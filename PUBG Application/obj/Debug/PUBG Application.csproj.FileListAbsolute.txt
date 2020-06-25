@@ -1,0 +1,68 @@
+D:\Visual Studio Projects\PUBG Application\bin\Debug\PUBG Application.exe.config
+D:\Visual Studio Projects\PUBG Application\bin\Debug\PUBG Application.exe
+D:\Visual Studio Projects\PUBG Application\bin\Debug\PUBG Application.pdb
+D:\Visual Studio Projects\PUBG Application\bin\Debug\bdr.exe
+D:\Visual Studio Projects\PUBG Application\bin\Debug\CircularProgressBar.dll
+D:\Visual Studio Projects\PUBG Application\bin\Debug\FontAwesome.Sharp.dll
+D:\Visual Studio Projects\PUBG Application\bin\Debug\JSONLibrary.dll
+D:\Visual Studio Projects\PUBG Application\bin\Debug\LiveCharts.dll
+D:\Visual Studio Projects\PUBG Application\bin\Debug\LiveCharts.WinForms.dll
+D:\Visual Studio Projects\PUBG Application\bin\Debug\LiveCharts.Wpf.dll
+D:\Visual Studio Projects\PUBG Application\bin\Debug\MaterialSkin.dll
+D:\Visual Studio Projects\PUBG Application\bin\Debug\WinFormAnimation.dll
+D:\Visual Studio Projects\PUBG Application\bin\Debug\Newtonsoft.Json.dll
+D:\Visual Studio Projects\PUBG Application\bin\Debug\JSONLibrary.pdb
+D:\Visual Studio Projects\PUBG Application\bin\Debug\JSONLibrary.dll.config
+D:\Visual Studio Projects\PUBG Application\bin\Debug\CircularProgressBar.xml
+D:\Visual Studio Projects\PUBG Application\bin\Debug\LiveCharts.pdb
+D:\Visual Studio Projects\PUBG Application\bin\Debug\LiveCharts.xml
+D:\Visual Studio Projects\PUBG Application\bin\Debug\LiveCharts.WinForms.pdb
+D:\Visual Studio Projects\PUBG Application\bin\Debug\LiveCharts.WinForms.xml
+D:\Visual Studio Projects\PUBG Application\bin\Debug\LiveCharts.Wpf.pdb
+D:\Visual Studio Projects\PUBG Application\bin\Debug\LiveCharts.Wpf.xml
+D:\Visual Studio Projects\PUBG Application\bin\Debug\Newtonsoft.Json.xml
+D:\Visual Studio Projects\PUBG Application\obj\Debug\PUBG Application.csprojAssemblyReference.cache
+D:\Visual Studio Projects\PUBG Application\obj\Debug\PUBG_Application.MainWindow.resources
+D:\Visual Studio Projects\PUBG Application\obj\Debug\PUBG_Application.Forms.InnerForm.resources
+D:\Visual Studio Projects\PUBG Application\obj\Debug\PUBG_Application.Properties.Resources.resources
+D:\Visual Studio Projects\PUBG Application\obj\Debug\PUBG Application.csproj.GenerateResource.cache
+D:\Visual Studio Projects\PUBG Application\obj\Debug\PUBG Application.csproj.CoreCompileInputs.cache
+D:\Visual Studio Projects\PUBG Application\obj\Debug\PUBG Application.csproj.CopyComplete
+D:\Visual Studio Projects\PUBG Application\obj\Debug\PUBG Application.exe
+D:\Visual Studio Projects\PUBG Application\obj\Debug\PUBG Application.pdb
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\PUBG Application.exe.config
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\PUBG Application.exe
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\PUBG Application.pdb
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\bdr.exe
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\CircularProgressBar.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\FontAwesome.Sharp.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\JSONLibrary.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\LiveCharts.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\LiveCharts.WinForms.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\LiveCharts.Wpf.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\MaterialSkin.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\Newtonsoft.Json.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\WinFormAnimation.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\JSONLibrary.pdb
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\JSONLibrary.dll.config
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\CircularProgressBar.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\LiveCharts.pdb
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\LiveCharts.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\LiveCharts.WinForms.pdb
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\LiveCharts.WinForms.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\LiveCharts.Wpf.pdb
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\LiveCharts.Wpf.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\Newtonsoft.Json.xml
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG Application.csprojAssemblyReference.cache
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG_Application.MainWindow.resources
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG_Application.Forms.NormalDoublePlayer.resources
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG_Application.Forms.RankedDoublePlayer.resources
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG_Application.Forms.RankedSinglePlayer.resources
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG_Application.Forms.NormalSinglePlayer.resources
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG_Application.Properties.Resources.resources
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG Application.csproj.GenerateResource.cache
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG Application.csproj.CoreCompileInputs.cache
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG Application.csproj.CopyComplete
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG Application.exe
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG Application.pdb
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\JsonSubTypes.dll

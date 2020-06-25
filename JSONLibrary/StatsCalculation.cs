@@ -17,23 +17,63 @@ namespace JSONLibrary
             return numerator / denominator;
         }
 
-        public static double GetAdr(float damagedealt, float  roundsplayed)
-        { 
+
+        public static double GetKD(double kills, double deaths)
+        {
+            return kills / deaths;
+        }
+
+        public static double GetKDA(double kills, double assists, double deaths)
+        {
+            double sum = kills + assists;
+            return sum / deaths;
+        }
+
+        public static double GetKnocksPerRound(double dBNOs, double roundsplayed)
+        {
+            if (roundsplayed == 0)
+            {
+                return 0;
+            }
+            return dBNOs / roundsplayed;
+        }
+        public static double GetAdr(double damagedealt, double roundsplayed)
+        {
+            if (roundsplayed == 0)
+            {
+                return 0;
+            }
+
             return damagedealt / roundsplayed;
         }
         
-        public static double GetHeadshotRatio(float headshotkills, float totalkills)
+        public static double GetHeadshotRatio(double headshotkills, double totalkills)
         {
+            if (totalkills == 0)
+            {
+                return 0;
+            }
+
             return (headshotkills / totalkills) * 100;
         }
 
-        public static double GetHeadshotRatioBelowOne(float headshotkills, float totalkills)
+        public static double GetHeadshotRatioBelowOne(double headshotkills, double totalkills)
         {
+            if (totalkills == 0)
+            {
+                return 0;
+            }
+
             return (headshotkills / totalkills);
         }
 
-        public static double GetAverageSurvivedTime(float timesurvived, float roundsplayed)
+        public static double GetAverageSurvivedTime(double timesurvived, double roundsplayed)
         {
+            if (roundsplayed == 0)
+            {
+                return 0;
+            }
+
             double minsSurvived = timesurvived / 60;
             double averageMinsSurvived = minsSurvived / roundsplayed;
 
@@ -46,7 +86,7 @@ namespace JSONLibrary
             return fraction + wholeNumber;
         }
 
-        public static double GetAverageSurvivedTimeBase10(float timesurvived, float roundsplayed)
+        public static double GetAverageSurvivedTimeBase10(double timesurvived, double roundsplayed)
         {
             double minsSurvived = timesurvived / 60;
             double averageMinsSurvived = minsSurvived / roundsplayed;
@@ -55,13 +95,23 @@ namespace JSONLibrary
             return averageMinsSurvived;
         }
 
-        public static double GetWinRatio(float wins, float roundsplayed)
+        public static double GetWinRatio(double wins, double roundsplayed)
         {
+            if (roundsplayed == 0)
+            {
+                return 0;
+
+            }
             return (wins / roundsplayed) * 100;
         }
 
-        public static double GetWinRatioBelowOne(float wins, float roundsplayed)
+        public static double GetWinRatioBelowOne(double wins, double roundsplayed)
         {
+            if (roundsplayed == 0)
+            {
+                return 0;
+            }
+
             return (wins / roundsplayed);
         }
     }

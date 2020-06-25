@@ -8,47 +8,32 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
+using System.Windows.Media;
 using JSONLibrary;
 using JSONLibrary.Json_Objects.AccountID;
+using JSONLibrary.Json_Objects.Ranked_Objects;
 using JSONLibrary.Json_Objects.Regular_Objects;
 using LiveCharts;
 using LiveCharts.Wpf;
+using LiveCharts.Wpf.Charts.Base;
 
 namespace PUBG_Application.Forms
 {
     public partial class NormalSinglePlayer : Form
     {
         private Tuple<RootAccountIDObject, RootNormalStatsObject> pair;
+        private PanelPlayer player;
+        private ModeStats stats;
+        private Values.StatType type;
 
-        public NormalSinglePlayer(LeftPlayer leftPlayer, RightPlayer rightPlayer, Values.StatType type)
+        public NormalSinglePlayer(PanelPlayer player, Values.StatType type)
         {
             InitializeComponent();
-            /*
-            this.stats = stats;
-            
-
-            this.labelGamesPlayedValue.Text = stats.RoundsPlayed.ToString();
-            this.labelWinsValue.Text = stats.Wins.ToString();
-
-
-            this.labelWinPercentValue.Text = string.Format("{0:.##}", StatsCalculation.GetWinRatio(stats.Wins, stats.RoundsPlayed));
-
-            this.labelAverageSurvivedTimeValue.Text = string.Format("{0:.##}", StatsCalculation.GetAverageSurvivedTime(stats.TimeSurvived, stats.RoundsPlayed)).ToString();
-            this.labelAdrValue.Text = string.Format("{0:.##}", StatsCalculation.GetAdr(stats.DamageDealt, stats.RoundsPlayed)).ToString();
-            this.labelHeadshotPercentValue.Text = string.Format("{0:.##}", StatsCalculation.GetHeadshotRatio(stats.HeadshotKills, stats.Kills)).ToString();
-            this.labelMaxKillsValue.Text = stats.RoundMostKills.ToString();
-            this.labelLongestKillValue.Text = string.Format("{0:.##}", stats.LongestKill);
-
-
-
-            double fragger = StatsCalculation.GetFraggerRating(StatsCalculation.GetAdr(stats.DamageDealt, stats.RoundsPlayed),
-                StatsCalculation.GetHeadshotRatioBelowOne(stats.HeadshotKills, stats.Kills),
-                StatsCalculation.GetAverageSurvivedTimeBase10(stats.TimeSurvived, stats.RoundsPlayed),
-                StatsCalculation.GetWinRatioBelowOne(stats.Wins, stats.RoundsPlayed));
-            this.labelFraggerRatingValue.Text = string.Format("{0:.##}", fragger);*/
-            //this.richTextBox1.Text = (this.stats[Values.Modes.SquadFPP].DamageDealt / this.stats[Values.Modes.SquadFPP].RoundsPlayed).ToString();
-
+            this.player = player;
+            this.type = type;
             this.graphPlotBindingSource.DataSource = new List<GraphPlot>();
             cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
             {
@@ -62,9 +47,204 @@ namespace PUBG_Application.Forms
                 LabelFormatter = value => value.ToString("C")
             });
             cartesianChart1.LegendLocation = LiveCharts.LegendLocation.Right;
+
+            Dictionary<string, int> mapsCount = this.CalculateRecent20Maps();
+
+            Func<ChartPoint, string> label = chartpoint => string.Format("{0} ({1:P)", chartpoint.Y, chartpoint.Participation);
+
+            SeriesCollection series = new SeriesCollection();
+
+
+            foreach(KeyValuePair<string, int> pair in mapsCount)
+            {
+                System.Windows.Media.SolidColorBrush Fill = System.Windows.Media.Brushes.SandyBrown;
+
+                if (pair.Key == "Desert_Main")
+                {
+                    Fill = System.Windows.Media.Brushes.SandyBrown;
+                }
+                else if (pair.Key == "DihorOtok_Main")
+                {
+                    Fill = System.Windows.Media.Brushes.MediumPurple;
+                }
+                
+                else if (pair.Key == "Baltic_Main")
+                {
+                    Fill = System.Windows.Media.Brushes.ForestGreen;
+                }
+                
+                else if (pair.Key == "Savage_Main")
+                {
+                    Fill = System.Windows.Media.Brushes.GreenYellow;
+                }
+                else if (pair.Key == "Summerland_Main")
+                {
+                    Fill = System.Windows.Media.Brushes.SaddleBrown;
+                }
+
+                if (pair.Value != 0)
+                {
+                    series.Add(new PieSeries()
+                    {
+                        Title = Values.GetMapName(pair.Key),
+                        Values = new ChartValues<int> { pair.Value },
+                        DataLabels = true,
+                        Fill = Fill
+                    });
+                }
+                
+            }
+
+            
+
+            
+
+            this.pieChart.Series = series;
+
+            fraggerRatingGauge.From = 0;
+            fraggerRatingGauge.To = 100;
+            
+            fraggerRatingGauge.Base.LabelsVisibility = Visibility.Hidden;
+            fraggerRatingGauge.Base.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(242, 169, 0));
+
+            fraggerRatingGauge.Base.GaugeActiveFill = new LinearGradientBrush
+            {
+                GradientStops = new GradientStopCollection
+                {
+                    new GradientStop(Colors.Yellow, 0),
+                    new GradientStop(Colors.Orange, .5),
+                    new GradientStop(Colors.Red, 1)
+                }
+            };
+
+            int xRecent20 = (panelRecent20.Size.Width - this.labelPieChartTitle.Size.Width) / 2;
+            this.labelPieChartTitle.Location = new System.Drawing.Point(xRecent20, this.labelPieChartTitle.Location.Y);
+
+            int xFraggerRating = (panelFraggerRating.Size.Width - this.labelFraggerRating.Size.Width) / 2;
+            this.labelFraggerRating.Location = new System.Drawing.Point(xFraggerRating, this.labelFraggerRating.Location.Y);
+
+
+            if (this.player != null)
+            {
+
+                this.stats = UIMethods.GetProperNormalStatsObject(type, this.player);
+
+                this.player.UnRankedUIStats = this.ComputeStats(this.stats);
+                
+                this.DisplayStats();
+                this.labelPlayerName.Text = this.player.Name.ToString();
+                this.labelSeasonName.Text = this.player.Season;
+                this.labelModeType.Text = type.ToString(); ;
+
+
+            }
+
         }
 
+        
+        private Dictionary<string, int> CalculateRecent20Maps()
+        {
+            Dictionary<string, int> mapsCount = new Dictionary<string, int>();
+            mapsCount.Add("Desert_Main", 0);
+            mapsCount.Add("DihorOtok_Main", 0);
+            mapsCount.Add("Erangel_Main", 0);
+            mapsCount.Add("Baltic_Main", 0);
+            mapsCount.Add("Range_Main", 0);
+            mapsCount.Add("Savage_Main", 0);
+            mapsCount.Add("Summerland_Main", 0);
 
+            for (int i = 0; i < this.player.Matches20SquadFpp.Count; i++)
+            {
+                string mapname = this.player.Matches20SquadFpp[i].data.attributes.mapName;
+
+                if (mapname == "Desert_Main")
+                {
+                    mapsCount["Desert_Main"] += 1;
+                }
+                else if (mapname == "DihorOtok_Main")
+                {
+                    mapsCount["DihorOtok_Main"] += 1;
+                }
+                else if (mapname == "Erangel_Main")
+                {
+                    mapsCount["Erangel_Main"] += 1;
+                }
+                else if (mapname == "Baltic_Main")
+                {
+                    mapsCount["Baltic_Main"] += 1;
+                }
+                else if (mapname == "Range_Main")
+                {
+                    mapsCount["Range_Main"] += 1;
+                }
+                else if (mapname == "Savage_Main")
+                {
+                    mapsCount["Savage_Main"] += 1;
+                }
+                else if (mapname == "Summerland_Main")
+                {
+                    mapsCount["Summerland_Main"] += 1;
+                }
+            }
+
+            return mapsCount;
+        }
+
+        private UnRankedObject ComputeStats(ModeStats stats)
+        {
+            if (stats != null)
+            {
+                return new UnRankedObject()
+                {
+                    GamesPlayed = (int)stats.RoundsPlayed,
+                    Wins = (int)stats.Wins,
+                    WinPercent = Math.Round(StatsCalculation.GetWinRatio(stats.Wins, stats.RoundsPlayed), 2),
+                    AvgSurvivalTime = Math.Round(StatsCalculation.GetAverageSurvivedTime(stats.TimeSurvived, stats.RoundsPlayed), 2),
+                    Adr = (int)StatsCalculation.GetAdr(stats.DamageDealt, stats.RoundsPlayed),
+                    HeadshotRatio = Math.Round(StatsCalculation.GetHeadshotRatio(stats.HeadshotKills, stats.Kills), 2),
+                    MaxKills = (int)stats.RoundMostKills,
+                    LongestKill = Math.Round(stats.LongestKill, 2),
+                    DbnosPerRound = Math.Round(StatsCalculation.GetKnocksPerRound(stats.DBNOS, stats.RoundsPlayed), 2),
+
+                    FraggerRating = new Random().Next(30, 100)
+                };
+            }
+            else
+            {
+                return new UnRankedObject()
+                {
+                    GamesPlayed = 0,
+                    Wins = 0,
+                    WinPercent = 0,
+                    AvgSurvivalTime = 0,
+                    Adr = 0,
+                    HeadshotRatio = 0,
+                    MaxKills = 0,
+                    LongestKill = 0,
+                    DbnosPerRound = 0,
+                    FraggerRating = 0
+
+                };
+            }
+        }
+
+        private void DisplayStats()
+        {
+            UnRankedObject unranked = this.player.UnRankedUIStats;
+
+
+            this.labelGamesPlayedValue.Text = unranked.GamesPlayed.ToString();
+            this.labelWinsValue.Text = unranked.Wins.ToString();
+            this.labelWinPercentValue.Text = unranked.WinPercent.ToString();
+            this.labelAverageSurvivedTimeValue.Text = unranked.AvgSurvivalTime.ToString();
+            this.labelAdrValue.Text = unranked.Adr.ToString();
+            this.labelHeadshotPercentValue.Text = unranked.HeadshotRatio.ToString();
+            this.labelMaxKillsValue.Text = unranked.MaxKills.ToString();
+            this.labelLongestKillValue.Text = unranked.LongestKill.ToString();
+            this.labelDbnosPerRoundValue.Text = unranked.DbnosPerRound.ToString();
+            this.fraggerRatingGauge.Value = unranked.FraggerRating;
+
+        }
         public NormalSinglePlayer()
         {
             InitializeComponent();

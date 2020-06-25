@@ -28,64 +28,854 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelRight = new System.Windows.Forms.Panel();
+            this.iconPictureBoxdBNOsRight = new FontAwesome.Sharp.IconPictureBox();
+            this.labelTopTenRatioRightValue = new System.Windows.Forms.Label();
+            this.iconPictureBoxKdaRight = new FontAwesome.Sharp.IconPictureBox();
+            this.labelAVGRankRightValue = new System.Windows.Forms.Label();
+            this.iconPictureBoxKdRight = new FontAwesome.Sharp.IconPictureBox();
+            this.labelTopTenRatioRight = new System.Windows.Forms.Label();
+            this.iconPictureBoxAdrRight = new FontAwesome.Sharp.IconPictureBox();
+            this.labelAverageKnocksPerGameRightValue = new System.Windows.Forms.Label();
+            this.iconPictureBoxTopTenPercentRight = new FontAwesome.Sharp.IconPictureBox();
+            this.labelWinPercentRightValue = new System.Windows.Forms.Label();
+            this.iconPictureBoxAVGRankRight = new FontAwesome.Sharp.IconPictureBox();
+            this.labelKDARightValue = new System.Windows.Forms.Label();
+            this.iconPictureBoxWinPercentRight = new FontAwesome.Sharp.IconPictureBox();
+            this.labelWinsRightValue = new System.Windows.Forms.Label();
+            this.iconPictureBoxWinsRight = new FontAwesome.Sharp.IconPictureBox();
+            this.labelKDRightValue = new System.Windows.Forms.Label();
+            this.iconPictureBoxGamesPlayedRight = new FontAwesome.Sharp.IconPictureBox();
+            this.labelGamesPlayedRightValue = new System.Windows.Forms.Label();
+            this.labelAdrRightValue = new System.Windows.Forms.Label();
+            this.labelAVGRankRight = new System.Windows.Forms.Label();
+            this.labelWinPercentRight = new System.Windows.Forms.Label();
+            this.labelAverageKnocksPerGameRight = new System.Windows.Forms.Label();
+            this.labelWinsRight = new System.Windows.Forms.Label();
+            this.labelKDARight = new System.Windows.Forms.Label();
+            this.labelGamesPlayedRight = new System.Windows.Forms.Label();
+            this.labelKDRight = new System.Windows.Forms.Label();
+            this.labelAdrRight = new System.Windows.Forms.Label();
+            this.labelPlayerNameRight = new System.Windows.Forms.Label();
+            this.pictureBoxRight = new System.Windows.Forms.PictureBox();
+            this.panelLeft = new System.Windows.Forms.Panel();
+            this.iconPictureBoxdBNOsLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxKdaLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxKdLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxAdrLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxTopTenPercentLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxAVGRankLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxWinPercentLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxWinsLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxGamesPlayedLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.labelTopTenRatioLeftValue = new System.Windows.Forms.Label();
+            this.labelAVGRankLeftValue = new System.Windows.Forms.Label();
+            this.labelTopTenRatioLeft = new System.Windows.Forms.Label();
+            this.labelAverageKnocksPerGameLeftValue = new System.Windows.Forms.Label();
+            this.labelWinPercentLeftValue = new System.Windows.Forms.Label();
+            this.labelKDALeftValue = new System.Windows.Forms.Label();
+            this.labelWinsLeftValue = new System.Windows.Forms.Label();
+            this.labelKDLeftValue = new System.Windows.Forms.Label();
+            this.labelGamesPlayedLeftValue = new System.Windows.Forms.Label();
+            this.labelAdrLeftValue = new System.Windows.Forms.Label();
+            this.labelAVGRankLeft = new System.Windows.Forms.Label();
+            this.labelWinPercentLeft = new System.Windows.Forms.Label();
+            this.labelAverageKnocksPerGameLeft = new System.Windows.Forms.Label();
+            this.labelWinsLeft = new System.Windows.Forms.Label();
+            this.labelKDALeft = new System.Windows.Forms.Label();
+            this.labelGamesPlayedLeft = new System.Windows.Forms.Label();
+            this.labelKDLeft = new System.Windows.Forms.Label();
+            this.labelAdrLeft = new System.Windows.Forms.Label();
+            this.labelPlayerNameLeft = new System.Windows.Forms.Label();
+            this.pictureBoxLeft = new System.Windows.Forms.PictureBox();
             this.switchToSingleViewButton = new System.Windows.Forms.Button();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.labelFraggerRatingValue = new System.Windows.Forms.Label();
-            this.labelAverageSurvivedTimeValue = new System.Windows.Forms.Label();
-            this.labelLongestKillValue = new System.Windows.Forms.Label();
-            this.labelWinPercentValue = new System.Windows.Forms.Label();
-            this.labelMaxKillsValue = new System.Windows.Forms.Label();
-            this.labelWinsValue = new System.Windows.Forms.Label();
-            this.labelHeadshotPercentValue = new System.Windows.Forms.Label();
-            this.labelGamesPlayedValue = new System.Windows.Forms.Label();
-            this.labelAdrValue = new System.Windows.Forms.Label();
-            this.labelAverageSurvivedTime = new System.Windows.Forms.Label();
-            this.labelFraggerRating = new System.Windows.Forms.Label();
-            this.labelWinPercent = new System.Windows.Forms.Label();
-            this.labelLongestKill = new System.Windows.Forms.Label();
-            this.labelWins = new System.Windows.Forms.Label();
-            this.labelMaxKills = new System.Windows.Forms.Label();
-            this.labelGamesPlayed = new System.Windows.Forms.Label();
-            this.labelHeadshotPercent = new System.Windows.Forms.Label();
-            this.labelAdr = new System.Windows.Forms.Label();
+            this.graphPlotBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxdBNOsRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxKdaRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxKdRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAdrRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxTopTenPercentRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAVGRankRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinPercentRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinsRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxGamesPlayedRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
+            this.panelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxdBNOsLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxKdaLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxKdLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAdrLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxTopTenPercentLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAVGRankLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinPercentLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinsLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxGamesPlayedLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphPlotBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.panel1.Controls.Add(this.panelRight);
+            this.panel1.Controls.Add(this.panelLeft);
             this.panel1.Controls.Add(this.switchToSingleViewButton);
             this.panel1.Controls.Add(this.cartesianChart1);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(794, 946);
             this.panel1.TabIndex = 1;
+            // 
+            // panelRight
+            // 
+            this.panelRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.panelRight.Controls.Add(this.iconPictureBoxdBNOsRight);
+            this.panelRight.Controls.Add(this.labelTopTenRatioRightValue);
+            this.panelRight.Controls.Add(this.iconPictureBoxKdaRight);
+            this.panelRight.Controls.Add(this.labelAVGRankRightValue);
+            this.panelRight.Controls.Add(this.iconPictureBoxKdRight);
+            this.panelRight.Controls.Add(this.labelTopTenRatioRight);
+            this.panelRight.Controls.Add(this.iconPictureBoxAdrRight);
+            this.panelRight.Controls.Add(this.labelAverageKnocksPerGameRightValue);
+            this.panelRight.Controls.Add(this.iconPictureBoxTopTenPercentRight);
+            this.panelRight.Controls.Add(this.labelWinPercentRightValue);
+            this.panelRight.Controls.Add(this.iconPictureBoxAVGRankRight);
+            this.panelRight.Controls.Add(this.labelKDARightValue);
+            this.panelRight.Controls.Add(this.iconPictureBoxWinPercentRight);
+            this.panelRight.Controls.Add(this.labelWinsRightValue);
+            this.panelRight.Controls.Add(this.iconPictureBoxWinsRight);
+            this.panelRight.Controls.Add(this.labelKDRightValue);
+            this.panelRight.Controls.Add(this.iconPictureBoxGamesPlayedRight);
+            this.panelRight.Controls.Add(this.labelGamesPlayedRightValue);
+            this.panelRight.Controls.Add(this.labelAdrRightValue);
+            this.panelRight.Controls.Add(this.labelAVGRankRight);
+            this.panelRight.Controls.Add(this.labelWinPercentRight);
+            this.panelRight.Controls.Add(this.labelAverageKnocksPerGameRight);
+            this.panelRight.Controls.Add(this.labelWinsRight);
+            this.panelRight.Controls.Add(this.labelKDARight);
+            this.panelRight.Controls.Add(this.labelGamesPlayedRight);
+            this.panelRight.Controls.Add(this.labelKDRight);
+            this.panelRight.Controls.Add(this.labelAdrRight);
+            this.panelRight.Controls.Add(this.labelPlayerNameRight);
+            this.panelRight.Controls.Add(this.pictureBoxRight);
+            this.panelRight.Location = new System.Drawing.Point(403, 64);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(379, 532);
+            this.panelRight.TabIndex = 32;
+            // 
+            // iconPictureBoxdBNOsRight
+            // 
+            this.iconPictureBoxdBNOsRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxdBNOsRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxdBNOsRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxdBNOsRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxdBNOsRight.IconSize = 23;
+            this.iconPictureBoxdBNOsRight.Location = new System.Drawing.Point(216, 500);
+            this.iconPictureBoxdBNOsRight.Name = "iconPictureBoxdBNOsRight";
+            this.iconPictureBoxdBNOsRight.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxdBNOsRight.TabIndex = 49;
+            this.iconPictureBoxdBNOsRight.TabStop = false;
+            // 
+            // labelTopTenRatioRightValue
+            // 
+            this.labelTopTenRatioRightValue.AutoSize = true;
+            this.labelTopTenRatioRightValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTopTenRatioRightValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelTopTenRatioRightValue.Location = new System.Drawing.Point(245, 362);
+            this.labelTopTenRatioRightValue.Name = "labelTopTenRatioRightValue";
+            this.labelTopTenRatioRightValue.Size = new System.Drawing.Size(0, 23);
+            this.labelTopTenRatioRightValue.TabIndex = 31;
+            this.labelTopTenRatioRightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // iconPictureBoxKdaRight
+            // 
+            this.iconPictureBoxKdaRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxKdaRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxKdaRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxKdaRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxKdaRight.IconSize = 23;
+            this.iconPictureBoxKdaRight.Location = new System.Drawing.Point(216, 466);
+            this.iconPictureBoxKdaRight.Name = "iconPictureBoxKdaRight";
+            this.iconPictureBoxKdaRight.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxKdaRight.TabIndex = 48;
+            this.iconPictureBoxKdaRight.TabStop = false;
+            // 
+            // labelAVGRankRightValue
+            // 
+            this.labelAVGRankRightValue.AutoSize = true;
+            this.labelAVGRankRightValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAVGRankRightValue.ForeColor = System.Drawing.Color.White;
+            this.labelAVGRankRightValue.Location = new System.Drawing.Point(245, 329);
+            this.labelAVGRankRightValue.Name = "labelAVGRankRightValue";
+            this.labelAVGRankRightValue.Size = new System.Drawing.Size(0, 23);
+            this.labelAVGRankRightValue.TabIndex = 26;
+            this.labelAVGRankRightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // iconPictureBoxKdRight
+            // 
+            this.iconPictureBoxKdRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxKdRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxKdRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxKdRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxKdRight.IconSize = 23;
+            this.iconPictureBoxKdRight.Location = new System.Drawing.Point(216, 431);
+            this.iconPictureBoxKdRight.Name = "iconPictureBoxKdRight";
+            this.iconPictureBoxKdRight.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxKdRight.TabIndex = 47;
+            this.iconPictureBoxKdRight.TabStop = false;
+            // 
+            // labelTopTenRatioRight
+            // 
+            this.labelTopTenRatioRight.AutoSize = true;
+            this.labelTopTenRatioRight.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTopTenRatioRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelTopTenRatioRight.Location = new System.Drawing.Point(3, 362);
+            this.labelTopTenRatioRight.Name = "labelTopTenRatioRight";
+            this.labelTopTenRatioRight.Size = new System.Drawing.Size(91, 23);
+            this.labelTopTenRatioRight.TabIndex = 25;
+            this.labelTopTenRatioRight.Text = "Top 10 %";
+            // 
+            // iconPictureBoxAdrRight
+            // 
+            this.iconPictureBoxAdrRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxAdrRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAdrRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxAdrRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAdrRight.IconSize = 23;
+            this.iconPictureBoxAdrRight.Location = new System.Drawing.Point(216, 396);
+            this.iconPictureBoxAdrRight.Name = "iconPictureBoxAdrRight";
+            this.iconPictureBoxAdrRight.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxAdrRight.TabIndex = 46;
+            this.iconPictureBoxAdrRight.TabStop = false;
+            // 
+            // labelAverageKnocksPerGameRightValue
+            // 
+            this.labelAverageKnocksPerGameRightValue.AutoSize = true;
+            this.labelAverageKnocksPerGameRightValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAverageKnocksPerGameRightValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelAverageKnocksPerGameRightValue.Location = new System.Drawing.Point(245, 500);
+            this.labelAverageKnocksPerGameRightValue.Name = "labelAverageKnocksPerGameRightValue";
+            this.labelAverageKnocksPerGameRightValue.Size = new System.Drawing.Size(0, 23);
+            this.labelAverageKnocksPerGameRightValue.TabIndex = 30;
+            this.labelAverageKnocksPerGameRightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // iconPictureBoxTopTenPercentRight
+            // 
+            this.iconPictureBoxTopTenPercentRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxTopTenPercentRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxTopTenPercentRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxTopTenPercentRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxTopTenPercentRight.IconSize = 23;
+            this.iconPictureBoxTopTenPercentRight.Location = new System.Drawing.Point(216, 362);
+            this.iconPictureBoxTopTenPercentRight.Name = "iconPictureBoxTopTenPercentRight";
+            this.iconPictureBoxTopTenPercentRight.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxTopTenPercentRight.TabIndex = 45;
+            this.iconPictureBoxTopTenPercentRight.TabStop = false;
+            // 
+            // labelWinPercentRightValue
+            // 
+            this.labelWinPercentRightValue.AutoSize = true;
+            this.labelWinPercentRightValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWinPercentRightValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelWinPercentRightValue.Location = new System.Drawing.Point(245, 294);
+            this.labelWinPercentRightValue.Name = "labelWinPercentRightValue";
+            this.labelWinPercentRightValue.Size = new System.Drawing.Size(0, 23);
+            this.labelWinPercentRightValue.TabIndex = 23;
+            this.labelWinPercentRightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // iconPictureBoxAVGRankRight
+            // 
+            this.iconPictureBoxAVGRankRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxAVGRankRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAVGRankRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxAVGRankRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAVGRankRight.IconSize = 23;
+            this.iconPictureBoxAVGRankRight.Location = new System.Drawing.Point(216, 329);
+            this.iconPictureBoxAVGRankRight.Name = "iconPictureBoxAVGRankRight";
+            this.iconPictureBoxAVGRankRight.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxAVGRankRight.TabIndex = 44;
+            this.iconPictureBoxAVGRankRight.TabStop = false;
+            // 
+            // labelKDARightValue
+            // 
+            this.labelKDARightValue.AutoSize = true;
+            this.labelKDARightValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKDARightValue.ForeColor = System.Drawing.Color.White;
+            this.labelKDARightValue.Location = new System.Drawing.Point(245, 466);
+            this.labelKDARightValue.Name = "labelKDARightValue";
+            this.labelKDARightValue.Size = new System.Drawing.Size(0, 23);
+            this.labelKDARightValue.TabIndex = 29;
+            this.labelKDARightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // iconPictureBoxWinPercentRight
+            // 
+            this.iconPictureBoxWinPercentRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxWinPercentRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinPercentRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxWinPercentRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinPercentRight.IconSize = 23;
+            this.iconPictureBoxWinPercentRight.Location = new System.Drawing.Point(216, 294);
+            this.iconPictureBoxWinPercentRight.Name = "iconPictureBoxWinPercentRight";
+            this.iconPictureBoxWinPercentRight.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxWinPercentRight.TabIndex = 43;
+            this.iconPictureBoxWinPercentRight.TabStop = false;
+            // 
+            // labelWinsRightValue
+            // 
+            this.labelWinsRightValue.AutoSize = true;
+            this.labelWinsRightValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWinsRightValue.ForeColor = System.Drawing.Color.White;
+            this.labelWinsRightValue.Location = new System.Drawing.Point(245, 259);
+            this.labelWinsRightValue.Name = "labelWinsRightValue";
+            this.labelWinsRightValue.Size = new System.Drawing.Size(0, 23);
+            this.labelWinsRightValue.TabIndex = 22;
+            this.labelWinsRightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // iconPictureBoxWinsRight
+            // 
+            this.iconPictureBoxWinsRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxWinsRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinsRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxWinsRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinsRight.IconSize = 23;
+            this.iconPictureBoxWinsRight.Location = new System.Drawing.Point(216, 259);
+            this.iconPictureBoxWinsRight.Name = "iconPictureBoxWinsRight";
+            this.iconPictureBoxWinsRight.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxWinsRight.TabIndex = 42;
+            this.iconPictureBoxWinsRight.TabStop = false;
+            // 
+            // labelKDRightValue
+            // 
+            this.labelKDRightValue.AutoSize = true;
+            this.labelKDRightValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKDRightValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelKDRightValue.Location = new System.Drawing.Point(245, 431);
+            this.labelKDRightValue.Name = "labelKDRightValue";
+            this.labelKDRightValue.Size = new System.Drawing.Size(0, 23);
+            this.labelKDRightValue.TabIndex = 28;
+            this.labelKDRightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // iconPictureBoxGamesPlayedRight
+            // 
+            this.iconPictureBoxGamesPlayedRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxGamesPlayedRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxGamesPlayedRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxGamesPlayedRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxGamesPlayedRight.IconSize = 23;
+            this.iconPictureBoxGamesPlayedRight.Location = new System.Drawing.Point(216, 227);
+            this.iconPictureBoxGamesPlayedRight.Name = "iconPictureBoxGamesPlayedRight";
+            this.iconPictureBoxGamesPlayedRight.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxGamesPlayedRight.TabIndex = 41;
+            this.iconPictureBoxGamesPlayedRight.TabStop = false;
+            this.iconPictureBoxGamesPlayedRight.Click += new System.EventHandler(this.iconPictureBox18_Click);
+            // 
+            // labelGamesPlayedRightValue
+            // 
+            this.labelGamesPlayedRightValue.AutoSize = true;
+            this.labelGamesPlayedRightValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGamesPlayedRightValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelGamesPlayedRightValue.Location = new System.Drawing.Point(245, 227);
+            this.labelGamesPlayedRightValue.Name = "labelGamesPlayedRightValue";
+            this.labelGamesPlayedRightValue.Size = new System.Drawing.Size(0, 23);
+            this.labelGamesPlayedRightValue.TabIndex = 20;
+            this.labelGamesPlayedRightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelAdrRightValue
+            // 
+            this.labelAdrRightValue.AutoSize = true;
+            this.labelAdrRightValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdrRightValue.ForeColor = System.Drawing.Color.White;
+            this.labelAdrRightValue.Location = new System.Drawing.Point(245, 396);
+            this.labelAdrRightValue.Name = "labelAdrRightValue";
+            this.labelAdrRightValue.Size = new System.Drawing.Size(0, 23);
+            this.labelAdrRightValue.TabIndex = 27;
+            this.labelAdrRightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelAVGRankRight
+            // 
+            this.labelAVGRankRight.AutoSize = true;
+            this.labelAVGRankRight.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAVGRankRight.ForeColor = System.Drawing.Color.White;
+            this.labelAVGRankRight.Location = new System.Drawing.Point(3, 329);
+            this.labelAVGRankRight.Name = "labelAVGRankRight";
+            this.labelAVGRankRight.Size = new System.Drawing.Size(104, 23);
+            this.labelAVGRankRight.TabIndex = 18;
+            this.labelAVGRankRight.Text = "AVG Rank";
+            // 
+            // labelWinPercentRight
+            // 
+            this.labelWinPercentRight.AutoSize = true;
+            this.labelWinPercentRight.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWinPercentRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelWinPercentRight.Location = new System.Drawing.Point(3, 294);
+            this.labelWinPercentRight.Name = "labelWinPercentRight";
+            this.labelWinPercentRight.Size = new System.Drawing.Size(64, 23);
+            this.labelWinPercentRight.TabIndex = 16;
+            this.labelWinPercentRight.Text = "Win %";
+            // 
+            // labelAverageKnocksPerGameRight
+            // 
+            this.labelAverageKnocksPerGameRight.AutoSize = true;
+            this.labelAverageKnocksPerGameRight.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAverageKnocksPerGameRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelAverageKnocksPerGameRight.Location = new System.Drawing.Point(3, 500);
+            this.labelAverageKnocksPerGameRight.Name = "labelAverageKnocksPerGameRight";
+            this.labelAverageKnocksPerGameRight.Size = new System.Drawing.Size(173, 23);
+            this.labelAverageKnocksPerGameRight.TabIndex = 24;
+            this.labelAverageKnocksPerGameRight.Text = "dBNO\'s Per Round";
+            // 
+            // labelWinsRight
+            // 
+            this.labelWinsRight.AutoSize = true;
+            this.labelWinsRight.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWinsRight.ForeColor = System.Drawing.Color.White;
+            this.labelWinsRight.Location = new System.Drawing.Point(3, 259);
+            this.labelWinsRight.Name = "labelWinsRight";
+            this.labelWinsRight.Size = new System.Drawing.Size(51, 23);
+            this.labelWinsRight.TabIndex = 15;
+            this.labelWinsRight.Text = "Wins";
+            // 
+            // labelKDARight
+            // 
+            this.labelKDARight.AutoSize = true;
+            this.labelKDARight.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKDARight.ForeColor = System.Drawing.Color.White;
+            this.labelKDARight.Location = new System.Drawing.Point(3, 466);
+            this.labelKDARight.Name = "labelKDARight";
+            this.labelKDARight.Size = new System.Drawing.Size(49, 23);
+            this.labelKDARight.TabIndex = 21;
+            this.labelKDARight.Text = "KDA";
+            // 
+            // labelGamesPlayedRight
+            // 
+            this.labelGamesPlayedRight.AutoSize = true;
+            this.labelGamesPlayedRight.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGamesPlayedRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelGamesPlayedRight.Location = new System.Drawing.Point(3, 227);
+            this.labelGamesPlayedRight.Name = "labelGamesPlayedRight";
+            this.labelGamesPlayedRight.Size = new System.Drawing.Size(147, 23);
+            this.labelGamesPlayedRight.TabIndex = 14;
+            this.labelGamesPlayedRight.Text = "Games Played";
+            // 
+            // labelKDRight
+            // 
+            this.labelKDRight.AutoSize = true;
+            this.labelKDRight.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKDRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelKDRight.Location = new System.Drawing.Point(3, 431);
+            this.labelKDRight.Name = "labelKDRight";
+            this.labelKDRight.Size = new System.Drawing.Size(35, 23);
+            this.labelKDRight.TabIndex = 19;
+            this.labelKDRight.Text = "KD";
+            // 
+            // labelAdrRight
+            // 
+            this.labelAdrRight.AutoSize = true;
+            this.labelAdrRight.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdrRight.ForeColor = System.Drawing.Color.White;
+            this.labelAdrRight.Location = new System.Drawing.Point(3, 396);
+            this.labelAdrRight.Name = "labelAdrRight";
+            this.labelAdrRight.Size = new System.Drawing.Size(48, 23);
+            this.labelAdrRight.TabIndex = 17;
+            this.labelAdrRight.Text = "ADR";
+            // 
+            // labelPlayerNameRight
+            // 
+            this.labelPlayerNameRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPlayerNameRight.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayerNameRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelPlayerNameRight.Location = new System.Drawing.Point(3, 186);
+            this.labelPlayerNameRight.Name = "labelPlayerNameRight";
+            this.labelPlayerNameRight.Size = new System.Drawing.Size(373, 22);
+            this.labelPlayerNameRight.TabIndex = 1;
+            this.labelPlayerNameRight.Text = "player name";
+            this.labelPlayerNameRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxRight
+            // 
+            this.pictureBoxRight.Location = new System.Drawing.Point(3, 13);
+            this.pictureBoxRight.Name = "pictureBoxRight";
+            this.pictureBoxRight.Size = new System.Drawing.Size(373, 158);
+            this.pictureBoxRight.TabIndex = 0;
+            this.pictureBoxRight.TabStop = false;
+            // 
+            // panelLeft
+            // 
+            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.panelLeft.Controls.Add(this.iconPictureBoxdBNOsLeft);
+            this.panelLeft.Controls.Add(this.iconPictureBoxKdaLeft);
+            this.panelLeft.Controls.Add(this.iconPictureBoxKdLeft);
+            this.panelLeft.Controls.Add(this.iconPictureBoxAdrLeft);
+            this.panelLeft.Controls.Add(this.iconPictureBoxTopTenPercentLeft);
+            this.panelLeft.Controls.Add(this.iconPictureBoxAVGRankLeft);
+            this.panelLeft.Controls.Add(this.iconPictureBoxWinPercentLeft);
+            this.panelLeft.Controls.Add(this.iconPictureBoxWinsLeft);
+            this.panelLeft.Controls.Add(this.iconPictureBoxGamesPlayedLeft);
+            this.panelLeft.Controls.Add(this.labelTopTenRatioLeftValue);
+            this.panelLeft.Controls.Add(this.labelAVGRankLeftValue);
+            this.panelLeft.Controls.Add(this.labelTopTenRatioLeft);
+            this.panelLeft.Controls.Add(this.labelAverageKnocksPerGameLeftValue);
+            this.panelLeft.Controls.Add(this.labelWinPercentLeftValue);
+            this.panelLeft.Controls.Add(this.labelKDALeftValue);
+            this.panelLeft.Controls.Add(this.labelWinsLeftValue);
+            this.panelLeft.Controls.Add(this.labelKDLeftValue);
+            this.panelLeft.Controls.Add(this.labelGamesPlayedLeftValue);
+            this.panelLeft.Controls.Add(this.labelAdrLeftValue);
+            this.panelLeft.Controls.Add(this.labelAVGRankLeft);
+            this.panelLeft.Controls.Add(this.labelWinPercentLeft);
+            this.panelLeft.Controls.Add(this.labelAverageKnocksPerGameLeft);
+            this.panelLeft.Controls.Add(this.labelWinsLeft);
+            this.panelLeft.Controls.Add(this.labelKDALeft);
+            this.panelLeft.Controls.Add(this.labelGamesPlayedLeft);
+            this.panelLeft.Controls.Add(this.labelKDLeft);
+            this.panelLeft.Controls.Add(this.labelAdrLeft);
+            this.panelLeft.Controls.Add(this.labelPlayerNameLeft);
+            this.panelLeft.Controls.Add(this.pictureBoxLeft);
+            this.panelLeft.Location = new System.Drawing.Point(12, 64);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(379, 532);
+            this.panelLeft.TabIndex = 17;
+            // 
+            // iconPictureBoxdBNOsLeft
+            // 
+            this.iconPictureBoxdBNOsLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxdBNOsLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxdBNOsLeft.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxdBNOsLeft.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxdBNOsLeft.IconSize = 23;
+            this.iconPictureBoxdBNOsLeft.Location = new System.Drawing.Point(216, 500);
+            this.iconPictureBoxdBNOsLeft.Name = "iconPictureBoxdBNOsLeft";
+            this.iconPictureBoxdBNOsLeft.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxdBNOsLeft.TabIndex = 40;
+            this.iconPictureBoxdBNOsLeft.TabStop = false;
+            // 
+            // iconPictureBoxKdaLeft
+            // 
+            this.iconPictureBoxKdaLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxKdaLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxKdaLeft.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxKdaLeft.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxKdaLeft.IconSize = 23;
+            this.iconPictureBoxKdaLeft.Location = new System.Drawing.Point(216, 466);
+            this.iconPictureBoxKdaLeft.Name = "iconPictureBoxKdaLeft";
+            this.iconPictureBoxKdaLeft.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxKdaLeft.TabIndex = 39;
+            this.iconPictureBoxKdaLeft.TabStop = false;
+            // 
+            // iconPictureBoxKdLeft
+            // 
+            this.iconPictureBoxKdLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxKdLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxKdLeft.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxKdLeft.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxKdLeft.IconSize = 23;
+            this.iconPictureBoxKdLeft.Location = new System.Drawing.Point(216, 437);
+            this.iconPictureBoxKdLeft.Name = "iconPictureBoxKdLeft";
+            this.iconPictureBoxKdLeft.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxKdLeft.TabIndex = 38;
+            this.iconPictureBoxKdLeft.TabStop = false;
+            // 
+            // iconPictureBoxAdrLeft
+            // 
+            this.iconPictureBoxAdrLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxAdrLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAdrLeft.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxAdrLeft.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAdrLeft.IconSize = 23;
+            this.iconPictureBoxAdrLeft.Location = new System.Drawing.Point(216, 402);
+            this.iconPictureBoxAdrLeft.Name = "iconPictureBoxAdrLeft";
+            this.iconPictureBoxAdrLeft.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxAdrLeft.TabIndex = 37;
+            this.iconPictureBoxAdrLeft.TabStop = false;
+            // 
+            // iconPictureBoxTopTenPercentLeft
+            // 
+            this.iconPictureBoxTopTenPercentLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxTopTenPercentLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxTopTenPercentLeft.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxTopTenPercentLeft.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxTopTenPercentLeft.IconSize = 23;
+            this.iconPictureBoxTopTenPercentLeft.Location = new System.Drawing.Point(216, 368);
+            this.iconPictureBoxTopTenPercentLeft.Name = "iconPictureBoxTopTenPercentLeft";
+            this.iconPictureBoxTopTenPercentLeft.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxTopTenPercentLeft.TabIndex = 36;
+            this.iconPictureBoxTopTenPercentLeft.TabStop = false;
+            // 
+            // iconPictureBoxAVGRankLeft
+            // 
+            this.iconPictureBoxAVGRankLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxAVGRankLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAVGRankLeft.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxAVGRankLeft.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAVGRankLeft.IconSize = 23;
+            this.iconPictureBoxAVGRankLeft.Location = new System.Drawing.Point(216, 335);
+            this.iconPictureBoxAVGRankLeft.Name = "iconPictureBoxAVGRankLeft";
+            this.iconPictureBoxAVGRankLeft.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxAVGRankLeft.TabIndex = 35;
+            this.iconPictureBoxAVGRankLeft.TabStop = false;
+            // 
+            // iconPictureBoxWinPercentLeft
+            // 
+            this.iconPictureBoxWinPercentLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxWinPercentLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinPercentLeft.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxWinPercentLeft.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinPercentLeft.IconSize = 23;
+            this.iconPictureBoxWinPercentLeft.Location = new System.Drawing.Point(216, 300);
+            this.iconPictureBoxWinPercentLeft.Name = "iconPictureBoxWinPercentLeft";
+            this.iconPictureBoxWinPercentLeft.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxWinPercentLeft.TabIndex = 34;
+            this.iconPictureBoxWinPercentLeft.TabStop = false;
+            // 
+            // iconPictureBoxWinsLeft
+            // 
+            this.iconPictureBoxWinsLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxWinsLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinsLeft.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxWinsLeft.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinsLeft.IconSize = 23;
+            this.iconPictureBoxWinsLeft.Location = new System.Drawing.Point(216, 265);
+            this.iconPictureBoxWinsLeft.Name = "iconPictureBoxWinsLeft";
+            this.iconPictureBoxWinsLeft.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxWinsLeft.TabIndex = 33;
+            this.iconPictureBoxWinsLeft.TabStop = false;
+            // 
+            // iconPictureBoxGamesPlayedLeft
+            // 
+            this.iconPictureBoxGamesPlayedLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxGamesPlayedLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxGamesPlayedLeft.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxGamesPlayedLeft.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxGamesPlayedLeft.IconSize = 23;
+            this.iconPictureBoxGamesPlayedLeft.Location = new System.Drawing.Point(216, 233);
+            this.iconPictureBoxGamesPlayedLeft.Name = "iconPictureBoxGamesPlayedLeft";
+            this.iconPictureBoxGamesPlayedLeft.Size = new System.Drawing.Size(23, 23);
+            this.iconPictureBoxGamesPlayedLeft.TabIndex = 32;
+            this.iconPictureBoxGamesPlayedLeft.TabStop = false;
+            // 
+            // labelTopTenRatioLeftValue
+            // 
+            this.labelTopTenRatioLeftValue.AutoSize = true;
+            this.labelTopTenRatioLeftValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTopTenRatioLeftValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelTopTenRatioLeftValue.Location = new System.Drawing.Point(245, 362);
+            this.labelTopTenRatioLeftValue.Name = "labelTopTenRatioLeftValue";
+            this.labelTopTenRatioLeftValue.Size = new System.Drawing.Size(0, 23);
+            this.labelTopTenRatioLeftValue.TabIndex = 31;
+            this.labelTopTenRatioLeftValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelAVGRankLeftValue
+            // 
+            this.labelAVGRankLeftValue.AutoSize = true;
+            this.labelAVGRankLeftValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAVGRankLeftValue.ForeColor = System.Drawing.Color.White;
+            this.labelAVGRankLeftValue.Location = new System.Drawing.Point(245, 329);
+            this.labelAVGRankLeftValue.Name = "labelAVGRankLeftValue";
+            this.labelAVGRankLeftValue.Size = new System.Drawing.Size(0, 23);
+            this.labelAVGRankLeftValue.TabIndex = 26;
+            this.labelAVGRankLeftValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTopTenRatioLeft
+            // 
+            this.labelTopTenRatioLeft.AutoSize = true;
+            this.labelTopTenRatioLeft.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTopTenRatioLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelTopTenRatioLeft.Location = new System.Drawing.Point(3, 362);
+            this.labelTopTenRatioLeft.Name = "labelTopTenRatioLeft";
+            this.labelTopTenRatioLeft.Size = new System.Drawing.Size(91, 23);
+            this.labelTopTenRatioLeft.TabIndex = 25;
+            this.labelTopTenRatioLeft.Text = "Top 10 %";
+            // 
+            // labelAverageKnocksPerGameLeftValue
+            // 
+            this.labelAverageKnocksPerGameLeftValue.AutoSize = true;
+            this.labelAverageKnocksPerGameLeftValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAverageKnocksPerGameLeftValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelAverageKnocksPerGameLeftValue.Location = new System.Drawing.Point(245, 500);
+            this.labelAverageKnocksPerGameLeftValue.Name = "labelAverageKnocksPerGameLeftValue";
+            this.labelAverageKnocksPerGameLeftValue.Size = new System.Drawing.Size(0, 23);
+            this.labelAverageKnocksPerGameLeftValue.TabIndex = 30;
+            this.labelAverageKnocksPerGameLeftValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelWinPercentLeftValue
+            // 
+            this.labelWinPercentLeftValue.AutoSize = true;
+            this.labelWinPercentLeftValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWinPercentLeftValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelWinPercentLeftValue.Location = new System.Drawing.Point(245, 294);
+            this.labelWinPercentLeftValue.Name = "labelWinPercentLeftValue";
+            this.labelWinPercentLeftValue.Size = new System.Drawing.Size(0, 23);
+            this.labelWinPercentLeftValue.TabIndex = 23;
+            this.labelWinPercentLeftValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelKDALeftValue
+            // 
+            this.labelKDALeftValue.AutoSize = true;
+            this.labelKDALeftValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKDALeftValue.ForeColor = System.Drawing.Color.White;
+            this.labelKDALeftValue.Location = new System.Drawing.Point(245, 466);
+            this.labelKDALeftValue.Name = "labelKDALeftValue";
+            this.labelKDALeftValue.Size = new System.Drawing.Size(0, 23);
+            this.labelKDALeftValue.TabIndex = 29;
+            this.labelKDALeftValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelWinsLeftValue
+            // 
+            this.labelWinsLeftValue.AutoSize = true;
+            this.labelWinsLeftValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWinsLeftValue.ForeColor = System.Drawing.Color.White;
+            this.labelWinsLeftValue.Location = new System.Drawing.Point(245, 259);
+            this.labelWinsLeftValue.Name = "labelWinsLeftValue";
+            this.labelWinsLeftValue.Size = new System.Drawing.Size(0, 23);
+            this.labelWinsLeftValue.TabIndex = 22;
+            this.labelWinsLeftValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelKDLeftValue
+            // 
+            this.labelKDLeftValue.AutoSize = true;
+            this.labelKDLeftValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKDLeftValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelKDLeftValue.Location = new System.Drawing.Point(245, 431);
+            this.labelKDLeftValue.Name = "labelKDLeftValue";
+            this.labelKDLeftValue.Size = new System.Drawing.Size(0, 23);
+            this.labelKDLeftValue.TabIndex = 28;
+            this.labelKDLeftValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelGamesPlayedLeftValue
+            // 
+            this.labelGamesPlayedLeftValue.AutoSize = true;
+            this.labelGamesPlayedLeftValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGamesPlayedLeftValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelGamesPlayedLeftValue.Location = new System.Drawing.Point(245, 227);
+            this.labelGamesPlayedLeftValue.Name = "labelGamesPlayedLeftValue";
+            this.labelGamesPlayedLeftValue.Size = new System.Drawing.Size(0, 23);
+            this.labelGamesPlayedLeftValue.TabIndex = 20;
+            this.labelGamesPlayedLeftValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelAdrLeftValue
+            // 
+            this.labelAdrLeftValue.AutoSize = true;
+            this.labelAdrLeftValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdrLeftValue.ForeColor = System.Drawing.Color.White;
+            this.labelAdrLeftValue.Location = new System.Drawing.Point(245, 396);
+            this.labelAdrLeftValue.Name = "labelAdrLeftValue";
+            this.labelAdrLeftValue.Size = new System.Drawing.Size(0, 23);
+            this.labelAdrLeftValue.TabIndex = 27;
+            this.labelAdrLeftValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelAVGRankLeft
+            // 
+            this.labelAVGRankLeft.AutoSize = true;
+            this.labelAVGRankLeft.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAVGRankLeft.ForeColor = System.Drawing.Color.White;
+            this.labelAVGRankLeft.Location = new System.Drawing.Point(3, 329);
+            this.labelAVGRankLeft.Name = "labelAVGRankLeft";
+            this.labelAVGRankLeft.Size = new System.Drawing.Size(104, 23);
+            this.labelAVGRankLeft.TabIndex = 18;
+            this.labelAVGRankLeft.Text = "AVG Rank";
+            // 
+            // labelWinPercentLeft
+            // 
+            this.labelWinPercentLeft.AutoSize = true;
+            this.labelWinPercentLeft.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWinPercentLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelWinPercentLeft.Location = new System.Drawing.Point(3, 294);
+            this.labelWinPercentLeft.Name = "labelWinPercentLeft";
+            this.labelWinPercentLeft.Size = new System.Drawing.Size(64, 23);
+            this.labelWinPercentLeft.TabIndex = 16;
+            this.labelWinPercentLeft.Text = "Win %";
+            // 
+            // labelAverageKnocksPerGameLeft
+            // 
+            this.labelAverageKnocksPerGameLeft.AutoSize = true;
+            this.labelAverageKnocksPerGameLeft.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAverageKnocksPerGameLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelAverageKnocksPerGameLeft.Location = new System.Drawing.Point(3, 500);
+            this.labelAverageKnocksPerGameLeft.Name = "labelAverageKnocksPerGameLeft";
+            this.labelAverageKnocksPerGameLeft.Size = new System.Drawing.Size(173, 23);
+            this.labelAverageKnocksPerGameLeft.TabIndex = 24;
+            this.labelAverageKnocksPerGameLeft.Text = "dBNO\'s Per Round";
+            // 
+            // labelWinsLeft
+            // 
+            this.labelWinsLeft.AutoSize = true;
+            this.labelWinsLeft.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWinsLeft.ForeColor = System.Drawing.Color.White;
+            this.labelWinsLeft.Location = new System.Drawing.Point(3, 259);
+            this.labelWinsLeft.Name = "labelWinsLeft";
+            this.labelWinsLeft.Size = new System.Drawing.Size(51, 23);
+            this.labelWinsLeft.TabIndex = 15;
+            this.labelWinsLeft.Text = "Wins";
+            // 
+            // labelKDALeft
+            // 
+            this.labelKDALeft.AutoSize = true;
+            this.labelKDALeft.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKDALeft.ForeColor = System.Drawing.Color.White;
+            this.labelKDALeft.Location = new System.Drawing.Point(3, 466);
+            this.labelKDALeft.Name = "labelKDALeft";
+            this.labelKDALeft.Size = new System.Drawing.Size(49, 23);
+            this.labelKDALeft.TabIndex = 21;
+            this.labelKDALeft.Text = "KDA";
+            // 
+            // labelGamesPlayedLeft
+            // 
+            this.labelGamesPlayedLeft.AutoSize = true;
+            this.labelGamesPlayedLeft.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGamesPlayedLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelGamesPlayedLeft.Location = new System.Drawing.Point(3, 227);
+            this.labelGamesPlayedLeft.Name = "labelGamesPlayedLeft";
+            this.labelGamesPlayedLeft.Size = new System.Drawing.Size(147, 23);
+            this.labelGamesPlayedLeft.TabIndex = 14;
+            this.labelGamesPlayedLeft.Text = "Games Played";
+            // 
+            // labelKDLeft
+            // 
+            this.labelKDLeft.AutoSize = true;
+            this.labelKDLeft.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKDLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelKDLeft.Location = new System.Drawing.Point(3, 431);
+            this.labelKDLeft.Name = "labelKDLeft";
+            this.labelKDLeft.Size = new System.Drawing.Size(35, 23);
+            this.labelKDLeft.TabIndex = 19;
+            this.labelKDLeft.Text = "KD";
+            // 
+            // labelAdrLeft
+            // 
+            this.labelAdrLeft.AutoSize = true;
+            this.labelAdrLeft.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdrLeft.ForeColor = System.Drawing.Color.White;
+            this.labelAdrLeft.Location = new System.Drawing.Point(3, 396);
+            this.labelAdrLeft.Name = "labelAdrLeft";
+            this.labelAdrLeft.Size = new System.Drawing.Size(48, 23);
+            this.labelAdrLeft.TabIndex = 17;
+            this.labelAdrLeft.Text = "ADR";
+            // 
+            // labelPlayerNameLeft
+            // 
+            this.labelPlayerNameLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPlayerNameLeft.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayerNameLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelPlayerNameLeft.Location = new System.Drawing.Point(3, 186);
+            this.labelPlayerNameLeft.Name = "labelPlayerNameLeft";
+            this.labelPlayerNameLeft.Size = new System.Drawing.Size(373, 22);
+            this.labelPlayerNameLeft.TabIndex = 1;
+            this.labelPlayerNameLeft.Text = "player name";
+            this.labelPlayerNameLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxLeft
+            // 
+            this.pictureBoxLeft.Location = new System.Drawing.Point(3, 13);
+            this.pictureBoxLeft.Name = "pictureBoxLeft";
+            this.pictureBoxLeft.Size = new System.Drawing.Size(373, 158);
+            this.pictureBoxLeft.TabIndex = 0;
+            this.pictureBoxLeft.TabStop = false;
             // 
             // switchToSingleViewButton
             // 
@@ -93,450 +883,21 @@
             this.switchToSingleViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.switchToSingleViewButton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.switchToSingleViewButton.ForeColor = System.Drawing.Color.White;
-            this.switchToSingleViewButton.Location = new System.Drawing.Point(316, 28);
+            this.switchToSingleViewButton.Location = new System.Drawing.Point(12, 12);
             this.switchToSingleViewButton.Name = "switchToSingleViewButton";
             this.switchToSingleViewButton.Size = new System.Drawing.Size(173, 46);
             this.switchToSingleViewButton.TabIndex = 16;
             this.switchToSingleViewButton.Text = "Switch to Single View";
             this.switchToSingleViewButton.UseVisualStyleBackColor = false;
+            this.switchToSingleViewButton.Click += new System.EventHandler(this.switchToSingleViewButton_Click);
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(12, 419);
+            this.cartesianChart1.Location = new System.Drawing.Point(12, 602);
             this.cartesianChart1.Name = "cartesianChart1";
             this.cartesianChart1.Size = new System.Drawing.Size(770, 332);
             this.cartesianChart1.TabIndex = 15;
             this.cartesianChart1.Text = "cartesianChart1";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.label18);
-            this.panel3.Location = new System.Drawing.Point(402, 107);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(380, 306);
-            this.panel3.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(217, 278);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 23);
-            this.label1.TabIndex = 13;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(217, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 23);
-            this.label2.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(217, 245);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 23);
-            this.label3.TabIndex = 12;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(217, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 23);
-            this.label4.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(217, 211);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 23);
-            this.label5.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(217, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 23);
-            this.label6.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(217, 176);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 23);
-            this.label7.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(217, 1);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 23);
-            this.label8.TabIndex = 5;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(217, 141);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 23);
-            this.label9.TabIndex = 9;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(-4, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(169, 23);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Avg survival time";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(-4, 278);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(146, 23);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Fragger Rating";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(0, 68);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 23);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Win %";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label13.Location = new System.Drawing.Point(-4, 245);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(112, 23);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Longest Kill";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(0, 33);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 23);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Wins:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label15.Location = new System.Drawing.Point(-4, 211);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(91, 23);
-            this.label15.TabIndex = 6;
-            this.label15.Text = "Max Kills";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label16.Location = new System.Drawing.Point(-4, 1);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(147, 23);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Games Played";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label17.Location = new System.Drawing.Point(-4, 176);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(63, 23);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "H/S %";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label18.Location = new System.Drawing.Point(-4, 141);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(48, 23);
-            this.label18.TabIndex = 4;
-            this.label18.Text = "ADR";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.panel2.Controls.Add(this.labelFraggerRatingValue);
-            this.panel2.Controls.Add(this.labelAverageSurvivedTimeValue);
-            this.panel2.Controls.Add(this.labelLongestKillValue);
-            this.panel2.Controls.Add(this.labelWinPercentValue);
-            this.panel2.Controls.Add(this.labelMaxKillsValue);
-            this.panel2.Controls.Add(this.labelWinsValue);
-            this.panel2.Controls.Add(this.labelHeadshotPercentValue);
-            this.panel2.Controls.Add(this.labelGamesPlayedValue);
-            this.panel2.Controls.Add(this.labelAdrValue);
-            this.panel2.Controls.Add(this.labelAverageSurvivedTime);
-            this.panel2.Controls.Add(this.labelFraggerRating);
-            this.panel2.Controls.Add(this.labelWinPercent);
-            this.panel2.Controls.Add(this.labelLongestKill);
-            this.panel2.Controls.Add(this.labelWins);
-            this.panel2.Controls.Add(this.labelMaxKills);
-            this.panel2.Controls.Add(this.labelGamesPlayed);
-            this.panel2.Controls.Add(this.labelHeadshotPercent);
-            this.panel2.Controls.Add(this.labelAdr);
-            this.panel2.Location = new System.Drawing.Point(12, 107);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(380, 306);
-            this.panel2.TabIndex = 3;
-            // 
-            // labelFraggerRatingValue
-            // 
-            this.labelFraggerRatingValue.AutoSize = true;
-            this.labelFraggerRatingValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFraggerRatingValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelFraggerRatingValue.Location = new System.Drawing.Point(217, 278);
-            this.labelFraggerRatingValue.Name = "labelFraggerRatingValue";
-            this.labelFraggerRatingValue.Size = new System.Drawing.Size(0, 23);
-            this.labelFraggerRatingValue.TabIndex = 13;
-            // 
-            // labelAverageSurvivedTimeValue
-            // 
-            this.labelAverageSurvivedTimeValue.AutoSize = true;
-            this.labelAverageSurvivedTimeValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAverageSurvivedTimeValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelAverageSurvivedTimeValue.Location = new System.Drawing.Point(217, 103);
-            this.labelAverageSurvivedTimeValue.Name = "labelAverageSurvivedTimeValue";
-            this.labelAverageSurvivedTimeValue.Size = new System.Drawing.Size(0, 23);
-            this.labelAverageSurvivedTimeValue.TabIndex = 8;
-            // 
-            // labelLongestKillValue
-            // 
-            this.labelLongestKillValue.AutoSize = true;
-            this.labelLongestKillValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLongestKillValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelLongestKillValue.Location = new System.Drawing.Point(217, 245);
-            this.labelLongestKillValue.Name = "labelLongestKillValue";
-            this.labelLongestKillValue.Size = new System.Drawing.Size(0, 23);
-            this.labelLongestKillValue.TabIndex = 12;
-            // 
-            // labelWinPercentValue
-            // 
-            this.labelWinPercentValue.AutoSize = true;
-            this.labelWinPercentValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWinPercentValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelWinPercentValue.Location = new System.Drawing.Point(217, 68);
-            this.labelWinPercentValue.Name = "labelWinPercentValue";
-            this.labelWinPercentValue.Size = new System.Drawing.Size(0, 23);
-            this.labelWinPercentValue.TabIndex = 7;
-            // 
-            // labelMaxKillsValue
-            // 
-            this.labelMaxKillsValue.AutoSize = true;
-            this.labelMaxKillsValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMaxKillsValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelMaxKillsValue.Location = new System.Drawing.Point(217, 211);
-            this.labelMaxKillsValue.Name = "labelMaxKillsValue";
-            this.labelMaxKillsValue.Size = new System.Drawing.Size(0, 23);
-            this.labelMaxKillsValue.TabIndex = 11;
-            // 
-            // labelWinsValue
-            // 
-            this.labelWinsValue.AutoSize = true;
-            this.labelWinsValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWinsValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelWinsValue.Location = new System.Drawing.Point(217, 33);
-            this.labelWinsValue.Name = "labelWinsValue";
-            this.labelWinsValue.Size = new System.Drawing.Size(0, 23);
-            this.labelWinsValue.TabIndex = 6;
-            // 
-            // labelHeadshotPercentValue
-            // 
-            this.labelHeadshotPercentValue.AutoSize = true;
-            this.labelHeadshotPercentValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeadshotPercentValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelHeadshotPercentValue.Location = new System.Drawing.Point(217, 176);
-            this.labelHeadshotPercentValue.Name = "labelHeadshotPercentValue";
-            this.labelHeadshotPercentValue.Size = new System.Drawing.Size(0, 23);
-            this.labelHeadshotPercentValue.TabIndex = 10;
-            // 
-            // labelGamesPlayedValue
-            // 
-            this.labelGamesPlayedValue.AutoSize = true;
-            this.labelGamesPlayedValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGamesPlayedValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelGamesPlayedValue.Location = new System.Drawing.Point(217, 1);
-            this.labelGamesPlayedValue.Name = "labelGamesPlayedValue";
-            this.labelGamesPlayedValue.Size = new System.Drawing.Size(0, 23);
-            this.labelGamesPlayedValue.TabIndex = 5;
-            // 
-            // labelAdrValue
-            // 
-            this.labelAdrValue.AutoSize = true;
-            this.labelAdrValue.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAdrValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelAdrValue.Location = new System.Drawing.Point(217, 141);
-            this.labelAdrValue.Name = "labelAdrValue";
-            this.labelAdrValue.Size = new System.Drawing.Size(0, 23);
-            this.labelAdrValue.TabIndex = 9;
-            // 
-            // labelAverageSurvivedTime
-            // 
-            this.labelAverageSurvivedTime.AutoSize = true;
-            this.labelAverageSurvivedTime.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAverageSurvivedTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelAverageSurvivedTime.Location = new System.Drawing.Point(-4, 103);
-            this.labelAverageSurvivedTime.Name = "labelAverageSurvivedTime";
-            this.labelAverageSurvivedTime.Size = new System.Drawing.Size(169, 23);
-            this.labelAverageSurvivedTime.TabIndex = 4;
-            this.labelAverageSurvivedTime.Text = "Avg survival time";
-            // 
-            // labelFraggerRating
-            // 
-            this.labelFraggerRating.AutoSize = true;
-            this.labelFraggerRating.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFraggerRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelFraggerRating.Location = new System.Drawing.Point(-4, 278);
-            this.labelFraggerRating.Name = "labelFraggerRating";
-            this.labelFraggerRating.Size = new System.Drawing.Size(146, 23);
-            this.labelFraggerRating.TabIndex = 8;
-            this.labelFraggerRating.Text = "Fragger Rating";
-            // 
-            // labelWinPercent
-            // 
-            this.labelWinPercent.AutoSize = true;
-            this.labelWinPercent.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWinPercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelWinPercent.Location = new System.Drawing.Point(0, 68);
-            this.labelWinPercent.Name = "labelWinPercent";
-            this.labelWinPercent.Size = new System.Drawing.Size(64, 23);
-            this.labelWinPercent.TabIndex = 3;
-            this.labelWinPercent.Text = "Win %";
-            // 
-            // labelLongestKill
-            // 
-            this.labelLongestKill.AutoSize = true;
-            this.labelLongestKill.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLongestKill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelLongestKill.Location = new System.Drawing.Point(-4, 245);
-            this.labelLongestKill.Name = "labelLongestKill";
-            this.labelLongestKill.Size = new System.Drawing.Size(112, 23);
-            this.labelLongestKill.TabIndex = 7;
-            this.labelLongestKill.Text = "Longest Kill";
-            // 
-            // labelWins
-            // 
-            this.labelWins.AutoSize = true;
-            this.labelWins.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWins.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelWins.Location = new System.Drawing.Point(0, 33);
-            this.labelWins.Name = "labelWins";
-            this.labelWins.Size = new System.Drawing.Size(56, 23);
-            this.labelWins.TabIndex = 2;
-            this.labelWins.Text = "Wins:";
-            // 
-            // labelMaxKills
-            // 
-            this.labelMaxKills.AutoSize = true;
-            this.labelMaxKills.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMaxKills.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelMaxKills.Location = new System.Drawing.Point(-4, 211);
-            this.labelMaxKills.Name = "labelMaxKills";
-            this.labelMaxKills.Size = new System.Drawing.Size(91, 23);
-            this.labelMaxKills.TabIndex = 6;
-            this.labelMaxKills.Text = "Max Kills";
-            // 
-            // labelGamesPlayed
-            // 
-            this.labelGamesPlayed.AutoSize = true;
-            this.labelGamesPlayed.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGamesPlayed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelGamesPlayed.Location = new System.Drawing.Point(-4, 1);
-            this.labelGamesPlayed.Name = "labelGamesPlayed";
-            this.labelGamesPlayed.Size = new System.Drawing.Size(147, 23);
-            this.labelGamesPlayed.TabIndex = 0;
-            this.labelGamesPlayed.Text = "Games Played";
-            // 
-            // labelHeadshotPercent
-            // 
-            this.labelHeadshotPercent.AutoSize = true;
-            this.labelHeadshotPercent.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeadshotPercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelHeadshotPercent.Location = new System.Drawing.Point(-4, 176);
-            this.labelHeadshotPercent.Name = "labelHeadshotPercent";
-            this.labelHeadshotPercent.Size = new System.Drawing.Size(63, 23);
-            this.labelHeadshotPercent.TabIndex = 5;
-            this.labelHeadshotPercent.Text = "H/S %";
-            // 
-            // labelAdr
-            // 
-            this.labelAdr.AutoSize = true;
-            this.labelAdr.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAdr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelAdr.Location = new System.Drawing.Point(-4, 141);
-            this.labelAdr.Name = "labelAdr";
-            this.labelAdr.Size = new System.Drawing.Size(48, 23);
-            this.labelAdr.TabIndex = 4;
-            this.labelAdr.Text = "ADR";
             // 
             // RankedDoublePlayer
             // 
@@ -547,10 +908,31 @@
             this.Name = "RankedDoublePlayer";
             this.Text = "RankedDoublePlayer";
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelRight.ResumeLayout(false);
+            this.panelRight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxdBNOsRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxKdaRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxKdRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAdrRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxTopTenPercentRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAVGRankRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinPercentRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinsRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxGamesPlayedRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).EndInit();
+            this.panelLeft.ResumeLayout(false);
+            this.panelLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxdBNOsLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxKdaLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxKdLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAdrLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxTopTenPercentLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAVGRankLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinPercentLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinsLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxGamesPlayedLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphPlotBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -560,43 +942,66 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button switchToSingleViewButton;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label labelFraggerRatingValue;
-        private System.Windows.Forms.Label labelAverageSurvivedTimeValue;
-        private System.Windows.Forms.Label labelLongestKillValue;
-        private System.Windows.Forms.Label labelWinPercentValue;
-        private System.Windows.Forms.Label labelMaxKillsValue;
-        private System.Windows.Forms.Label labelWinsValue;
-        private System.Windows.Forms.Label labelHeadshotPercentValue;
-        private System.Windows.Forms.Label labelGamesPlayedValue;
-        private System.Windows.Forms.Label labelAdrValue;
-        private System.Windows.Forms.Label labelAverageSurvivedTime;
-        private System.Windows.Forms.Label labelFraggerRating;
-        private System.Windows.Forms.Label labelWinPercent;
-        private System.Windows.Forms.Label labelLongestKill;
-        private System.Windows.Forms.Label labelWins;
-        private System.Windows.Forms.Label labelMaxKills;
-        private System.Windows.Forms.Label labelGamesPlayed;
-        private System.Windows.Forms.Label labelHeadshotPercent;
-        private System.Windows.Forms.Label labelAdr;
+        private System.Windows.Forms.BindingSource graphPlotBindingSource;
+        private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Label labelPlayerNameLeft;
+        private System.Windows.Forms.PictureBox pictureBoxLeft;
+        private System.Windows.Forms.Panel panelRight;
+        private System.Windows.Forms.Label labelTopTenRatioRightValue;
+        private System.Windows.Forms.Label labelAVGRankRightValue;
+        private System.Windows.Forms.Label labelTopTenRatioRight;
+        private System.Windows.Forms.Label labelAverageKnocksPerGameRightValue;
+        private System.Windows.Forms.Label labelWinPercentRightValue;
+        private System.Windows.Forms.Label labelKDARightValue;
+        private System.Windows.Forms.Label labelWinsRightValue;
+        private System.Windows.Forms.Label labelKDRightValue;
+        private System.Windows.Forms.Label labelGamesPlayedRightValue;
+        private System.Windows.Forms.Label labelAdrRightValue;
+        private System.Windows.Forms.Label labelAVGRankRight;
+        private System.Windows.Forms.Label labelWinPercentRight;
+        private System.Windows.Forms.Label labelAverageKnocksPerGameRight;
+        private System.Windows.Forms.Label labelWinsRight;
+        private System.Windows.Forms.Label labelKDARight;
+        private System.Windows.Forms.Label labelGamesPlayedRight;
+        private System.Windows.Forms.Label labelKDRight;
+        private System.Windows.Forms.Label labelAdrRight;
+        private System.Windows.Forms.Label labelPlayerNameRight;
+        private System.Windows.Forms.PictureBox pictureBoxRight;
+        private System.Windows.Forms.Label labelTopTenRatioLeftValue;
+        private System.Windows.Forms.Label labelAVGRankLeftValue;
+        private System.Windows.Forms.Label labelTopTenRatioLeft;
+        private System.Windows.Forms.Label labelAverageKnocksPerGameLeftValue;
+        private System.Windows.Forms.Label labelWinPercentLeftValue;
+        private System.Windows.Forms.Label labelKDALeftValue;
+        private System.Windows.Forms.Label labelWinsLeftValue;
+        private System.Windows.Forms.Label labelKDLeftValue;
+        private System.Windows.Forms.Label labelGamesPlayedLeftValue;
+        private System.Windows.Forms.Label labelAdrLeftValue;
+        private System.Windows.Forms.Label labelAVGRankLeft;
+        private System.Windows.Forms.Label labelWinPercentLeft;
+        private System.Windows.Forms.Label labelAverageKnocksPerGameLeft;
+        private System.Windows.Forms.Label labelWinsLeft;
+        private System.Windows.Forms.Label labelKDALeft;
+        private System.Windows.Forms.Label labelGamesPlayedLeft;
+        private System.Windows.Forms.Label labelKDLeft;
+        private System.Windows.Forms.Label labelAdrLeft;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxGamesPlayedLeft;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxdBNOsLeft;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxKdaLeft;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxKdLeft;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxAdrLeft;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxTopTenPercentLeft;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxAVGRankLeft;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxWinPercentLeft;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxWinsLeft;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxdBNOsRight;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxKdaRight;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxKdRight;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxAdrRight;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxTopTenPercentRight;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxAVGRankRight;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxWinPercentRight;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxWinsRight;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxGamesPlayedRight;
     }
 }

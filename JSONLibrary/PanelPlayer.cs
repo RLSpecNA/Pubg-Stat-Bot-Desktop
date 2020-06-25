@@ -1,4 +1,5 @@
 ﻿using JSONLibrary.Json_Objects.AccountID;
+using JSONLibrary.Json_Objects.Match;
 using JSONLibrary.Json_Objects.Ranked_Objects;
 using JSONLibrary.Json_Objects.Regular_Objects;
 using System;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace JSONLibrary
 {
-    public abstract class PanelPlayer
+    public class PanelPlayer
     {
         public string Name { get; set; }
 
@@ -22,8 +23,24 @@ namespace JSONLibrary
 
         public RootRankedStatsObject RankedStatsObj { get; set; }
 
+        public int RankedErrorCode { get; set; }
+        public int NormalErrorCode { get; set; }
 
-        protected PanelPlayer(string name, string account_id, RootAccountIDObject accountObj, 
+        public RankedObject RankedUIStats { get; set; }
+        public UnRankedObject UnRankedUIStats { get; set; }
+
+        public string Season { get; set; }
+
+        public List<RootMatch> Matches { get; set; }
+        public List<RootMatch> Matches20Solo { get; set; }
+        public List<RootMatch> Matches20Duo { get; set; }
+        public List<RootMatch> Matches20Squad { get; set; }
+        public List<RootMatch> Matches20SoloFpp { get; set; }
+        public List<RootMatch> Matches20DuoFpp { get; set; }
+        public List<RootMatch> Matches20SquadFpp { get; set; }
+
+
+        public PanelPlayer(string name, string account_id, RootAccountIDObject accountObj, 
             RootNormalStatsObject normalStatsObj, RootRankedStatsObject rankedStatsObj)
         {
             this.Name = name;
@@ -33,7 +50,7 @@ namespace JSONLibrary
             this.RankedStatsObj = rankedStatsObj;
         }
 
-        protected PanelPlayer(RootAccountIDObject accountObj)
+        public PanelPlayer(RootAccountIDObject accountObj)
         {
             this.AccountObj = accountObj;
 
@@ -41,6 +58,9 @@ namespace JSONLibrary
             this.AccountID = this.AccountObj.data[0].id.ToString();
         }
 
+        public PanelPlayer()
+        {
 
+        }
     }
 }

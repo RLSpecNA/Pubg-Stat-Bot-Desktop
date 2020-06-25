@@ -37,6 +37,9 @@
     <Reference Include="JsonApiSerializer, Version=1.7.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\PUBG Application\packages\JsonApiSerializer.1.7.4\lib\net45\JsonApiSerializer.dll</HintPath>
     </Reference>
+    <Reference Include="JsonSubTypes, Version=1.7.0.0, Culture=neutral, PublicKeyToken=ee75fc290dbc1176, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\JsonSubTypes.1.7.0\lib\net47\JsonSubTypes.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\PUBG Application\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -48,6 +51,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Json, Version=2.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\PUBG Application\packages\System.Json.4.7.1\lib\net461\System.Json.dll</HintPath>
     </Reference>
@@ -72,6 +76,27 @@
     <Compile Include="Json Objects\AccountID\Meta.cs" />
     <Compile Include="Json Objects\AccountID\Relationships.cs" />
     <Compile Include="Json Objects\AccountID\RootAccountIDObject.cs" />
+    <Compile Include="Json Objects\Match\AssetObject.cs" />
+    <Compile Include="Json Objects\Match\AssetObjectAttributes.cs" />
+    <Compile Include="Json Objects\Match\Assets.cs" />
+    <Compile Include="Json Objects\Match\Attributes.cs" />
+    <Compile Include="Json Objects\Match\Data.cs" />
+    <Compile Include="Json Objects\Match\Links.cs" />
+    <Compile Include="Json Objects\Match\MatchSingleObject.cs" />
+    <Compile Include="Json Objects\Match\ParticipantObject.cs" />
+    <Compile Include="Json Objects\Match\ParticipantObjectAttributes.cs" />
+    <Compile Include="Json Objects\Match\ParticipantObjectStats.cs" />
+    <Compile Include="Json Objects\Match\Relationships.cs" />
+    <Compile Include="Json Objects\Match\RootMatch.cs" />
+    <Compile Include="Json Objects\Match\RosterObject.cs" />
+    <Compile Include="Json Objects\Match\RosterObjectAttributes.cs" />
+    <Compile Include="Json Objects\Match\RosterObjectParticipantData.cs" />
+    <Compile Include="Json Objects\Match\RosterObjectParticipants.cs" />
+    <Compile Include="Json Objects\Match\RosterObjectRelationships.cs" />
+    <Compile Include="Json Objects\Match\RosterObjectStats.cs" />
+    <Compile Include="Json Objects\Match\RosterObjectTeam.cs" />
+    <Compile Include="Json Objects\Match\Rosters.cs" />
+    <Compile Include="Json Objects\Match\SingleMatchData.cs" />
     <Compile Include="Json Objects\NonRanked Objects\DataMatch.cs" />
     <Compile Include="Json Objects\NonRanked Objects\MatchesDuo.cs" />
     <Compile Include="Json Objects\NonRanked Objects\MatchesDuoFpp.cs" />
@@ -104,7 +129,9 @@
     <Compile Include="PanelPlayer.cs" />
     <Compile Include="QueryBuilder.cs" />
     <Compile Include="Json Objects\Ranked Objects\Data.cs" />
+    <Compile Include="RankedObject.cs" />
     <Compile Include="RightPlayer.cs" />
+    <Compile Include="UnRankedObject.cs" />
     <Compile Include="Values.cs" />
     <Compile Include="Json Objects\NonRanked Objects\SquadFPPStats.cs" />
     <Compile Include="Json Objects\NonRanked Objects\DuoFPPStats.cs" />
@@ -123,6 +150,35 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Rank Icons\Bronze-1.png" />
+    <Content Include="Rank Icons\Bronze-2.png" />
+    <Content Include="Rank Icons\Bronze-3.png" />
+    <Content Include="Rank Icons\Bronze-4.png" />
+    <Content Include="Rank Icons\Bronze-5.png" />
+    <Content Include="Rank Icons\Diamond-1.png" />
+    <Content Include="Rank Icons\Diamond-2.png" />
+    <Content Include="Rank Icons\Diamond-3.png" />
+    <Content Include="Rank Icons\Diamond-4.png" />
+    <Content Include="Rank Icons\Diamond-5.png" />
+    <Content Include="Rank Icons\Gold-1.png" />
+    <Content Include="Rank Icons\Gold-2.png" />
+    <Content Include="Rank Icons\Gold-3.png" />
+    <Content Include="Rank Icons\Gold-4.png" />
+    <Content Include="Rank Icons\Gold-5.png" />
+    <Content Include="Rank Icons\Master.png" />
+    <Content Include="Rank Icons\Platinum-1.png" />
+    <Content Include="Rank Icons\Platinum-2.png" />
+    <Content Include="Rank Icons\Platinum-3.png" />
+    <Content Include="Rank Icons\Platinum-4.png" />
+    <Content Include="Rank Icons\Platinum-5.png" />
+    <Content Include="Rank Icons\Silver-1.png" />
+    <Content Include="Rank Icons\Silver-2.png" />
+    <Content Include="Rank Icons\Silver-3.png" />
+    <Content Include="Rank Icons\Silver-4.png" />
+    <Content Include="Rank Icons\Silver-5.png" />
+    <Content Include="Rank Icons\Unranked.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

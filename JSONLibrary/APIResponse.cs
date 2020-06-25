@@ -18,6 +18,8 @@ namespace JSONLibrary
         {
             switch (this.code)
             {
+                case 400:
+                    return "Bad request";
                 case 401:
                     return "API key invalid or missing";
                 case 404:
@@ -29,6 +31,39 @@ namespace JSONLibrary
                 default:
                     return string.Empty;
             }
+        }
+
+        public string GetFormattedResponseAccounNameLookUp()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Account ID lookup failed");
+            builder.Append(Environment.NewLine);
+            builder.Append("Error code: " + this.code.ToString());
+            builder.Append(Environment.NewLine);
+            builder.Append(this.GetDetailedResponse());
+            return builder.ToString();
+        }
+
+        public string GetFormattedResponseStatLookUp()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Casual stats fetch failed");
+            builder.Append(Environment.NewLine);
+            builder.Append("Error code: " + this.code.ToString());
+            builder.Append(Environment.NewLine);
+            builder.Append(this.GetDetailedResponse());
+            return builder.ToString();
+        }
+
+        public string GetFormattedResponseRankedLookUp()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Ranked stats fetch failed");
+            builder.Append(Environment.NewLine);
+            builder.Append("Error code: " + this.code.ToString());
+            builder.Append(Environment.NewLine);
+            builder.Append(this.GetDetailedResponse());
+            return builder.ToString();
         }
     }
 }

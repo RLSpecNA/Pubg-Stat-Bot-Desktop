@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pubg_logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pubg_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pubg_PNG55" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pubg_PNG55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -127,7 +130,85 @@
   <data name="pubg_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pubg_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pubg_logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\pubg_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bronze-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bronze-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bronze-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bronze-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bronze-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bronze-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bronze-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bronze-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bronze-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bronze-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Diamond-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diamond-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Diamond-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diamond-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Diamond-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diamond-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Diamond-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diamond-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Diamond-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diamond-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gold-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gold-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gold-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gold-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gold-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gold-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gold-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gold-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gold-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gold-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Master" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Master.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Platinum-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Platinum-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Platinum-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Platinum-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Platinum-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Platinum-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Platinum-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Platinum-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Platinum-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Platinum-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Silver-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Silver-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Silver-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Silver-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Silver-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Silver-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Silver-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Silver-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Silver-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Silver-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unranked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unranked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

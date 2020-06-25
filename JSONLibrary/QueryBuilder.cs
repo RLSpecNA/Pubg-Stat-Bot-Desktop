@@ -40,5 +40,12 @@ namespace JSONLibrary
             builder.Append(this.BASE_URL + "players/" + account_id + "/seasons/" + season_id + "/ranked");
             return builder.ToString();
         }
+
+        public string GetMatchQuery(string match_id)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append(this.BASE_URL + "matches/" + match_id);
+            return builder.ToString();
+        }
     }
 }

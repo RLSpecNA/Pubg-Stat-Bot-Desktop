@@ -17,5 +17,18 @@ namespace JSONLibrary
         {
 
         }
+
+        public LeftPlayer(RootAccountIDObject accountObj) : base(accountObj)
+        {
+            this.AccountObj = accountObj;
+
+            this.Name = this.AccountObj.data[0].attributes.name.ToString();
+            this.AccountID = this.AccountObj.data[0].id.ToString();
+        }
+
+        public LeftPlayer()
+        {
+
+        }
     }
 }

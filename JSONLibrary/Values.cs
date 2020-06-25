@@ -1,6 +1,8 @@
-﻿using System;
+﻿using JSONLibrary.Json_Objects.Ranked_Objects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -138,5 +140,102 @@ namespace JSONLibrary
             RankedTPP,
             RankedFPP
         }
+
+        public enum RankTitle
+        {
+            Bronze,
+            Silver,
+            Gold,
+            Platinum,
+            Diamond,
+            Master,
+            Unranked
+        }
+
+        public enum RankLevel
+        {
+            I,
+            II,
+            III,
+            IV,
+            V,
+            Master,
+            Unranked
+        }
+
+        public static string GetEnumString(StatType type)
+        {
+            if (type == StatType.Solo)
+            {
+                return "Solo";
+            }
+            else if (type == StatType.SoloFPP)
+            {
+                return "Solo-FPP";
+            }
+            else if (type == StatType.Duo)
+            {
+                return "Duo";
+            }
+            else if (type == StatType.DuoFPP)
+            {
+                return "Duo-FPP";
+            }
+            else if (type == StatType.Squad)
+            {
+                return "Squad";
+            }
+            else if (type == StatType.SquadFPP)
+            {
+                return "Squad-FPP";
+            }
+            else if (type == StatType.RankedTPP)
+            {
+                return "Ranked Squad";
+            }
+            else if (type == StatType.RankedFPP)
+            {
+                return "Ranked Squad FPP";
+            }
+
+            return "";
+        }
+
+        public static string GetMapName(string apiMapName)
+        {
+            if (apiMapName == "Desert_Main")
+            {
+                return "Miramar";
+            }
+            else if (apiMapName == "DihorOtok_Main")
+            {
+                return "Vikendi";
+            }
+            else if (apiMapName == "Erangel_Main")
+            {
+                return "Erangel (old)";
+            }
+            else if (apiMapName == "Baltic_Main")
+            {
+                return "Erangel";
+            }
+            else if (apiMapName == "Range_Main")
+            {
+                return "Training Mode";
+            }
+            else if (apiMapName == "Savage_Main")
+            {
+                return "Sanhok";
+            }
+            else if (apiMapName == "Summerland_Main")
+            {
+                return "Karakin";
+            }
+            else
+            {
+                return "";
+            }
+        } 
+       
     }
 }

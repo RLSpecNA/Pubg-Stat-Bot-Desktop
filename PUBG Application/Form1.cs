@@ -24,6 +24,7 @@ using JSONLibrary.Json_Objects.Regular_Objects;
 using JSONLibrary.Json_Objects.AccountID;
 using JSONLibrary.Json_Objects;
 using System.Runtime.CompilerServices;
+using JSONLibrary.Json_Objects.Match;
 
 namespace PUBG_Application
 {
@@ -35,9 +36,6 @@ namespace PUBG_Application
         private Form currentChildForm;
         private Dictionary<Values.Modes, ModeStats> stats = new Dictionary<Values.Modes, ModeStats>();
 
-        private Tuple<RootAccountIDObject, Tuple<RootNormalStatsObject, RootRankedStatsObject>>[] accountPair =
-            new Tuple<RootAccountIDObject, Tuple<RootNormalStatsObject, RootRankedStatsObject>>[2];
-
         private bool firstLoad = true;
 
         private Dictionary<string, RootAccountIDObject> nameAndIdDict = new Dictionary<string, RootAccountIDObject>();
@@ -45,7 +43,10 @@ namespace PUBG_Application
         private LeftPlayer leftPlayer = null;
         private RightPlayer rightPlayer = null;
         private Dictionary<string, PanelPlayer> familiarNames = new Dictionary<string, PanelPlayer>();
-        
+
+        public TextBox leftTextBox;
+        public TextBox rightTextBox;
+
         // Constructor
         public MainWindow()
         {
@@ -61,20 +62,32 @@ namespace PUBG_Application
 
 
             this.PopulateComboBox();
-            
+
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
 
             this.circularProgressBarLarge.Value = 0;
             this.circularProgressBarLarge.Update();
 
+            this.leftTextBox = this.txtLeftPlayerName;
+            this.rightTextBox = this.txtRightPlayerName;
+
             //this.circularProgressBarTop.Value = 0;
             //this.circularProgressBarTop.Update();
 
-            this.txtRightPlayerName.Enabled = false;
+            //this.txtRightPlayerName.Enabled = false;
 
         }
 
+        public void SetLeftPlayerNull()
+        {
+            this.leftPlayer = null;
+        }
+
+        public void SetRightPlayerNull()
+        {
+            this.rightPlayer = null;
+        }
         private struct RGBColors
         {
             // orange color
@@ -93,6 +106,8 @@ namespace PUBG_Application
             public static Color lightorange = Color.FromArgb(255, 218, 74);
 
             public static Color panelTitleGrey = Color.FromArgb(27, 27, 27);
+
+            public static Color redBrown = Color.FromArgb(156, 65, 0);
 
         }
 
@@ -143,7 +158,7 @@ namespace PUBG_Application
             }
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
@@ -162,87 +177,140 @@ namespace PUBG_Application
             //label1.Text = childForm.Text;
         }
 
+
         private void soloButton_clicked(object sender, EventArgs e)
         {
-            this.ActivateButton(sender, RGBColors.white);
-            Tuple<RootAccountIDObject, RootNormalStatsObject> pair =
-                Tuple.Create(this.accountPair[0].Item1, this.accountPair[0].Item2.Item1);
-
-            if (this.accountPair[0] != null)
+            if (this.BothPlayersNotNull())
             {
-
-                this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.Solo));
-
+                this.ActivateButton(sender, RGBColors.white);
+                this.OpenChildForm(new NormalDoublePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.Solo, this));
             }
+            else
+            {
+                if (this.leftPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, Values.StatType.Solo));
+                }
+                else if (this.rightPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.rightPlayer, Values.StatType.Solo));
+                }
+            }
+
         }
 
         private void duoButton_clicked(object sender, EventArgs e)
         {
-            this.ActivateButton(sender, RGBColors.white);
-            Tuple<RootAccountIDObject, RootNormalStatsObject> pair =
-                Tuple.Create(this.accountPair[0].Item1, this.accountPair[0].Item2.Item1);
-
-            if (this.accountPair[0] != null)
+            if (this.BothPlayersNotNull())
             {
-
-                this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.Duo));
-
+                this.ActivateButton(sender, RGBColors.white);
+                this.OpenChildForm(new NormalDoublePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.Duo, this));
             }
+            else
+            {
+                if (this.leftPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, Values.StatType.Duo));
+                }
+                else if (this.rightPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.rightPlayer, Values.StatType.Duo));
+                }
+            }
+
         }
 
         private void squadButton_clicked(object sender, EventArgs e)
         {
-            this.ActivateButton(sender, RGBColors.white);
-            Tuple<RootAccountIDObject, RootNormalStatsObject> pair =
-                Tuple.Create(this.accountPair[0].Item1, this.accountPair[0].Item2.Item1);
-
-            if (this.accountPair[0] != null)
+            if (this.BothPlayersNotNull())
             {
-
-                this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.Squad));
-
+                this.ActivateButton(sender, RGBColors.white);
+                this.OpenChildForm(new NormalDoublePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.Squad, this));
+            }
+            else
+            {
+                if (this.leftPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, Values.StatType.Squad));
+                }
+                else if (this.rightPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.rightPlayer, Values.StatType.Squad));
+                }
             }
         }
 
         private void soloFPPButton_clicked(object sender, EventArgs e)
         {
-            this.ActivateButton(sender, RGBColors.white);
-            Tuple<RootAccountIDObject, RootNormalStatsObject> pair =
-                Tuple.Create(this.accountPair[0].Item1, this.accountPair[0].Item2.Item1);
-
-            if (this.accountPair[0] != null)
+            if (this.BothPlayersNotNull())
             {
-
-                this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.SoloFPP));
-
+                this.ActivateButton(sender, RGBColors.white);
+                this.OpenChildForm(new NormalDoublePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.SoloFPP, this));
             }
+            else
+            {
+                if (this.leftPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, Values.StatType.SoloFPP));
+                }
+                else if (this.rightPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.rightPlayer, Values.StatType.SoloFPP));
+                }
+            }
+
         }
 
         private void duoFPPButton_clicked(object sender, EventArgs e)
         {
-            this.ActivateButton(sender, RGBColors.white);
-            Tuple<RootAccountIDObject, RootNormalStatsObject> pair =
-                Tuple.Create(this.accountPair[0].Item1, this.accountPair[0].Item2.Item1);
-
-            if (this.accountPair[0] != null)
+            if (this.BothPlayersNotNull())
             {
-
-                this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.DuoFPP));
-
+                this.ActivateButton(sender, RGBColors.white);
+                this.OpenChildForm(new NormalDoublePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.DuoFPP, this));
             }
+            else
+            {
+                if (this.leftPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, Values.StatType.DuoFPP));
+                }
+                else if (this.rightPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.rightPlayer, Values.StatType.DuoFPP));
+                }
+            }
+
         }
 
         private void squadFPPButton_clicked(object sender, EventArgs e)
         {
-            this.ActivateButton(sender, RGBColors.white);
-            Tuple<RootAccountIDObject, RootNormalStatsObject> pair =
-                Tuple.Create(this.accountPair[0].Item1, this.accountPair[0].Item2.Item1);
-
-            if (this.accountPair[0] != null)
+            if (this.BothPlayersNotNull())
             {
-
-                this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.SquadFPP));
-
+                this.ActivateButton(sender, RGBColors.white);
+                this.OpenChildForm(new NormalDoublePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.SquadFPP, this));
+            }
+            else
+            {
+                if (this.leftPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, Values.StatType.SquadFPP));
+                }
+                else if (this.rightPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new NormalSinglePlayer(this.rightPlayer, Values.StatType.SquadFPP));
+                }
             }
 
 
@@ -250,29 +318,47 @@ namespace PUBG_Application
 
         private void rankTPPButton_Click(object sender, EventArgs e)
         {
-            this.ActivateButton(sender, RGBColors.white);
-            Tuple<RootAccountIDObject, RootRankedStatsObject> pair =
-                Tuple.Create(this.accountPair[0].Item1, this.accountPair[0].Item2.Item2);
-
-            if (this.accountPair[0] != null)
+            if (this.BothPlayersNotNull())
             {
-                
-                this.OpenChildForm(new RankedSinglePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.RankedTPP));
-
+                this.ActivateButton(sender, RGBColors.white);
+                this.OpenChildForm(new RankedDoublePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.RankedTPP, this));
             }
+            else
+            {
+                if (this.leftPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new RankedSinglePlayer(this.leftPlayer, Values.StatType.RankedTPP));
+                }
+                else if (this.rightPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new RankedSinglePlayer(this.rightPlayer, Values.StatType.RankedTPP));
+                }
+                
+            }
+
         }
 
         private void rankFPPButton_Click(object sender, EventArgs e)
         {
-            this.ActivateButton(sender, RGBColors.white);
-            Tuple<RootAccountIDObject, RootRankedStatsObject> pair =
-                Tuple.Create(this.accountPair[0].Item1, this.accountPair[0].Item2.Item2);
-
-            if (this.accountPair[0] != null)
+            if (this.BothPlayersNotNull())
             {
-
-                this.OpenChildForm(new RankedSinglePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.RankedFPP));
-
+                this.ActivateButton(sender, RGBColors.white);
+                this.OpenChildForm(new RankedDoublePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.RankedFPP, this));
+            }
+            else
+            {
+                if (this.leftPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new RankedSinglePlayer(this.leftPlayer, Values.StatType.RankedFPP));
+                }
+                else if (this.rightPlayer != null)
+                {
+                    this.ActivateButton(sender, RGBColors.white);
+                    this.OpenChildForm(new RankedSinglePlayer(this.rightPlayer, Values.StatType.RankedFPP));
+                }
             }
         }
 
@@ -280,7 +366,7 @@ namespace PUBG_Application
         {
             DisableButton();
             //iconCurrentChildForm.IconChar = IconChar.Home;
-           // iconCurrentChildForm.IconColor = RGBColors.lightorange;
+            // iconCurrentChildForm.IconColor = RGBColors.lightorange;
 
             //label1.Text = "Home";
         }
@@ -336,11 +422,11 @@ namespace PUBG_Application
 
                 foreach (Control txt in panelTitleBar.Controls)
                 {
-                    if (txt.GetType() == typeof(TextBox) && txt.Name == "txt" + lbl.Name.Remove(0, 3))
+                    if (txt.GetType() == typeof(TextBox) && txt.Name == "txtLeftPlayerName")
                     {
                         txt.Focus();
                     }
-                    if (txt.GetType() == typeof(Panel) && txt.Name == "pnl" + txt.Name.Remove(0, 3))
+                    if (txt.GetType() == typeof(Panel) && txt.Name == "pnlPlayerName1")
                     {
                         txt.BackColor = RGBColors.orange;
                     }
@@ -352,6 +438,7 @@ namespace PUBG_Application
         {
             var lbl = sender as Label;
 
+
             if (lbl.Location.X == 403)
             {
                 lbl.Font = new Font("Century Gothic", 12, FontStyle.Italic);
@@ -360,11 +447,11 @@ namespace PUBG_Application
 
                 foreach (Control txt in panelTitleBar.Controls)
                 {
-                    if (txt.GetType() == typeof(TextBox) && txt.Name == "txt" + lbl.Name.Remove(0, 3))
+                    if (txt.GetType() == typeof(TextBox) && txt.Name == "txtRightPlayerName")
                     {
                         txt.Focus();
                     }
-                    if (txt.GetType() == typeof(Panel) && txt.Name == "pnl" + txt.Name.Remove(0, 3))
+                    if (txt.GetType() == typeof(Panel) && txt.Name == "pnlPlayerName2")
                     {
                         txt.BackColor = RGBColors.orange;
                     }
@@ -379,12 +466,12 @@ namespace PUBG_Application
 
             foreach (Control ctrl in panelTitleBar.Controls)
             {
-                if (ctrl.GetType() == typeof(Panel) && ctrl.Name == "pnl" + txt.Name.Remove(0, 3))
+                if (ctrl.GetType() == typeof(Panel) && ctrl.Name == "pnlPlayerName1")
                 {
                     ctrl.BackColor = RGBColors.orange;
                 }
 
-                if (ctrl.GetType() == typeof(Label) && ctrl.Name == "lbl" + txt.Name.Remove(0, 3))
+                if (ctrl.GetType() == typeof(Label) && ctrl.Name == "lblPlayerName1")
                 {
                     ctrl.ForeColor = RGBColors.orange;
                     ctrl.BackColor = RGBColors.panelTitleGrey;
@@ -405,12 +492,12 @@ namespace PUBG_Application
 
             foreach (Control ctrl in panelTitleBar.Controls)
             {
-                if (ctrl.GetType() == typeof(Panel) && ctrl.Name == "pnl" + txt.Name.Remove(0, 3))
+                if (ctrl.GetType() == typeof(Panel) && ctrl.Name == "pnlPlayerName2")
                 {
                     ctrl.BackColor = RGBColors.orange;
                 }
 
-                if (ctrl.GetType() == typeof(Label) && ctrl.Name == "lbl" + txt.Name.Remove(0, 3))
+                if (ctrl.GetType() == typeof(Label) && ctrl.Name == "lblPlayerName2")
                 {
                     ctrl.ForeColor = RGBColors.orange;
                     ctrl.BackColor = RGBColors.panelTitleGrey;
@@ -426,7 +513,7 @@ namespace PUBG_Application
         }
 
 
-       
+
 
         private void TextBox1_Leave(object sender, EventArgs e)
         {
@@ -434,12 +521,12 @@ namespace PUBG_Application
 
             foreach (Control ctrl in panelTitleBar.Controls)
             {
-                if (ctrl.GetType() == typeof(Panel) && ctrl.Name == "pnl" + txt.Name.Remove(0, 3))
+                if (ctrl.GetType() == typeof(Panel) && ctrl.Name == "pnlPlayerName1")
                 {
                     ctrl.BackColor = RGBColors.orange;
                 }
 
-                if (ctrl.GetType() == typeof(Label) && ctrl.Name == "lbl" + txt.Name.Remove(0, 3))
+                if (ctrl.GetType() == typeof(Label) && ctrl.Name == "lblPlayerName1")
                 {
                     ctrl.ForeColor = RGBColors.orange;
 
@@ -461,12 +548,12 @@ namespace PUBG_Application
 
             foreach (Control ctrl in panelTitleBar.Controls)
             {
-                if (ctrl.GetType() == typeof(Panel) && ctrl.Name == "pnl" + txt.Name.Remove(0, 3))
+                if (ctrl.GetType() == typeof(Panel) && ctrl.Name == "pnlPlayerName2")
                 {
                     ctrl.BackColor = RGBColors.orange;
                 }
 
-                if (ctrl.GetType() == typeof(Label) && ctrl.Name == "lbl" + txt.Name.Remove(0, 3))
+                if (ctrl.GetType() == typeof(Label) && ctrl.Name == "lblPlayerName2")
                 {
                     ctrl.ForeColor = RGBColors.orange;
 
@@ -497,97 +584,750 @@ namespace PUBG_Application
             }
         }
 
-
-        private void txtPlayerName1_KeyDown(object sender, KeyEventArgs e)
+        
+        private async void txtPlayerName1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                this.txtLeftPlayerName.Enabled = false;
-                this.comboBox1.Enabled = false;
+                
 
-                //single player mode
-                // check if there is somethging in the left text box 
-                // check if right text is disabled.
-                if (this.txtRightPlayerName.Enabled == false && this.txtLeftPlayerName.Text != "")
+                string leftname = txtLeftPlayerName.Text.ToString();
+                string rightname = txtRightPlayerName.Text.ToString();
+
+                string season1 = this.comboBox1.SelectedItem.ToString();
+                string season2 = this.comboBox2.SelectedItem.ToString();
+
+
+                APIResponse response;
+
+                if ((leftname != string.Empty || leftname != "") && (rightname != string.Empty || rightname != ""))
                 {
-                    //check if name is in dictionary
-                    if (this.familiarNames.ContainsKey(this.txtLeftPlayerName.Text.ToString()))
+                    this.txtLeftPlayerName.Enabled = false;
+                    this.txtRightPlayerName.Enabled = false;
+
+                    //TODO
+                    // make same names in 1 if/else so a double form can open and not single when 2 names are already in the dictionary
+                    if (this.familiarNames.ContainsKey(leftname))
                     {
-                        //if the name is present, skip to stat query
+                        PanelPlayer player = this.familiarNames[leftname];
+                        //fetch stats...from api
+
+                        player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season1, "left"));
+
+                        if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                        {
+                            
+                            MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                               Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                        }
+                        else
+                        {
+
+                            LeftPlayer leftPlayer = (LeftPlayer)player;
+                            leftPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(leftPlayer.AccountObj.data[0].relationships.matches.data));
+                            
+                            this.leftPlayer = leftPlayer;
+                            this.leftPlayer.Season = season1;
+                        }
+                    }
+                    else
+                    {
+                        // fetch account informaiton from api
+                        Tuple<RootAccountIDObject, int> pair = await Task.Run(() => this.GetAccountObjAsync(leftname));
+                        RootAccountIDObject accObj = pair.Item1;
+                        int errorCode = pair.Item2;
+
+                        if (errorCode == 200)
+                        {
+                            // build player object
+                            PanelPlayer player = this.BuildPlayer(accObj);
+
+                            //fetch stats...from api
+                            player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season1, "left"));
+
+                            if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                            {
+                                MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                                   Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp()); this.leftPlayer = null;
+                            }
+                            else
+                            {
+                                LeftPlayer leftPlayer = (LeftPlayer)player;
+                                leftPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(leftPlayer.AccountObj.data[0].relationships.matches.data));
+                                
+                                this.leftPlayer = leftPlayer;
+                                this.leftPlayer.Season = season1;
+
+                                //add to dictionary
+                                this.familiarNames.Add(player.Name, leftPlayer);
+
+
+
+                                
+
+
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(new APIResponse(errorCode).GetFormattedResponseAccounNameLookUp());
+                        }
+
+                       
+                    }
+
+                    if (this.familiarNames.ContainsKey(rightname))
+                    {
+                        PanelPlayer player = this.familiarNames[rightname];
+                        //fetch stats...from api
+
+                        player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season2, "right"));
+
+                        if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                        {
+                            MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                               Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                        }
+                        else
+                        {
+                            RightPlayer rightPlayer = (RightPlayer)player;
+                            rightPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(rightPlayer.AccountObj.data[0].relationships.matches.data));
+
+                            this.rightPlayer = rightPlayer;
+                            this.rightPlayer.Season = season2;
+
+
+
+                        }
+                    }
+                    else
+                    {
+                        Tuple<RootAccountIDObject, int> pair = await Task.Run(() => this.GetAccountObjAsync(rightname));
+                        RootAccountIDObject accObj = pair.Item1;
+                        int errorCode = pair.Item2;
+
+                        if (errorCode == 200)
+                        {
+                            // build player object
+                            PanelPlayer player = this.BuildPlayer(accObj);
+
+                            //fetch stats...from api
+                            player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season2, "right"));
+
+                            if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                            {
+                                this.rightPlayer = null;
+
+                                MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                                   Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                            }
+                            else
+                            {
+                                RightPlayer rightPlayer = (RightPlayer)player;
+                                rightPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(rightPlayer.AccountObj.data[0].relationships.matches.data));
+
+                                this.rightPlayer = rightPlayer;
+                                this.rightPlayer.Season = season2;
+
+                                //add to dictionary
+                                this.familiarNames.Add(player.Name, rightPlayer);
+
+
+
+                                
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(new APIResponse(errorCode).GetFormattedResponseAccounNameLookUp());
+                        }
+                    }
+
+                    this.ActivateButton(this.iconButton8, RGBColors.white);
+                    if (this.leftPlayer != null && this.rightPlayer != null)
+                    {
+                        this.OpenChildForm(new RankedDoublePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.RankedFPP, this));
+
+                    }
+                    else if (this.leftPlayer == null && this.rightPlayer != null)
+                    {
+                        this.OpenChildForm(new RankedSinglePlayer(this.rightPlayer, Values.StatType.RankedFPP));
+
+                    }
+
+                    else if (this.leftPlayer != null && this.rightPlayer == null)
+                    {
+                        this.OpenChildForm(new RankedSinglePlayer(this.leftPlayer, Values.StatType.RankedFPP));
 
                     }
                     else
                     {
-                        string name = this.txtLeftPlayerName.Text.ToString();
-                        string side = "left";
-                        Tuple<string, string> arguments = Tuple.Create(name, side);
-
-                        // if name not present in dictionary, try to pull name.account from API
-                        this.workerAccountID.RunWorkerAsync(arguments);
+                        MessageBox.Show("Both account names are not valid.");
                     }
+
+                    this.txtLeftPlayerName.Enabled = true;
+                    this.txtRightPlayerName.Enabled = true;
+
                 }
-                else if (this.txtRightPlayerName.Enabled && 
-                    this.txtRightPlayerName.Text != "" && this.txtLeftPlayerName.Text != "")
+
+                else if (leftname != "" || leftname != string.Empty)
+                {
+                    this.txtLeftPlayerName.Enabled = false;
+                    if (this.familiarNames.ContainsKey(leftname))
+                    {
+                        PanelPlayer player = this.familiarNames[leftname];
+                        //fetch stats...from api
+
+                        player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season1, "left"));
+
+                        if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                        {
+                            MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                               Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                        }
+                        else
+                        {
+                            LeftPlayer leftPlayer = (LeftPlayer)player;
+                            leftPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(leftPlayer.AccountObj.data[0].relationships.matches.data));
+                            
+                            this.leftPlayer = leftPlayer;
+                            this.leftPlayer.Season = season1;
+
+
+                            this.ActivateButton(this.iconButton8, RGBColors.white);
+                            this.OpenChildForm(new RankedSinglePlayer(this.leftPlayer, Values.StatType.RankedFPP));
+
+
+                        }
+                    }
+                    else
+                    {
+                        // fetch account informaiton from api
+                        Tuple<RootAccountIDObject, int> pair = await Task.Run(() => this.GetAccountObjAsync(leftname));
+                        RootAccountIDObject accObj = pair.Item1;
+                        int errorCode = pair.Item2;
+
+                        if (errorCode == 200)
+                        {
+                            // build player object
+                            PanelPlayer player = this.BuildPlayer(accObj);
+
+                            //fetch stats...from api
+                            player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season1, "left"));
+
+                            if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                            {
+                                this.leftPlayer = null;
+
+                                MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                                   Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                            }
+                            else
+                            {
+                                LeftPlayer leftPlayer = (LeftPlayer)player;
+                                leftPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(leftPlayer.AccountObj.data[0].relationships.matches.data));
+                                leftPlayer.Matches20SquadFpp = await Task.Run(() => UIMethods.FilterUnrankedMatches(leftPlayer.Matches, Values.StatType.SquadFPP, 20));
+                                this.leftPlayer = leftPlayer;
+                                this.leftPlayer.Season = season1;
+
+                                //add to dictionary
+                                this.familiarNames.Add(player.Name, leftPlayer);
+
+
+
+                                this.ActivateButton(this.iconButton8, RGBColors.white);
+                                this.OpenChildForm(new RankedSinglePlayer(this.leftPlayer, Values.StatType.RankedFPP));
+
+
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(new APIResponse(errorCode).GetFormattedResponseAccounNameLookUp());
+                        }
+                        
+                    }
+
+                    
+                    this.txtLeftPlayerName.Enabled = true;
+                }
+
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                else if (rightname != string.Empty || rightname != "")
                 {
 
+                    this.txtRightPlayerName.Enabled = false;
+
+                    if (this.familiarNames.ContainsKey(rightname))
+                    {
+                        PanelPlayer player = this.familiarNames[rightname];
+                        //fetch stats...from api
+
+                        player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season2, "right"));
+
+                        if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                        {
+                            MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                               Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                        }
+                        else
+                        {
+                            RightPlayer rightPlayer = (RightPlayer)player;
+                            rightPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(rightPlayer.AccountObj.data[0].relationships.matches.data));
+
+                            this.rightPlayer = rightPlayer;
+                            this.rightPlayer.Season = season2;
+
+                            this.ActivateButton(this.iconButton8, RGBColors.white);
+                            this.OpenChildForm(new RankedSinglePlayer(this.rightPlayer, Values.StatType.RankedFPP));
+
+
+                        }
+                    }
+                    else
+                    {
+                        Tuple<RootAccountIDObject, int> pair = await Task.Run(() => this.GetAccountObjAsync(rightname));
+                        RootAccountIDObject accObj = pair.Item1;
+                        int errorCode = pair.Item2;
+
+                        if (errorCode == 200)
+                        {
+                            // build player object
+                            PanelPlayer player = this.BuildPlayer(accObj);
+
+                            //fetch stats...from api
+                            player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season2, "right"));
+
+                            if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                            {
+                                this.rightPlayer = null;
+
+                                MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                                   Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                            }
+                            else
+                            {
+                                RightPlayer rightPlayer = (RightPlayer)player;
+                                rightPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(rightPlayer.AccountObj.data[0].relationships.matches.data));
+
+                                this.rightPlayer = rightPlayer;
+                                this.rightPlayer.Season = season2;
+
+                                //add to dictionary
+                                this.familiarNames.Add(player.Name, rightPlayer);
+
+
+
+                                this.ActivateButton(this.iconButton8, RGBColors.white);
+                                this.OpenChildForm(new RankedSinglePlayer(this.rightPlayer, Values.StatType.RankedFPP));
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(new APIResponse(errorCode).GetFormattedResponseAccounNameLookUp());
+                        }
+                    }
+
+                    this.txtRightPlayerName.Enabled = true;
                 }
 
-                //this.workerAccountID.RunWorkerAsync(this.txtPlayerName1.Text.ToString());
-
-
-
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 e.Handled = true;
                 e.SuppressKeyPress = true;
+
+                return;
             }
         }
 
-        private void txtPlayerName2_KeyDown(object sender, KeyEventArgs e)
+        
+       
+
+
+        private async void txtPlayerName2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                /*
-                this.txtPlayerName2.Enabled = false;
-                this.comboBox2.Enabled = false;
+                
+
+                string leftname = txtLeftPlayerName.Text.ToString();
+                string rightname = txtRightPlayerName.Text.ToString();
+
+                string season1 = this.comboBox1.SelectedItem.ToString();
+                string season2 = this.comboBox2.SelectedItem.ToString();
 
 
+                APIResponse response;
 
-
-                if (this.firstLoad)
+                if ((leftname != string.Empty || leftname != "") && (rightname != string.Empty || rightname != ""))
                 {
-                    this.LoadProgress(this.circularProgressBarLarge);
-                    this.firstLoad = false;
+
+                    this.txtLeftPlayerName.Enabled = false;
+                    this.txtRightPlayerName.Enabled = false;
+
+                    if (this.familiarNames.ContainsKey(leftname))
+                    {
+                        PanelPlayer player = this.familiarNames[leftname];
+                        //fetch stats...from api
+
+                        player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season1, "left"));
+
+                        if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                        {
+                            MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                               Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                        }
+                        else
+                        {
+                            LeftPlayer leftPlayer = (LeftPlayer)player;
+                            leftPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(leftPlayer.AccountObj.data[0].relationships.matches.data));
+
+                            this.leftPlayer = leftPlayer;
+                            this.leftPlayer.Season = season1;
+
+                        }
+                    }
+                    else
+                    {
+                        // fetch account informaiton from api
+                        Tuple<RootAccountIDObject, int> pair = await Task.Run(() => this.GetAccountObjAsync(leftname));
+                        RootAccountIDObject accObj = pair.Item1;
+                        int errorCode = pair.Item2;
+
+                        if (errorCode == 200)
+                        {
+                            // build player object
+                            PanelPlayer player = this.BuildPlayer(accObj);
+
+                            //fetch stats...from api
+                            player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season1, "left"));
+
+                            if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                            {
+                                this.leftPlayer = null;
+
+                                MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                                   Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                            }
+                            else
+                            {
+                                LeftPlayer leftPlayer = (LeftPlayer)player;
+                                leftPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(leftPlayer.AccountObj.data[0].relationships.matches.data));
+
+                                this.leftPlayer = leftPlayer;
+                                this.leftPlayer.Season = season1;
+
+                                //add to dictionary
+                                this.familiarNames.Add(player.Name, leftPlayer);
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(new APIResponse(errorCode).GetFormattedResponseAccounNameLookUp());
+                        }
+                    }
+
+                    if (this.familiarNames.ContainsKey(rightname))
+                    {
+                        PanelPlayer player = this.familiarNames[rightname];
+                        //fetch stats...from api
+
+                        player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season2, "right"));
+
+                        if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                        {
+                            MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                               Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                        }
+                        else
+                        {
+                            RightPlayer rightPlayer = (RightPlayer)player;
+                            rightPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(rightPlayer.AccountObj.data[0].relationships.matches.data));
+
+                            this.rightPlayer = rightPlayer;
+                            this.rightPlayer.Season = season2;
+
+                        }
+                    }
+                    else
+                    {
+                        Tuple<RootAccountIDObject, int> pair = await Task.Run(() => this.GetAccountObjAsync(rightname));
+                        RootAccountIDObject accObj = pair.Item1;
+                        int errorCode = pair.Item2;
+
+                        if (errorCode == 200)
+                        {
+                            // build player object
+                            PanelPlayer player = this.BuildPlayer(accObj);
+
+                            //fetch stats...from api
+                            player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season2, "right"));
+
+                            if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                            {
+                                this.rightPlayer = null;
+
+                                MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                                   Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                            }
+                            else
+                            {
+                                RightPlayer rightPlayer = (RightPlayer)player;
+                                rightPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(rightPlayer.AccountObj.data[0].relationships.matches.data));
+
+                                this.rightPlayer = rightPlayer;
+                                this.rightPlayer.Season = season2;
+
+                                //add to dictionary
+                                this.familiarNames.Add(player.Name, rightPlayer);
+
+
+
+                               
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(new APIResponse(errorCode).GetFormattedResponseAccounNameLookUp());
+                        }
+                    }
+
+                    this.ActivateButton(this.iconButton8, RGBColors.white);
+                    if (this.leftPlayer != null && this.rightPlayer != null)
+                    {
+                        this.OpenChildForm(new RankedDoublePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.RankedFPP, this));
+
+                    }
+                    else if (this.leftPlayer == null && this.rightPlayer != null)
+                    {
+                        this.OpenChildForm(new RankedSinglePlayer(this.rightPlayer, Values.StatType.RankedFPP));
+
+                    }
+
+                    else if (this.leftPlayer != null && this.rightPlayer == null)
+                    {
+                        this.OpenChildForm(new RankedSinglePlayer(this.leftPlayer, Values.StatType.RankedFPP));
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Both account names are not valid.");
+                    }
+
+                    this.txtLeftPlayerName.Enabled = true;
+                    this.txtRightPlayerName.Enabled = true;
                 }
-                else
+
+                else if (leftname != "" || leftname != string.Empty)
                 {
-                    //this.LoadProgress(this.circularProgressBarTop);
+
+                    if (this.familiarNames.ContainsKey(leftname))
+                    {
+
+                        this.txtLeftPlayerName.Enabled = false;
+
+                        PanelPlayer player = this.familiarNames[leftname];
+                        //fetch stats...from api
+
+                        player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season1, "left"));
+
+                        if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                        {
+                            MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                               Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                        }
+                        else
+                        {
+                            LeftPlayer leftPlayer = (LeftPlayer)player;
+                            leftPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(leftPlayer.AccountObj.data[0].relationships.matches.data));
+
+                            this.leftPlayer = leftPlayer;
+                            this.leftPlayer.Season = season1;
+
+                            this.ActivateButton(this.iconButton8, RGBColors.white);
+                            this.OpenChildForm(new RankedSinglePlayer(this.leftPlayer, Values.StatType.RankedFPP));
+
+
+                        }
+                    }
+                    else
+                    {
+                        // fetch account informaiton from api
+                        Tuple<RootAccountIDObject, int> pair = await Task.Run(() => this.GetAccountObjAsync(leftname));
+                        RootAccountIDObject accObj = pair.Item1;
+                        int errorCode = pair.Item2;
+
+                        if (errorCode == 200)
+                        {
+                            // build player object
+                            PanelPlayer player = this.BuildPlayer(accObj);
+
+                            //fetch stats...from api
+                            player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season1, "left"));
+
+                            if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                            {
+                                this.leftPlayer = null;
+
+                                MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                                   Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                            }
+                            else
+                            {
+                                LeftPlayer leftPlayer = (LeftPlayer)player;
+                                leftPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(leftPlayer.AccountObj.data[0].relationships.matches.data));
+
+                                this.leftPlayer = leftPlayer;
+                                this.leftPlayer.Season = season1;
+
+                                //add to dictionary
+                                this.familiarNames.Add(player.Name, leftPlayer);
+
+
+
+                                this.ActivateButton(this.iconButton8, RGBColors.white);
+                                this.OpenChildForm(new RankedSinglePlayer(this.leftPlayer, Values.StatType.RankedFPP));
+
+
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(new APIResponse(errorCode).GetFormattedResponseAccounNameLookUp());
+                        }
+
+                    }
+
+                    this.txtLeftPlayerName.Enabled = true;
                 }
 
-                if (!this.nameAndIdDict.ContainsKey(this.txtPlayerName2.Text.ToString()))
-                {
-                    this.workerAccountID.RunWorkerAsync(this.txtPlayerName2.Text.ToString());
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+                else if (rightname != string.Empty || rightname != "")
+                {
+                    this.txtRightPlayerName.Enabled = false;
+
+                    if (this.familiarNames.ContainsKey(rightname))
+                    {
+                        PanelPlayer player = this.familiarNames[rightname];
+                        //fetch stats...from api
+
+                        player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season2, "right"));
+
+                        if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                        {
+                            MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() +
+                                                               Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+                        }
+                        else
+                        {
+                            RightPlayer rightPlayer = (RightPlayer)player;
+                            rightPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(rightPlayer.AccountObj.data[0].relationships.matches.data));
+
+                            this.rightPlayer = rightPlayer;
+                            this.rightPlayer.Season = season2;
+
+                            this.ActivateButton(this.iconButton8, RGBColors.white);
+                            this.OpenChildForm(new RankedSinglePlayer(this.rightPlayer, Values.StatType.RankedFPP));
+
+
+                        }
+                    }
+                    else
+                    {
+                        Tuple<RootAccountIDObject, int> pair = await Task.Run(() => this.GetAccountObjAsync(rightname));
+                        RootAccountIDObject accObj = pair.Item1;
+                        int errorCode = pair.Item2;
+
+                        if (errorCode == 200)
+                        {
+                            // build player object
+                            PanelPlayer player = this.BuildPlayer(accObj);
+
+                            //fetch stats...from api
+                            player = await Task.Run(() => this.BuildPlayerWithStatsAsync(player, season2, "right"));
+
+                            if (player.NormalErrorCode != 200 || player.RankedErrorCode != 200)
+                            {
+                                this.rightPlayer = null;
+
+                                MessageBox.Show(new APIResponse(player.NormalErrorCode).GetFormattedResponseStatLookUp() + 
+                                    Environment.NewLine + new APIResponse(player.RankedErrorCode).GetFormattedResponseRankedLookUp());
+
+
+                            }
+                            else
+                            {
+                                RightPlayer rightPlayer = (RightPlayer)player;
+                                rightPlayer.Matches = await Task.Run(() => UIMethods.GetMatchesParsed(rightPlayer.AccountObj.data[0].relationships.matches.data));
+
+                                this.rightPlayer = rightPlayer;
+                                this.rightPlayer.Season = season2;
+
+                                //add to dictionary
+                                this.familiarNames.Add(player.Name, rightPlayer);
+
+
+
+                                this.ActivateButton(this.iconButton8, RGBColors.white);
+                                this.OpenChildForm(new RankedSinglePlayer(this.rightPlayer, Values.StatType.RankedFPP));
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(new APIResponse(errorCode).GetFormattedResponseAccounNameLookUp());
+                        }
+                    }
+
+                    this.txtRightPlayerName.Enabled = true;
                 }
 
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                else
-                {
-                    List<string> arguments = new List<string>();
-                    //arguments.Add(this.nameAndIdDict[this.txtPlayerName.Text.ToString()]);
-                    arguments.Add(this.GetProperSeasonName(this.comboBox2.SelectedItem.ToString()));
+                
 
-                    this.workerStats.RunWorkerAsync(arguments);
-                }*/
-
-                this.txtRightPlayerName.Enabled = true;
-                this.comboBox2.Enabled = true;
-
-
+                
                 e.Handled = true;
                 e.SuppressKeyPress = true;
+
+                return;
             }
         }
 
+
+        private bool BothPlayersNotNull()
+        {
+            if (this.leftPlayer != null && this.rightPlayer != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
         private string GetProperSeasonName(string season)
         {
             if (Enum.TryParse(season.Replace(" ", "_"), out Values.Seasons proper))
@@ -623,49 +1363,108 @@ namespace PUBG_Application
             }
         }
 
+
+     
+
+       
+
         
 
-
-
-
-
-
-        private Tuple<RootNormalStatsObject, int, RootRankedStatsObject, int> GetStats(string accountid, string seasonid)
+        private async Task<PanelPlayer> BuildPlayerWithStatsAsync(PanelPlayer player, string season, string side)
         {
-            QueryBuilder builderNormal = new QueryBuilder();
-            QueryExecutor executorNormal = new QueryExecutor(builderNormal.GetSeasonForPlayerQuery(accountid, seasonid));
-            Tuple<string, int> pairNormal = executorNormal.ExecuteQuery();
-            Console.WriteLine("Starting task...getting stats for player");
-            Tuple<RootNormalStatsObject, int> responseNormal = JsonParser.ParseNormalSeasonStats(pairNormal);
+            string seasonid = this.GetProperSeasonName(season);
+            string name = player.Name;
+            string accountID = player.AccountID;
 
+            Tuple<StatsObject, int> statsNormal = await Task.Run(() => this.GetStatsAsync(accountID, seasonid, false));
+            Tuple<StatsObject, int> statsRanked = await Task.Run(() => this.GetStatsAsync(accountID, seasonid, true));
 
-            QueryBuilder builderRanked = new QueryBuilder();
-            QueryExecutor executorRanked = new QueryExecutor(builderRanked.GetRankedSeasonForPlayerQuery(accountid, seasonid));
-            Tuple<string, int> pairRanked = executorRanked.ExecuteQuery();
-            Console.WriteLine("Starting task...getting ranked stats for player");
-            Tuple<RootRankedStatsObject, int> responseRanked = JsonParser.ParseRankedSeasonStats(pairRanked);
+            player.NormalStatsObj = (RootNormalStatsObject)statsNormal.Item1;
+            player.RankedStatsObj = (RootRankedStatsObject)statsRanked.Item1;
 
-
-            Tuple<RootNormalStatsObject,int, RootRankedStatsObject, int> quadTuple = 
-                Tuple.Create(responseNormal.Item1, responseNormal.Item2, responseRanked.Item1, responseRanked.Item2);
-
-            return quadTuple;
-
+            if (side == "left")
+            {
+                LeftPlayer leftplayer = new LeftPlayer(name, player.AccountID, player.AccountObj, player.NormalStatsObj, player.RankedStatsObj);
+                leftplayer.NormalErrorCode = statsNormal.Item2;
+                leftplayer.RankedErrorCode = statsRanked.Item2;
+                return leftplayer;
+            }
+            else if (side == "right")
+            {
+                RightPlayer rightplayer = new RightPlayer(name, player.AccountID, player.AccountObj, player.NormalStatsObj, player.RankedStatsObj);
+                rightplayer.NormalErrorCode = statsNormal.Item2;
+                rightplayer.RankedErrorCode = statsRanked.Item2;
+                return rightplayer;
+            }
+            else
+            {
+                return new PanelPlayer();
+            }
         }
 
-        private Tuple<RootAccountIDObject, int> GetAccountId(string name)
+        private PanelPlayer BuildPlayer(RootAccountIDObject accountObj)
+        {
+            string name = accountObj.data[0].attributes.name;
+            string accID = accountObj.data[0].id;
+
+            PanelPlayer player = new PanelPlayer();
+            player.Name = name;
+            player.AccountID = accID;
+            player.AccountObj = accountObj;
+
+            return player;
+        }
+
+        
+        private async Task<Tuple<RootAccountIDObject, int>> GetAccountObjAsync(string name)
         {
             QueryBuilder builder = new QueryBuilder();
             QueryExecutor executor = new QueryExecutor(builder.GetAccountIDQuery(name));
-            Console.WriteLine("Starting task...getting accountid");
+            Tuple<string, int> account = await Task.Run(() => executor.ExecuteQueryAsync());
 
-            Tuple<string, int> pair = executor.ExecuteQuery();
+            Tuple<RootAccountIDObject, int> accountObjAndError = JsonParser.ParseAccountID(account);
 
-            Tuple<RootAccountIDObject, int> reponse = JsonParser.ParseAccountID(pair);
-
-            return reponse;
+            
+            return accountObjAndError;
         }
 
+        
+        private async Task<Tuple<StatsObject, int>> GetStatsAsync(string accountid, string seasonid, bool ranked)
+        {
+            QueryBuilder builder = new QueryBuilder();
+            QueryExecutor executor;
+            Tuple<string, int> statsJson;
+            Tuple<StatsObject, int> statsObjAndError;
+
+            if (!ranked)
+            {
+                executor = new QueryExecutor(builder.GetSeasonForPlayerQuery(accountid, seasonid));
+                statsJson = await Task.Run(() => executor.ExecuteQueryAsync());
+                Tuple<RootNormalStatsObject, int> pair = JsonParser.ParseNormalSeasonStats(statsJson);
+
+                StatsObject statsObj = pair.Item1;
+                int errorCode = pair.Item2;
+
+                statsObjAndError = Tuple.Create(statsObj, errorCode);
+
+            } 
+            else
+            {
+                executor = new QueryExecutor(builder.GetRankedSeasonForPlayerQuery(accountid, seasonid));
+                statsJson = await Task.Run(() => executor.ExecuteQueryAsync());
+                Tuple<RootRankedStatsObject, int> pair = JsonParser.ParseRankedSeasonStats(statsJson);
+
+                StatsObject statsObj = pair.Item1;
+                int errorCode = pair.Item2;
+
+                statsObjAndError = Tuple.Create(statsObj, errorCode);
+            }
+
+            return statsObjAndError;
+
+        }
+
+        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -687,18 +1486,7 @@ namespace PUBG_Application
                    //this.LoadProgress(this.circularProgressBarTop);
                 }
 
-                if (!this.nameAndIdDict.ContainsKey(this.txtLeftPlayerName.Text.ToString()))
-                {
-                    this.workerAccountID.RunWorkerAsync(this.txtLeftPlayerName.Text.ToString());
-                }
-                else
-                {
-                    List<string> arguments = new List<string>();
-                    //arguments.Add(this.nameAndIdDict[this.txtPlayerName.Text.ToString()]);
-                    arguments.Add(this.GetProperSeasonName(this.comboBox1.SelectedItem.ToString()));
-
-                    this.workerStats.RunWorkerAsync(arguments);
-                }
+               
 
                 this.txtLeftPlayerName.Enabled = true;
                 this.comboBox1.Enabled = true;
@@ -706,85 +1494,7 @@ namespace PUBG_Application
 
         }
 
-        private void DoWork_GetAccountID(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-            Tuple<string, string> arguments = e.Argument as Tuple<string, string>;
-
-            string name = arguments.Item1;
-            string side = arguments.Item2;
-
-            Tuple<RootAccountIDObject, int> pair = this.GetAccountId(name);
-            object[] paramsToSend = new object[3];
-            paramsToSend[0] = pair.Item1;
-            paramsToSend[1] = pair.Item2;
-            paramsToSend[2] = side;
-            e.Result = paramsToSend;
-        }
-
-        private void workerAccountID_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            RootAccountIDObject accountObj;
-            if (e.Result != null)
-            {
-                object[] paramsReceived = null;
-                paramsReceived = e.Result as object[];
-                accountObj = paramsReceived[0] as RootAccountIDObject;
-                int code = Int32.Parse(paramsReceived[1].ToString());
-                Tuple<RootAccountIDObject, int> response = Tuple.Create(accountObj, code);
-                string side = paramsReceived[2].ToString();
-                if (response.Item1 != null)
-                {
-
-                    string name = response.Item1.data[0].attributes.name;
-                    RootAccountIDObject accountObject = response.Item1;
-
-                    //add name and accountobject to global dictionary
-                    this.nameAndIdDict.Add(name, accountObject);
-
-                    string account_id = accountObject.data[0].id;
-                    string season_id = this.GetProperSeasonName(this.comboBox1.SelectedItem.ToString());
-
-                    Tuple<string, string> idAndSeason = Tuple.Create(account_id, season_id);
-
-                    List<object> paramsToSend = new List<object>();
-                    paramsToSend.Add(idAndSeason);
-                    paramsToSend.Add(side);
-
-                    this.familiarNames.Add(accountObj.data[0].attributes.name.ToString(), new LeftPlayer(accountObj));
-                    this.workerStats.RunWorkerAsync(idAndSeason);       
-                }
-
-                else
-                {
-                    APIResponse errorcode = new APIResponse((int)response.Item2);
-                    MessageBox.Show(errorcode.GetDetailedResponse());
-                    Console.WriteLine("Account id failed A");
-                    
-
-                    if (side == "left" && accountObj == null)
-                    {
-                        this.leftPlayer = null;
-                    }
-                    else if (side == "right")
-                    {
-                        this.rightPlayer = null;
-                    }
-
-                }
-            }
-            
-            else
-            {
-                Console.WriteLine("Account id failed B");
-
-            }
-
-        }
-
-        private void workerAccountID_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            // used for progress bars...
-        }
+        
 
 
 
@@ -793,87 +1503,7 @@ namespace PUBG_Application
 
 
 
-        private void DoWork_GetStats(object sender, DoWorkEventArgs e)
-        {
-            List<object> paramsReceived = e.Result as List<object>;
-
-            Tuple<string, string> idAndSeason = paramsReceived[0] as Tuple<string, string>;
-            string side = paramsReceived[1].ToString();
-
-            string account_id = idAndSeason.Item1;
-            string season = idAndSeason.Item2;
-
-            List<object> paramsToSend = new List<object>();
-
-            paramsToSend.Add(this.GetStats(account_id, season));
-            paramsToSend.Add(side);
-            e.Result = paramsToSend;
-        }
-
-        private void workerStats_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            List<object> paramsReceived = e.Result as List<object>;
-
-
-            Tuple<RootNormalStatsObject, int, RootRankedStatsObject, int> responseQuadTuple = 
-                paramsReceived[0] as Tuple<RootNormalStatsObject, int, RootRankedStatsObject, int>;
-
-            string side = paramsReceived[1].ToString();
-
-            if (responseQuadTuple.Item1 != null || responseQuadTuple.Item3 != null)
-            {
-                if (side == "left")
-                {
-                    // make acc obj reference from dictionary
-                    RootAccountIDObject accountObj = this.nameAndIdDict[this.txtLeftPlayerName.Text.ToString()];
-                    RootNormalStatsObject normalStats = responseQuadTuple.Item1;
-                    RootRankedStatsObject rankedStats = responseQuadTuple.Item3;
-
-                    this.leftPlayer = new LeftPlayer(
-                        this.txtLeftPlayerName.Text.ToString(), 
-                        accountObj.data[0].id.ToString(),
-                        accountObj, 
-                        normalStats, 
-                        rankedStats);
-                }
-                else if (side == "right")
-                {
-                    // make acc obj reference from dictionary
-                    RootAccountIDObject accountObj = this.nameAndIdDict[this.txtLeftPlayerName.Text.ToString()];
-                    RootNormalStatsObject normalStats = responseQuadTuple.Item1;
-                    RootRankedStatsObject rankedStats = responseQuadTuple.Item3;
-
-                    this.rightPlayer = new RightPlayer(
-                        this.txtRightPlayerName.Text.ToString(),
-                        accountObj.data[0].id.ToString(),
-                        accountObj,
-                        normalStats,
-                        rankedStats);
-                }
-
-
-                this.ActivateButton(this.iconButton8, Color.White);
-                
-                this.OpenChildForm(new NormalSinglePlayer(this.leftPlayer, this.rightPlayer, Values.StatType.RankedFPP));
-
-                if (!this.firstLoad)
-                {
-                    //this.circularProgressBarTop.Value = 0;
-                    //this.circularProgressBarTop.Update();
-                }
-            } 
-            else
-            {
-                Console.WriteLine("Failed getting stats");
-                APIResponse response = new APIResponse((int)responseQuadTuple.Item2);
-                MessageBox.Show(response.GetDetailedResponse().ToString());
-            }
-        }
-
-        private void workerStats_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            //used for progress bars...
-        }
+        
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -889,44 +1519,8 @@ namespace PUBG_Application
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            /*
-            QueryBuilder queryBuilder = new QueryBuilder();
-            string url = queryBuilder.GetRankedSeasonForPlayerQuery("account.0165929b76b147d1a453bbfd21a58b4b", "division.bro.official.pc-2018-07");
-
-            QueryExecutor executor = new QueryExecutor(url);
-            object [] objs = executor.ExecuteQuery();
-            string json = objs[0].ToString();
-
-            RootRankedObject response = JsonConvert.DeserializeObject<RootRankedObject>(json);
-
-            Console.WriteLine(response.ToString());*/
-            /*
-            QueryBuilder queryBuilder = new QueryBuilder();
-            string url = queryBuilder.GetSeasonForPlayerQuery("account.0165929b76b147d1a453bbfd21a58b4b", "division.bro.official.pc-2018-07");
-            QueryExecutor executor = new QueryExecutor(url);
-            object[] objs = executor.ExecuteQuery();
-            string json = objs[0].ToString();
-
-            RootNormalObject response = JsonConvert.DeserializeObject<RootNormalObject>(json);
-
-            Console.WriteLine(response.ToString());*/
+            
         }
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         /*
             OpenFileDialog openFileDialog = new OpenFileDialog

@@ -54,8 +54,6 @@
             this.circularProgressBarLarge = new CircularProgressBar.CircularProgressBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.workerAccountID = new System.ComponentModel.BackgroundWorker();
-            this.workerStats = new System.ComponentModel.BackgroundWorker();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -526,18 +524,6 @@
             this.panelDesktop.Size = new System.Drawing.Size(796, 925);
             this.panelDesktop.TabIndex = 1;
             // 
-            // workerAccountID
-            // 
-            this.workerAccountID.DoWork += new System.ComponentModel.DoWorkEventHandler(this.DoWork_GetAccountID);
-            this.workerAccountID.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.workerAccountID_ProgressChanged);
-            this.workerAccountID.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.workerAccountID_RunWorkerCompleted);
-            // 
-            // workerStats
-            // 
-            this.workerStats.DoWork += new System.ComponentModel.DoWorkEventHandler(this.DoWork_GetStats);
-            this.workerStats.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.workerStats_ProgressChanged);
-            this.workerStats.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.workerStats_RunWorkerCompleted);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,8 +570,6 @@
         private System.Windows.Forms.Panel pnlPlayerName1;
         private System.Windows.Forms.ComboBox comboBox1;
         private CircularProgressBar.CircularProgressBar circularProgressBarLarge;
-        private System.ComponentModel.BackgroundWorker workerAccountID;
-        private System.ComponentModel.BackgroundWorker workerStats;
         private FontAwesome.Sharp.IconButton iconButton8;
         private FontAwesome.Sharp.IconButton iconButton7;
         private System.Windows.Forms.ComboBox comboBox2;

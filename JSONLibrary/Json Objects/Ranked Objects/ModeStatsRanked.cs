@@ -10,34 +10,75 @@ namespace JSONLibrary.Json_Objects.Ranked_Objects
     {
         public CurrentTier currentTier { get; set; }
 
-        public float currentRankPoint { get; set; }
+        public double currentRankPoint { get; set; }
         public BestTier bestTier { get; set; }
 
-        public float bestRankPoint { get; set; }
-        public float RoundsPlayed { get; set; }
-        public float AvgRank { get; set; }
-        public float AvgSurvivalTime { get; set; }
-        public float Top10Ratio { get; set; }
-        public float WinRatio { get; set; }
-        public float Assists { get; set; }
-        public float Wins { get; set; }
-        public float Kda { get; set; }
-        public float Kdr { get; set; }
-        public float Kills { get; set; }
-        public float Deaths { get; set; }
-        public float RoundMostKills { get; set; }
-        public float LongestKill { get; set; }
-        public float HeadShotKills { get; set; }
-        public float HeadShotKillRatio { get; set; }
-        public float DamageDealt { get; set; }
-        public float Dbnos { get; set; }
-        public float ReviveRatio { get; set; }
-        public float Revives { get; set; }
-        public float Heals { get; set; }
-        public float Boosts { get; set; }
-        public float WeaponsAcquired { get; set; }
-        public float TeamKills { get; set; }
-        public float PlayTime { get; set; }
-        public float KillStreak { get; set; }
+        public double bestRankPoint { get; set; }
+        public double RoundsPlayed { get; set; }
+        public double AvgRank { get; set; }
+
+        [Obsolete("AvgSurvivalTime is deprecated")]
+        public double AvgSurvivalTime { get; set; }
+        public double Top10Ratio { get; set; }
+        public double WinRatio { get; set; }
+        public double Assists { get; set; }
+        public double Wins { get; set; }
+        public double Kda { get; set; }
+
+        [Obsolete("Kdr is deprecated")]
+
+        public double Kdr { get; set; }
+        public double Kills { get; set; }
+        public double Deaths { get; set; }
+
+        [Obsolete("RoundMostKills is deprecated")]
+
+        public double RoundMostKills { get; set; }
+
+        [Obsolete("LongestKill is deprecated")]
+
+        public double LongestKill { get; set; }
+
+        [Obsolete("HeadShotKills is deprecated")]
+
+        public double HeadShotKills { get; set; }
+
+        [Obsolete("HeadShotKillRatio is deprecated")]
+
+        public double HeadShotKillRatio { get; set; }
+        public double DamageDealt { get; set; }
+        public double Dbnos { get; set; }
+
+        [Obsolete("ReviveRatio is deprecated")]
+
+        public double ReviveRatio { get; set; }
+
+        [Obsolete("Revives is deprecated")]
+
+        public double Revives { get; set; }
+
+        [Obsolete("Heals is deprecated")]
+
+        public double Heals { get; set; }
+
+        [Obsolete("Boosts is deprecated")]
+
+        public double Boosts { get; set; }
+
+        [Obsolete("WeaponsAcquired is deprecated")]
+
+        public double WeaponsAcquired { get; set; }
+
+        [Obsolete("TeamKills is deprecated")]
+
+        public double TeamKills { get; set; }
+
+        [Obsolete("PlayTime is deprecated")]
+
+        public double PlayTime { get; set; }
+
+        [Obsolete("KillStreak is deprecated")]
+
+        public double KillStreak { get; set; } 
     }
 }

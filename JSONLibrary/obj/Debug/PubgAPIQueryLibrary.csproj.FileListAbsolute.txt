@@ -1,0 +1,35 @@
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\JSONLibrary.dll.config
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\JSONLibrary.dll
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\JSONLibrary.pdb
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\JsonApiSerializer.dll
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\Newtonsoft.Json.dll
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\nunit.framework.dll
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\Pubg.Net.dll
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\System.Json.dll
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\Newtonsoft.Json.xml
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\nunit.framework.pdb
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\nunit.framework.xml
+D:\Visual Studio Projects\JSONLibrary\bin\Debug\System.Json.xml
+D:\Visual Studio Projects\JSONLibrary\obj\Debug\PubgAPIQueryLibrary.csprojAssemblyReference.cache
+D:\Visual Studio Projects\JSONLibrary\obj\Debug\PubgAPIQueryLibrary.csproj.CoreCompileInputs.cache
+D:\Visual Studio Projects\JSONLibrary\obj\Debug\PubgAPIQueryLibrary.csproj.CopyComplete
+D:\Visual Studio Projects\JSONLibrary\obj\Debug\JSONLibrary.dll
+D:\Visual Studio Projects\JSONLibrary\obj\Debug\JSONLibrary.pdb
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\JSONLibrary.dll.config
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\JSONLibrary.dll
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\JSONLibrary.pdb
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\JsonApiSerializer.dll
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\Newtonsoft.Json.dll
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\nunit.framework.dll
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\Pubg.Net.dll
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\System.Json.dll
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\Newtonsoft.Json.xml
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\nunit.framework.pdb
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\nunit.framework.xml
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\System.Json.xml
+D:\PUBG C# Stats Project\JSONLibrary\obj\Debug\PubgAPIQueryLibrary.csprojAssemblyReference.cache
+D:\PUBG C# Stats Project\JSONLibrary\obj\Debug\PubgAPIQueryLibrary.csproj.CoreCompileInputs.cache
+D:\PUBG C# Stats Project\JSONLibrary\obj\Debug\PubgAPIQueryLibrary.csproj.CopyComplete
+D:\PUBG C# Stats Project\JSONLibrary\obj\Debug\JSONLibrary.dll
+D:\PUBG C# Stats Project\JSONLibrary\obj\Debug\JSONLibrary.pdb
+D:\PUBG C# Stats Project\JSONLibrary\bin\Debug\JsonSubTypes.dll

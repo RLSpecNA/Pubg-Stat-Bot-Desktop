@@ -17,10 +17,11 @@ namespace JSONLibrary
 {
     public class QueryExecutor
     {
-        private readonly string API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJlZGYwZTE4" +
-            "MC03YWI3LTAxMzgtZDM1YS0wMDFlODhkODU2NjAiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0I" +
-               "joxNTg5NzUyOTA4LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImFsZX" +
-            "gtbXlzdGVyeW1hIn0.eImkcaol-TKjnnNMq1JXaNgFOTtXYMVbLaE_97q3FaI";
+        private readonly string API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9" +
+            ".eyJqdGkiOiJlZGYwZTE4MC03YWI3LTAxMzgtZDM1YS0wMDFlODhkODU2NjAiLCJpc" +
+            "3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTg5NzUyOTA4LCJwdWIiOiJibHVlaG9sZSI" +
+            "sInRpdGxlIjoicHViZyIsImFwcCI6ImFsZXgtbXlzdGVyeW1hIn0.eImkcaol-TKjn" +
+            "nNMq1JXaNgFOTtXYMVbLaE_97q3FaI";
 
         private string url;
         public QueryExecutor(string url)
@@ -28,7 +29,7 @@ namespace JSONLibrary
             this.url = url;
         }
 
-        public Tuple<string, int> ExecuteQuery()
+        public async Task<Tuple<string, int>> ExecuteQueryAsync()
         {
             if (url == null)
             {
@@ -49,16 +50,17 @@ namespace JSONLibrary
 
                 try
                 {
-                    response = (HttpWebResponse)request.GetResponse();
+                    var res = await Task.Run(() => request.GetResponseAsync());
+                    response = (HttpWebResponse)res;
                 }
-                catch (WebException ex)
+                catch (WebException webException)
                 {
-                    response = (HttpWebResponse)ex.Response;
+                    response = (HttpWebResponse)webException.Response;
                 }
 
                 statusCode = response.StatusCode;
 
-                Stream receiveStream = response.GetResponseStream();
+                Stream receiveStream = await Task.Run(() => response.GetResponseStream()); 
                 reader = new StreamReader(receiveStream, Encoding.GetEncoding("utf-8"));
 
                 if (reader != null)
@@ -69,15 +71,12 @@ namespace JSONLibrary
                     if ((int)statusCode != 200)
                     {
                         pair = Tuple.Create<string, int>(null, (int)statusCode);
-
-                        //object[] array = {null, (int)statusCode };
                         return pair;
                     }
                     else
                     {
                         string json = reader.ReadToEnd();
-                        pair = Tuple.Create<string, int>(json, (int)statusCode);
-                        //object[] array = { json, (int)statusCode };
+                        pair = Tuple.Create(json, (int)statusCode);
                         return pair;
 
                     }
