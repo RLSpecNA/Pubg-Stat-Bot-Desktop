@@ -34,14 +34,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="JsonApiSerializer, Version=1.7.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\PUBG Application\packages\JsonApiSerializer.1.7.4\lib\net45\JsonApiSerializer.dll</HintPath>
     </Reference>
     <Reference Include="JsonSubTypes, Version=1.7.0.0, Culture=neutral, PublicKeyToken=ee75fc290dbc1176, processorArchitecture=MSIL">
       <HintPath>..\PUBG Application\packages\JsonSubTypes.1.7.0\lib\net47\JsonSubTypes.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\PUBG Application\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=4.1.3.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\Npgsql.4.1.3.1\lib\net461\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\PUBG Application\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
@@ -50,10 +65,39 @@
       <HintPath>..\PUBG Application\packages\Pubg-DotNet.2.3.0\lib\netstandard2.0\Pubg.Net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\System.Data.SQLite.Core.1.0.113.1\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Json, Version=2.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\PUBG Application\packages\System.Json.4.7.1\lib\net461\System.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PUBG Application\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
@@ -66,6 +110,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIResponse.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="Date.cs" />
+    <Compile Include="DoublePlayerMatchFiltering.cs" />
+    <Compile Include="GraphPlot.cs" />
     <Compile Include="IFile.cs" />
     <Compile Include="Json Objects\AccountID\Assets.cs" />
     <Compile Include="Json Objects\AccountID\Attributes.cs" />
@@ -76,6 +124,16 @@
     <Compile Include="Json Objects\AccountID\Meta.cs" />
     <Compile Include="Json Objects\AccountID\Relationships.cs" />
     <Compile Include="Json Objects\AccountID\RootAccountIDObject.cs" />
+    <Compile Include="Json Objects\Leaderboard\Attributes.cs" />
+    <Compile Include="Json Objects\Leaderboard\AttributesPlayer.cs" />
+    <Compile Include="Json Objects\Leaderboard\Data.cs" />
+    <Compile Include="Json Objects\Leaderboard\Included.cs" />
+    <Compile Include="Json Objects\Leaderboard\Links.cs" />
+    <Compile Include="Json Objects\Leaderboard\PlayerData.cs" />
+    <Compile Include="Json Objects\Leaderboard\Players.cs" />
+    <Compile Include="Json Objects\Leaderboard\Relationships.cs" />
+    <Compile Include="Json Objects\Leaderboard\RootLeaderboard.cs" />
+    <Compile Include="Json Objects\Leaderboard\Stats.cs" />
     <Compile Include="Json Objects\Match\AssetObject.cs" />
     <Compile Include="Json Objects\Match\AssetObjectAttributes.cs" />
     <Compile Include="Json Objects\Match\Assets.cs" />
@@ -125,12 +183,17 @@
     <Compile Include="Json Objects\NonRanked Objects\RootNormalStatsObject.cs" />
     <Compile Include="Json Objects\StatsObject.cs" />
     <Compile Include="JsonParser.cs" />
+    <Compile Include="LeaderboardRow.cs" />
     <Compile Include="LeftPlayer.cs" />
+    <Compile Include="MatchFiltering.cs" />
     <Compile Include="PanelPlayer.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="QueryBuilder.cs" />
     <Compile Include="Json Objects\Ranked Objects\Data.cs" />
     <Compile Include="RankedObject.cs" />
     <Compile Include="RightPlayer.cs" />
+    <Compile Include="SinglePlayerMatchFiltering.cs" />
+    <Compile Include="SqliteDataAccess.cs" />
     <Compile Include="UnRankedObject.cs" />
     <Compile Include="Values.cs" />
     <Compile Include="Json Objects\NonRanked Objects\SquadFPPStats.cs" />
@@ -149,35 +212,34 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Rank Icons\Bronze-1.png" />
-    <Content Include="Rank Icons\Bronze-2.png" />
-    <Content Include="Rank Icons\Bronze-3.png" />
-    <Content Include="Rank Icons\Bronze-4.png" />
-    <Content Include="Rank Icons\Bronze-5.png" />
-    <Content Include="Rank Icons\Diamond-1.png" />
-    <Content Include="Rank Icons\Diamond-2.png" />
-    <Content Include="Rank Icons\Diamond-3.png" />
-    <Content Include="Rank Icons\Diamond-4.png" />
-    <Content Include="Rank Icons\Diamond-5.png" />
-    <Content Include="Rank Icons\Gold-1.png" />
-    <Content Include="Rank Icons\Gold-2.png" />
-    <Content Include="Rank Icons\Gold-3.png" />
-    <Content Include="Rank Icons\Gold-4.png" />
-    <Content Include="Rank Icons\Gold-5.png" />
-    <Content Include="Rank Icons\Master.png" />
-    <Content Include="Rank Icons\Platinum-1.png" />
-    <Content Include="Rank Icons\Platinum-2.png" />
-    <Content Include="Rank Icons\Platinum-3.png" />
-    <Content Include="Rank Icons\Platinum-4.png" />
-    <Content Include="Rank Icons\Platinum-5.png" />
-    <Content Include="Rank Icons\Silver-1.png" />
-    <Content Include="Rank Icons\Silver-2.png" />
-    <Content Include="Rank Icons\Silver-3.png" />
-    <Content Include="Rank Icons\Silver-4.png" />
-    <Content Include="Rank Icons\Silver-5.png" />
-    <Content Include="Rank Icons\Unranked.png" />
+    <Content Include="RankIcons\Bronze-1.png" />
+    <Content Include="RankIcons\Bronze-2.png" />
+    <Content Include="RankIcons\Bronze-3.png" />
+    <Content Include="RankIcons\Bronze-4.png" />
+    <Content Include="RankIcons\Bronze-5.png" />
+    <Content Include="RankIcons\Diamond-1.png" />
+    <Content Include="RankIcons\Diamond-2.png" />
+    <Content Include="RankIcons\Diamond-3.png" />
+    <Content Include="RankIcons\Diamond-4.png" />
+    <Content Include="RankIcons\Diamond-5.png" />
+    <Content Include="RankIcons\Gold-1.png" />
+    <Content Include="RankIcons\Gold-2.png" />
+    <Content Include="RankIcons\Gold-3.png" />
+    <Content Include="RankIcons\Gold-4.png" />
+    <Content Include="RankIcons\Gold-5.png" />
+    <Content Include="RankIcons\Master.png" />
+    <Content Include="RankIcons\Platinum-1.png" />
+    <Content Include="RankIcons\Platinum-2.png" />
+    <Content Include="RankIcons\Platinum-3.png" />
+    <Content Include="RankIcons\Platinum-4.png" />
+    <Content Include="RankIcons\Platinum-5.png" />
+    <Content Include="RankIcons\Silver-1.png" />
+    <Content Include="RankIcons\Silver-2.png" />
+    <Content Include="RankIcons\Silver-3.png" />
+    <Content Include="RankIcons\Silver-4.png" />
+    <Content Include="RankIcons\Silver-5.png" />
+    <Content Include="RankIcons\Unranked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -185,5 +247,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\PUBG Application\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\PUBG Application\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\PUBG Application\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\PUBG Application\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets'))" />
   </Target>
+  <Import Project="..\PUBG Application\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\PUBG Application\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" />
 </Project>

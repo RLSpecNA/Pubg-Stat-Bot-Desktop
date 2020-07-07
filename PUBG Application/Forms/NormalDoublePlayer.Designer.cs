@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelTopBarWithLabels = new System.Windows.Forms.Panel();
             this.panelRightPlayerTopWithLabels = new System.Windows.Forms.Panel();
             this.labelRightPlayerSeasonName = new System.Windows.Forms.Label();
@@ -44,6 +43,17 @@
             this.labelLeftPlayerSeasonFraggerRatingTitle = new System.Windows.Forms.Label();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.panelRightPlayerStats = new System.Windows.Forms.Panel();
+            this.iconPictureBoxDbnosPerRoundRight = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxMaxKillsRight = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxLongestKillRight = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxHeadShotPercentRight = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxAdrRight = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxAvgSurvivalTimeRight = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxWinPercentRight = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxWinsRight = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBoxGamesPlayedRight = new FontAwesome.Sharp.IconPictureBox();
+            this.labelDbnosPerRoundRightValue = new System.Windows.Forms.Label();
+            this.labelDbnosPerRoundRight = new System.Windows.Forms.Label();
             this.labelAverageSurvivedTimeRightValue = new System.Windows.Forms.Label();
             this.labelMaxKillsRightValue = new System.Windows.Forms.Label();
             this.labelWinPercentRightValue = new System.Windows.Forms.Label();
@@ -88,24 +98,21 @@
             this.labelGamesPlayedLeft = new System.Windows.Forms.Label();
             this.labelHeadshotPercentLeft = new System.Windows.Forms.Label();
             this.labelAdrLeft = new System.Windows.Forms.Label();
-            this.graphPlotBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelDbnosPerRoundRight = new System.Windows.Forms.Label();
-            this.labelDbnosPerRoundRightValue = new System.Windows.Forms.Label();
-            this.iconPictureBoxGamesPlayedRight = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBoxWinsRight = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBoxWinPercentRight = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBoxAvgSurvivalTimeRight = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBoxAdrRight = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBoxHeadShotPercentRight = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBoxLongestKillRight = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBoxMaxKillsRight = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBoxDbnosPerRoundRight = new FontAwesome.Sharp.IconPictureBox();
             this.panelTopBarWithLabels.SuspendLayout();
             this.panelRightPlayerTopWithLabels.SuspendLayout();
             this.panelLeftPlayerTopWithLabels.SuspendLayout();
             this.panelRightPlayerFraggerRating.SuspendLayout();
             this.panelLeftPlayerFraggerRating.SuspendLayout();
             this.panelRightPlayerStats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxDbnosPerRoundRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxMaxKillsRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxLongestKillRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxHeadShotPercentRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAdrRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAvgSurvivalTimeRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinPercentRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinsRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxGamesPlayedRight)).BeginInit();
             this.panelLeftPlayerStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxDbnosPerRoundLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxLongestKillLeft)).BeginInit();
@@ -116,16 +123,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinPercentLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinsLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxGamesPlayedLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.graphPlotBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxGamesPlayedRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinsRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinPercentRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAvgSurvivalTimeRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAdrRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxHeadShotPercentRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxLongestKillRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxMaxKillsRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxDbnosPerRoundRight)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTopBarWithLabels
@@ -272,9 +269,11 @@
             // 
             // cartesianChart1
             // 
+            this.cartesianChart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.cartesianChart1.ForeColor = System.Drawing.Color.White;
             this.cartesianChart1.Location = new System.Drawing.Point(10, 633);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(772, 301);
+            this.cartesianChart1.Size = new System.Drawing.Size(772, 287);
             this.cartesianChart1.TabIndex = 15;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
@@ -313,6 +312,145 @@
             this.panelRightPlayerStats.Size = new System.Drawing.Size(386, 303);
             this.panelRightPlayerStats.TabIndex = 14;
             this.panelRightPlayerStats.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelRightPlayerStats_MouseDoubleClick);
+            // 
+            // iconPictureBoxDbnosPerRoundRight
+            // 
+            this.iconPictureBoxDbnosPerRoundRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxDbnosPerRoundRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxDbnosPerRoundRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxDbnosPerRoundRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxDbnosPerRoundRight.IconSize = 20;
+            this.iconPictureBoxDbnosPerRoundRight.Location = new System.Drawing.Point(235, 269);
+            this.iconPictureBoxDbnosPerRoundRight.Name = "iconPictureBoxDbnosPerRoundRight";
+            this.iconPictureBoxDbnosPerRoundRight.Size = new System.Drawing.Size(20, 20);
+            this.iconPictureBoxDbnosPerRoundRight.TabIndex = 42;
+            this.iconPictureBoxDbnosPerRoundRight.TabStop = false;
+            // 
+            // iconPictureBoxMaxKillsRight
+            // 
+            this.iconPictureBoxMaxKillsRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxMaxKillsRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxMaxKillsRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxMaxKillsRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxMaxKillsRight.IconSize = 20;
+            this.iconPictureBoxMaxKillsRight.Location = new System.Drawing.Point(235, 205);
+            this.iconPictureBoxMaxKillsRight.Name = "iconPictureBoxMaxKillsRight";
+            this.iconPictureBoxMaxKillsRight.Size = new System.Drawing.Size(20, 20);
+            this.iconPictureBoxMaxKillsRight.TabIndex = 41;
+            this.iconPictureBoxMaxKillsRight.TabStop = false;
+            // 
+            // iconPictureBoxLongestKillRight
+            // 
+            this.iconPictureBoxLongestKillRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxLongestKillRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxLongestKillRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxLongestKillRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxLongestKillRight.IconSize = 20;
+            this.iconPictureBoxLongestKillRight.Location = new System.Drawing.Point(235, 237);
+            this.iconPictureBoxLongestKillRight.Name = "iconPictureBoxLongestKillRight";
+            this.iconPictureBoxLongestKillRight.Size = new System.Drawing.Size(20, 20);
+            this.iconPictureBoxLongestKillRight.TabIndex = 40;
+            this.iconPictureBoxLongestKillRight.TabStop = false;
+            // 
+            // iconPictureBoxHeadShotPercentRight
+            // 
+            this.iconPictureBoxHeadShotPercentRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxHeadShotPercentRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxHeadShotPercentRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxHeadShotPercentRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxHeadShotPercentRight.IconSize = 20;
+            this.iconPictureBoxHeadShotPercentRight.Location = new System.Drawing.Point(235, 173);
+            this.iconPictureBoxHeadShotPercentRight.Name = "iconPictureBoxHeadShotPercentRight";
+            this.iconPictureBoxHeadShotPercentRight.Size = new System.Drawing.Size(20, 20);
+            this.iconPictureBoxHeadShotPercentRight.TabIndex = 39;
+            this.iconPictureBoxHeadShotPercentRight.TabStop = false;
+            // 
+            // iconPictureBoxAdrRight
+            // 
+            this.iconPictureBoxAdrRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxAdrRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAdrRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxAdrRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAdrRight.IconSize = 20;
+            this.iconPictureBoxAdrRight.Location = new System.Drawing.Point(235, 141);
+            this.iconPictureBoxAdrRight.Name = "iconPictureBoxAdrRight";
+            this.iconPictureBoxAdrRight.Size = new System.Drawing.Size(20, 20);
+            this.iconPictureBoxAdrRight.TabIndex = 38;
+            this.iconPictureBoxAdrRight.TabStop = false;
+            // 
+            // iconPictureBoxAvgSurvivalTimeRight
+            // 
+            this.iconPictureBoxAvgSurvivalTimeRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxAvgSurvivalTimeRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAvgSurvivalTimeRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxAvgSurvivalTimeRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxAvgSurvivalTimeRight.IconSize = 20;
+            this.iconPictureBoxAvgSurvivalTimeRight.Location = new System.Drawing.Point(235, 109);
+            this.iconPictureBoxAvgSurvivalTimeRight.Name = "iconPictureBoxAvgSurvivalTimeRight";
+            this.iconPictureBoxAvgSurvivalTimeRight.Size = new System.Drawing.Size(20, 20);
+            this.iconPictureBoxAvgSurvivalTimeRight.TabIndex = 37;
+            this.iconPictureBoxAvgSurvivalTimeRight.TabStop = false;
+            // 
+            // iconPictureBoxWinPercentRight
+            // 
+            this.iconPictureBoxWinPercentRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxWinPercentRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinPercentRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxWinPercentRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinPercentRight.IconSize = 20;
+            this.iconPictureBoxWinPercentRight.Location = new System.Drawing.Point(235, 77);
+            this.iconPictureBoxWinPercentRight.Name = "iconPictureBoxWinPercentRight";
+            this.iconPictureBoxWinPercentRight.Size = new System.Drawing.Size(20, 20);
+            this.iconPictureBoxWinPercentRight.TabIndex = 36;
+            this.iconPictureBoxWinPercentRight.TabStop = false;
+            // 
+            // iconPictureBoxWinsRight
+            // 
+            this.iconPictureBoxWinsRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxWinsRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinsRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxWinsRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxWinsRight.IconSize = 20;
+            this.iconPictureBoxWinsRight.Location = new System.Drawing.Point(235, 45);
+            this.iconPictureBoxWinsRight.Name = "iconPictureBoxWinsRight";
+            this.iconPictureBoxWinsRight.Size = new System.Drawing.Size(20, 20);
+            this.iconPictureBoxWinsRight.TabIndex = 35;
+            this.iconPictureBoxWinsRight.TabStop = false;
+            // 
+            // iconPictureBoxGamesPlayedRight
+            // 
+            this.iconPictureBoxGamesPlayedRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.iconPictureBoxGamesPlayedRight.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxGamesPlayedRight.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBoxGamesPlayedRight.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBoxGamesPlayedRight.IconSize = 20;
+            this.iconPictureBoxGamesPlayedRight.Location = new System.Drawing.Point(235, 13);
+            this.iconPictureBoxGamesPlayedRight.Name = "iconPictureBoxGamesPlayedRight";
+            this.iconPictureBoxGamesPlayedRight.Size = new System.Drawing.Size(20, 20);
+            this.iconPictureBoxGamesPlayedRight.TabIndex = 34;
+            this.iconPictureBoxGamesPlayedRight.TabStop = false;
+            // 
+            // labelDbnosPerRoundRightValue
+            // 
+            this.labelDbnosPerRoundRightValue.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDbnosPerRoundRightValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelDbnosPerRoundRightValue.Location = new System.Drawing.Point(301, 269);
+            this.labelDbnosPerRoundRightValue.Name = "labelDbnosPerRoundRightValue";
+            this.labelDbnosPerRoundRightValue.Size = new System.Drawing.Size(45, 20);
+            this.labelDbnosPerRoundRightValue.TabIndex = 15;
+            this.labelDbnosPerRoundRightValue.Text = "label";
+            this.labelDbnosPerRoundRightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelDbnosPerRoundRight
+            // 
+            this.labelDbnosPerRoundRight.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDbnosPerRoundRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelDbnosPerRoundRight.Location = new System.Drawing.Point(0, 269);
+            this.labelDbnosPerRoundRight.Name = "labelDbnosPerRoundRight";
+            this.labelDbnosPerRoundRight.Size = new System.Drawing.Size(229, 20);
+            this.labelDbnosPerRoundRight.TabIndex = 14;
+            this.labelDbnosPerRoundRight.Text = "dBNO\'s per Round";
+            this.labelDbnosPerRoundRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelAverageSurvivedTimeRightValue
             // 
@@ -850,145 +988,6 @@
             this.labelAdrLeft.Text = "ADR";
             this.labelAdrLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelDbnosPerRoundRight
-            // 
-            this.labelDbnosPerRoundRight.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDbnosPerRoundRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelDbnosPerRoundRight.Location = new System.Drawing.Point(0, 269);
-            this.labelDbnosPerRoundRight.Name = "labelDbnosPerRoundRight";
-            this.labelDbnosPerRoundRight.Size = new System.Drawing.Size(229, 20);
-            this.labelDbnosPerRoundRight.TabIndex = 14;
-            this.labelDbnosPerRoundRight.Text = "dBNO\'s per Round";
-            this.labelDbnosPerRoundRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelDbnosPerRoundRightValue
-            // 
-            this.labelDbnosPerRoundRightValue.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDbnosPerRoundRightValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelDbnosPerRoundRightValue.Location = new System.Drawing.Point(301, 269);
-            this.labelDbnosPerRoundRightValue.Name = "labelDbnosPerRoundRightValue";
-            this.labelDbnosPerRoundRightValue.Size = new System.Drawing.Size(45, 20);
-            this.labelDbnosPerRoundRightValue.TabIndex = 15;
-            this.labelDbnosPerRoundRightValue.Text = "label";
-            this.labelDbnosPerRoundRightValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // iconPictureBoxGamesPlayedRight
-            // 
-            this.iconPictureBoxGamesPlayedRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.iconPictureBoxGamesPlayedRight.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxGamesPlayedRight.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBoxGamesPlayedRight.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxGamesPlayedRight.IconSize = 20;
-            this.iconPictureBoxGamesPlayedRight.Location = new System.Drawing.Point(235, 13);
-            this.iconPictureBoxGamesPlayedRight.Name = "iconPictureBoxGamesPlayedRight";
-            this.iconPictureBoxGamesPlayedRight.Size = new System.Drawing.Size(20, 20);
-            this.iconPictureBoxGamesPlayedRight.TabIndex = 34;
-            this.iconPictureBoxGamesPlayedRight.TabStop = false;
-            // 
-            // iconPictureBoxWinsRight
-            // 
-            this.iconPictureBoxWinsRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.iconPictureBoxWinsRight.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxWinsRight.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBoxWinsRight.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxWinsRight.IconSize = 20;
-            this.iconPictureBoxWinsRight.Location = new System.Drawing.Point(235, 45);
-            this.iconPictureBoxWinsRight.Name = "iconPictureBoxWinsRight";
-            this.iconPictureBoxWinsRight.Size = new System.Drawing.Size(20, 20);
-            this.iconPictureBoxWinsRight.TabIndex = 35;
-            this.iconPictureBoxWinsRight.TabStop = false;
-            // 
-            // iconPictureBoxWinPercentRight
-            // 
-            this.iconPictureBoxWinPercentRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.iconPictureBoxWinPercentRight.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxWinPercentRight.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBoxWinPercentRight.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxWinPercentRight.IconSize = 20;
-            this.iconPictureBoxWinPercentRight.Location = new System.Drawing.Point(235, 77);
-            this.iconPictureBoxWinPercentRight.Name = "iconPictureBoxWinPercentRight";
-            this.iconPictureBoxWinPercentRight.Size = new System.Drawing.Size(20, 20);
-            this.iconPictureBoxWinPercentRight.TabIndex = 36;
-            this.iconPictureBoxWinPercentRight.TabStop = false;
-            // 
-            // iconPictureBoxAvgSurvivalTimeRight
-            // 
-            this.iconPictureBoxAvgSurvivalTimeRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.iconPictureBoxAvgSurvivalTimeRight.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxAvgSurvivalTimeRight.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBoxAvgSurvivalTimeRight.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxAvgSurvivalTimeRight.IconSize = 20;
-            this.iconPictureBoxAvgSurvivalTimeRight.Location = new System.Drawing.Point(235, 109);
-            this.iconPictureBoxAvgSurvivalTimeRight.Name = "iconPictureBoxAvgSurvivalTimeRight";
-            this.iconPictureBoxAvgSurvivalTimeRight.Size = new System.Drawing.Size(20, 20);
-            this.iconPictureBoxAvgSurvivalTimeRight.TabIndex = 37;
-            this.iconPictureBoxAvgSurvivalTimeRight.TabStop = false;
-            // 
-            // iconPictureBoxAdrRight
-            // 
-            this.iconPictureBoxAdrRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.iconPictureBoxAdrRight.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxAdrRight.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBoxAdrRight.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxAdrRight.IconSize = 20;
-            this.iconPictureBoxAdrRight.Location = new System.Drawing.Point(235, 141);
-            this.iconPictureBoxAdrRight.Name = "iconPictureBoxAdrRight";
-            this.iconPictureBoxAdrRight.Size = new System.Drawing.Size(20, 20);
-            this.iconPictureBoxAdrRight.TabIndex = 38;
-            this.iconPictureBoxAdrRight.TabStop = false;
-            // 
-            // iconPictureBoxHeadShotPercentRight
-            // 
-            this.iconPictureBoxHeadShotPercentRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.iconPictureBoxHeadShotPercentRight.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxHeadShotPercentRight.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBoxHeadShotPercentRight.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxHeadShotPercentRight.IconSize = 20;
-            this.iconPictureBoxHeadShotPercentRight.Location = new System.Drawing.Point(235, 173);
-            this.iconPictureBoxHeadShotPercentRight.Name = "iconPictureBoxHeadShotPercentRight";
-            this.iconPictureBoxHeadShotPercentRight.Size = new System.Drawing.Size(20, 20);
-            this.iconPictureBoxHeadShotPercentRight.TabIndex = 39;
-            this.iconPictureBoxHeadShotPercentRight.TabStop = false;
-            // 
-            // iconPictureBoxLongestKillRight
-            // 
-            this.iconPictureBoxLongestKillRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.iconPictureBoxLongestKillRight.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxLongestKillRight.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBoxLongestKillRight.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxLongestKillRight.IconSize = 20;
-            this.iconPictureBoxLongestKillRight.Location = new System.Drawing.Point(235, 237);
-            this.iconPictureBoxLongestKillRight.Name = "iconPictureBoxLongestKillRight";
-            this.iconPictureBoxLongestKillRight.Size = new System.Drawing.Size(20, 20);
-            this.iconPictureBoxLongestKillRight.TabIndex = 40;
-            this.iconPictureBoxLongestKillRight.TabStop = false;
-            // 
-            // iconPictureBoxMaxKillsRight
-            // 
-            this.iconPictureBoxMaxKillsRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.iconPictureBoxMaxKillsRight.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxMaxKillsRight.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBoxMaxKillsRight.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxMaxKillsRight.IconSize = 20;
-            this.iconPictureBoxMaxKillsRight.Location = new System.Drawing.Point(235, 205);
-            this.iconPictureBoxMaxKillsRight.Name = "iconPictureBoxMaxKillsRight";
-            this.iconPictureBoxMaxKillsRight.Size = new System.Drawing.Size(20, 20);
-            this.iconPictureBoxMaxKillsRight.TabIndex = 41;
-            this.iconPictureBoxMaxKillsRight.TabStop = false;
-            // 
-            // iconPictureBoxDbnosPerRoundRight
-            // 
-            this.iconPictureBoxDbnosPerRoundRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.iconPictureBoxDbnosPerRoundRight.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxDbnosPerRoundRight.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBoxDbnosPerRoundRight.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBoxDbnosPerRoundRight.IconSize = 20;
-            this.iconPictureBoxDbnosPerRoundRight.Location = new System.Drawing.Point(235, 269);
-            this.iconPictureBoxDbnosPerRoundRight.Name = "iconPictureBoxDbnosPerRoundRight";
-            this.iconPictureBoxDbnosPerRoundRight.Size = new System.Drawing.Size(20, 20);
-            this.iconPictureBoxDbnosPerRoundRight.TabIndex = 42;
-            this.iconPictureBoxDbnosPerRoundRight.TabStop = false;
-            // 
             // NormalDoublePlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1003,6 +1002,15 @@
             this.panelRightPlayerFraggerRating.ResumeLayout(false);
             this.panelLeftPlayerFraggerRating.ResumeLayout(false);
             this.panelRightPlayerStats.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxDbnosPerRoundRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxMaxKillsRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxLongestKillRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxHeadShotPercentRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAdrRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAvgSurvivalTimeRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinPercentRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinsRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxGamesPlayedRight)).EndInit();
             this.panelLeftPlayerStats.ResumeLayout(false);
             this.panelLeftPlayerStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxDbnosPerRoundLeft)).EndInit();
@@ -1014,16 +1022,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinPercentLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinsLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxGamesPlayedLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.graphPlotBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxGamesPlayedRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinsRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxWinPercentRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAvgSurvivalTimeRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAdrRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxHeadShotPercentRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxLongestKillRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxMaxKillsRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxDbnosPerRoundRight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1066,7 +1064,6 @@
         private System.Windows.Forms.Label labelHeadshotPercentLeft;
         private System.Windows.Forms.Label labelAdrLeft;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
-        private System.Windows.Forms.BindingSource graphPlotBindingSource;
         private System.Windows.Forms.Panel panelLeftPlayerFraggerRating;
         private System.Windows.Forms.Panel panelRightPlayerFraggerRating;
         private System.Windows.Forms.Panel panelLeftPlayerTopWithLabels;

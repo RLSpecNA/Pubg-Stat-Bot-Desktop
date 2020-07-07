@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.iconButton9 = new FontAwesome.Sharp.IconButton();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -51,20 +53,19 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.circularProgressBarLarge = new CircularProgressBar.CircularProgressBar();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.panelMenu.Controls.Add(this.iconButton9);
             this.panelMenu.Controls.Add(this.iconButton8);
             this.panelMenu.Controls.Add(this.iconButton7);
             this.panelMenu.Controls.Add(this.iconButton6);
@@ -77,8 +78,34 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 1000);
+            this.panelMenu.Size = new System.Drawing.Size(220, 983);
             this.panelMenu.TabIndex = 0;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
+            // 
+            // iconButton9
+            // 
+            this.iconButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.iconButton9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton9.FlatAppearance.BorderSize = 0;
+            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton9.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton9.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.iconButton9.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.iconButton9.IconSize = 32;
+            this.iconButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton9.Location = new System.Drawing.Point(0, 620);
+            this.iconButton9.Name = "iconButton9";
+            this.iconButton9.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButton9.Rotation = 0D;
+            this.iconButton9.Size = new System.Drawing.Size(220, 60);
+            this.iconButton9.TabIndex = 9;
+            this.iconButton9.Text = "Leaderboards";
+            this.iconButton9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton9.UseVisualStyleBackColor = false;
+            this.iconButton9.Click += new System.EventHandler(this.leaderBoardButton_click);
             // 
             // iconButton8
             // 
@@ -317,7 +344,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(796, 75);
+            this.panelTitleBar.Size = new System.Drawing.Size(813, 75);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -384,7 +411,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(150, 24);
             this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lblPlayerName1
             // 
@@ -420,7 +446,6 @@
             this.txtLeftPlayerName.Name = "txtLeftPlayerName";
             this.txtLeftPlayerName.Size = new System.Drawing.Size(213, 25);
             this.txtLeftPlayerName.TabIndex = 5;
-            this.txtLeftPlayerName.TextChanged += new System.EventHandler(this.txtPlayerName_TextChanged);
             this.txtLeftPlayerName.Enter += new System.EventHandler(this.TextBox1_Enter);
             this.txtLeftPlayerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPlayerName1_KeyDown);
             this.txtLeftPlayerName.Leave += new System.EventHandler(this.TextBox1_Leave);
@@ -433,7 +458,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(668, 0);
+            this.button3.Location = new System.Drawing.Point(691, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 30);
             this.button3.TabIndex = 4;
@@ -449,7 +474,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(710, 0);
+            this.button2.Location = new System.Drawing.Point(730, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 30);
             this.button2.TabIndex = 3;
@@ -465,7 +490,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(751, 0);
+            this.button1.Location = new System.Drawing.Point(768, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 30);
             this.button1.TabIndex = 2;
@@ -473,67 +498,40 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // circularProgressBarLarge
+            // panelDesktop
             // 
-            this.circularProgressBarLarge.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.CircularEaseIn;
-            this.circularProgressBarLarge.AnimationSpeed = 500;
-            this.circularProgressBarLarge.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBarLarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBarLarge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBarLarge.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.circularProgressBarLarge.InnerMargin = 2;
-            this.circularProgressBarLarge.InnerWidth = -1;
-            this.circularProgressBarLarge.Location = new System.Drawing.Point(205, 217);
-            this.circularProgressBarLarge.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBarLarge.Name = "circularProgressBarLarge";
-            this.circularProgressBarLarge.OuterColor = System.Drawing.Color.Gray;
-            this.circularProgressBarLarge.OuterMargin = -100;
-            this.circularProgressBarLarge.OuterWidth = 0;
-            this.circularProgressBarLarge.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.circularProgressBarLarge.ProgressWidth = 8;
-            this.circularProgressBarLarge.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBarLarge.Size = new System.Drawing.Size(390, 390);
-            this.circularProgressBarLarge.StartAngle = 270;
-            this.circularProgressBarLarge.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.circularProgressBarLarge.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBarLarge.SubscriptText = ".23";
-            this.circularProgressBarLarge.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.circularProgressBarLarge.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBarLarge.SuperscriptText = "°C";
-            this.circularProgressBarLarge.TabIndex = 0;
-            this.circularProgressBarLarge.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.circularProgressBarLarge.Value = 68;
+            this.panelDesktop.AutoSize = true;
+            this.panelDesktop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(0, 0);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(813, 908);
+            this.panelDesktop.TabIndex = 1;
             // 
             // panel1
             // 
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel1.Controls.Add(this.panelDesktop);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(220, 75);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(796, 925);
+            this.panel1.Size = new System.Drawing.Size(813, 908);
             this.panel1.TabIndex = 2;
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.panelDesktop.Controls.Add(this.circularProgressBarLarge);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(0, 0);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(796, 925);
-            this.panelDesktop.TabIndex = 1;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1016, 1000);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.ClientSize = new System.Drawing.Size(1033, 983);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -543,7 +541,7 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panelDesktop.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -560,8 +558,6 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelTitleBar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -569,13 +565,15 @@
         private System.Windows.Forms.Label lblPlayerName1;
         private System.Windows.Forms.Panel pnlPlayerName1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private CircularProgressBar.CircularProgressBar circularProgressBarLarge;
         private FontAwesome.Sharp.IconButton iconButton8;
         private FontAwesome.Sharp.IconButton iconButton7;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label lblPlayerName2;
         private System.Windows.Forms.Panel pnlPlayerName2;
         private System.Windows.Forms.TextBox txtRightPlayerName;
+        private FontAwesome.Sharp.IconButton iconButton9;
+        private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

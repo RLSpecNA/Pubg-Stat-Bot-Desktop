@@ -66,3 +66,32 @@ D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG Application.csproj.Copy
 D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG Application.exe
 D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG Application.pdb
 D:\PUBG C# Stats Project\PUBG Application\bin\Debug\JsonSubTypes.dll
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG_Application.Forms.Leaderboard.resources
+D:\PUBG C# Stats Project\PUBG Application\obj\Debug\PUBG_Application.Forms.Loading.resources
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\Npgsql.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Buffers.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Memory.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Numerics.Vectors.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Text.Encodings.Web.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Text.Json.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.ValueTuple.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\Npgsql.pdb
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\Npgsql.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Buffers.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Memory.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Numerics.Vectors.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Text.Encodings.Web.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Text.Json.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.ValueTuple.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\sqlite_database.db
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\Dapper.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Data.SQLite.dll
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\Dapper.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Data.SQLite.xml
+D:\PUBG C# Stats Project\PUBG Application\bin\Debug\System.Data.SQLite.dll.config

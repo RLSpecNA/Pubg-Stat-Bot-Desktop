@@ -26,8 +26,6 @@ namespace JSONLibrary
         public int RankedErrorCode { get; set; }
         public int NormalErrorCode { get; set; }
 
-        public RankedObject RankedUIStats { get; set; }
-        public UnRankedObject UnRankedUIStats { get; set; }
 
         public string Season { get; set; }
 
@@ -38,6 +36,23 @@ namespace JSONLibrary
         public List<RootMatch> Matches20SoloFpp { get; set; }
         public List<RootMatch> Matches20DuoFpp { get; set; }
         public List<RootMatch> Matches20SquadFpp { get; set; }
+
+        public List<RootMatch> Matches20RankedTpp { get; set; }
+        public List<RootMatch> Matches20RankedFpp { get; set; }
+
+
+
+        public UnRankedObject CalculatedSoloStats { get; set; }
+        public UnRankedObject CalculatedDuoStats { get; set; }
+        public UnRankedObject CalculatedSquadStats { get; set; }
+        public UnRankedObject CalculatedSoloFppStats { get; set; }
+        public UnRankedObject CalculatedDuoFppStats { get; set; }
+        public UnRankedObject CalculatedSquadFppStats { get; set; }
+
+        public RankedObject CalculatedRankedTppStats { get; set; }
+        public RankedObject CalculatedRankedFppStats { get; set; }
+
+        //private Dictionary<string, int> 
 
 
         public PanelPlayer(string name, string account_id, RootAccountIDObject accountObj, 

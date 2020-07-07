@@ -21,8 +21,8 @@ namespace PUBG_Application.Forms
 
         private PanelPlayer leftPlayer;
         private PanelPlayer rightPlayer;
-        private ModeStats statsLeft;
-        private ModeStats statsRight;
+        private UnRankedObject unrankedLeft;
+        private UnRankedObject unrankedRight;
 
         private Form mainForm;
 
@@ -37,19 +37,7 @@ namespace PUBG_Application.Forms
         {
             InitializeComponent();
 
-            this.graphPlotBindingSource.DataSource = new List<GraphPlot>();
-            cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
-            {
-                Title = "Recent 50 Games",
-                Labels = new[] { "Jan", "Feb", "March", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec" }
-            });
-
-            cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
-            {
-                Title = "Fragger Rating",
-                LabelFormatter = value => value.ToString("C")
-            });
-            cartesianChart1.LegendLocation = LiveCharts.LegendLocation.Right;
+           
 
 
             this.leftPlayerFraggerRatingGauge.From = 0;
@@ -95,15 +83,18 @@ namespace PUBG_Application.Forms
                 this.leftPlayer = leftPlayer;
                 this.rightPlayer = rightPlayer;
                 this.type = type;
-                
-                this.statsLeft = UIMethods.GetProperNormalStatsObject(type, this.leftPlayer);
-                this.statsRight = UIMethods.GetProperNormalStatsObject(type, this.rightPlayer);
-
-                this.leftPlayer.UnRankedUIStats = this.ComputeStats(this.statsLeft);
-                this.rightPlayer.UnRankedUIStats = this.ComputeStats(this.statsRight);
+                this.unrankedLeft = this.GetUnrankedObjectType(this.leftPlayer);
+                this.unrankedRight = this.GetUnrankedObjectType(this.rightPlayer);
 
                 this.UpdateStatLabels();
                 this.DisplayComparisonArrows();
+
+                DoublePlayerMatchFiltering doubleFiltering = new DoublePlayerMatchFiltering(this.leftPlayer.Matches, this.leftPlayer.Name,
+                   this.rightPlayer.Matches, this.rightPlayer.Name, this.type, "official");
+
+                Tuple<List<GraphPlot>, List<GraphPlot>> tuple = doubleFiltering.GetList();
+
+                this.BuildChart(tuple.Item1, tuple.Item2);
 
 
             }
@@ -111,9 +102,8 @@ namespace PUBG_Application.Forms
 
         private void UpdateStatLabels()
         {
-            UnRankedObject unrankedLeft = this.leftPlayer.UnRankedUIStats;
-            UnRankedObject unrankedRight = this.rightPlayer.UnRankedUIStats;
-
+            UnRankedObject unrankedLeft = this.GetUnrankedObjectType(this.leftPlayer);
+            UnRankedObject unrankedRight = this.GetUnrankedObjectType(this.rightPlayer);
 
 
             this.labelGamesPlayedLeftValue.Text = unrankedLeft.GamesPlayed.ToString();
@@ -151,49 +141,46 @@ namespace PUBG_Application.Forms
 
 
         }
-
-        private UnRankedObject ComputeStats(ModeStats stats)
+        private UnRankedObject GetUnrankedObjectType(PanelPlayer player)
         {
-            if (stats != null)
+            if (this.type == Values.StatType.Solo)
             {
-                return new UnRankedObject()
-                {
-                    GamesPlayed = (int)stats.RoundsPlayed,
-                    Wins = (int)stats.Wins,
-                    WinPercent = Math.Round(StatsCalculation.GetWinRatio(stats.Wins, stats.RoundsPlayed), 2),
-                    AvgSurvivalTime = Math.Round(StatsCalculation.GetAverageSurvivedTime(stats.TimeSurvived, stats.RoundsPlayed), 2),
-                    Adr = (int)StatsCalculation.GetAdr(stats.DamageDealt, stats.RoundsPlayed),
-                    HeadshotRatio = Math.Round(StatsCalculation.GetHeadshotRatio(stats.HeadshotKills, stats.Kills), 2),
-                    MaxKills = (int)stats.RoundMostKills,
-                    LongestKill = Math.Round(stats.LongestKill, 2),
-                    DbnosPerRound = Math.Round(StatsCalculation.GetKnocksPerRound(stats.DBNOS, stats.RoundsPlayed), 2),
+                return player.CalculatedSoloStats;
+            }
+            else if (this.type == Values.StatType.Duo)
+            {
+                return player.CalculatedDuoStats;
 
-                    FraggerRating = new Random().Next(30, 100)
-                };
+            }
+            else if (this.type == Values.StatType.Squad)
+            {
+                return player.CalculatedSquadStats;
+
+            }
+            else if (this.type == Values.StatType.SoloFPP)
+            {
+                return player.CalculatedSoloFppStats;
+
+            }
+            else if (this.type == Values.StatType.DuoFPP)
+            {
+                return player.CalculatedDuoFppStats;
+
+            }
+            else if (this.type == Values.StatType.SquadFPP)
+            {
+                return player.CalculatedSquadFppStats;
+
             }
             else
             {
-                return new UnRankedObject()
-                {
-                    GamesPlayed = 0,
-                    Wins = 0,
-                    WinPercent = 0,
-                    AvgSurvivalTime = 0,
-                    Adr = 0,
-                    HeadshotRatio = 0,
-                    MaxKills = 0,
-                    LongestKill = 0,
-                    DbnosPerRound = 0,
-                    FraggerRating = 0
-
-                };
+                return null;
             }
         }
 
         private void DisplayComparisonArrows()
         {
-            UnRankedObject leftUI = this.leftPlayer.UnRankedUIStats;
-            UnRankedObject rightUI = this.rightPlayer.UnRankedUIStats;
+            
 
             List<double> statsListLeft = new List<double>();
             List<double> statsListRight = new List<double>();
@@ -201,25 +188,25 @@ namespace PUBG_Application.Forms
             List<IconPictureBox> rightComparisonArrowList = new List<IconPictureBox>();
 
 
-            statsListLeft.Add(leftUI.GamesPlayed);
-            statsListLeft.Add(leftUI.Wins);
-            statsListLeft.Add(leftUI.WinPercent);
-            statsListLeft.Add(leftUI.AvgSurvivalTime);
-            statsListLeft.Add(leftUI.HeadshotRatio);
-            statsListLeft.Add(leftUI.Adr);
-            statsListLeft.Add(leftUI.MaxKills);
-            statsListLeft.Add(leftUI.LongestKill);
-            statsListLeft.Add(leftUI.DbnosPerRound);
+            statsListLeft.Add(this.unrankedLeft.GamesPlayed);
+            statsListLeft.Add(this.unrankedLeft.Wins);
+            statsListLeft.Add(this.unrankedLeft.WinPercent);
+            statsListLeft.Add(this.unrankedLeft.AvgSurvivalTime);
+            statsListLeft.Add(this.unrankedLeft.HeadshotRatio);
+            statsListLeft.Add(this.unrankedLeft.Adr);
+            statsListLeft.Add(this.unrankedLeft.MaxKills);
+            statsListLeft.Add(this.unrankedLeft.LongestKill);
+            statsListLeft.Add(this.unrankedLeft.DbnosPerRound);
 
-            statsListRight.Add(rightUI.GamesPlayed);
-            statsListRight.Add(rightUI.Wins);
-            statsListRight.Add(rightUI.WinPercent);
-            statsListRight.Add(rightUI.AvgSurvivalTime);
-            statsListRight.Add(rightUI.HeadshotRatio);
-            statsListRight.Add(rightUI.Adr);
-            statsListRight.Add(rightUI.MaxKills);
-            statsListRight.Add(rightUI.LongestKill);
-            statsListRight.Add(rightUI.DbnosPerRound);
+            statsListRight.Add(this.unrankedRight.GamesPlayed);
+            statsListRight.Add(this.unrankedRight.Wins);
+            statsListRight.Add(this.unrankedRight.WinPercent);
+            statsListRight.Add(this.unrankedRight.AvgSurvivalTime);
+            statsListRight.Add(this.unrankedRight.HeadshotRatio);
+            statsListRight.Add(this.unrankedRight.Adr);
+            statsListRight.Add(this.unrankedRight.MaxKills);
+            statsListRight.Add(this.unrankedRight.LongestKill);
+            statsListRight.Add(this.unrankedRight.DbnosPerRound);
 
             leftComparisonArrowList.Add(this.iconPictureBoxGamesPlayedLeft);
             leftComparisonArrowList.Add(this.iconPictureBoxWinsLeft);
@@ -277,84 +264,111 @@ namespace PUBG_Application.Forms
 
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void BuildChart(List<GraphPlot> valuesLeft, List<GraphPlot> valuesRight)
         {
-            //init data
-            cartesianChart1.Series.Clear();
-            SeriesCollection series = new SeriesCollection();
-            var years = (from o in graphPlotBindingSource.DataSource as List<GraphPlot>
-                         select new { Year = o.Year }).Distinct();
+            DefaultLegend customLegend = new DefaultLegend();
 
-            foreach (var year in years)
+            customLegend.Foreground = System.Windows.Media.Brushes.White;
+
+            cartesianChart1.DefaultLegend = customLegend;
+
+            List<string> nums = new List<string>();
+
+            for (int i = 0; i < valuesLeft.Count; i++)
             {
-                List<double> values = new List<double>();
-                for (int month = 1; month <= 12; month++)
-                {
-                    double value = 0;
-                    var data = from o in graphPlotBindingSource.DataSource as List<GraphPlot>
-                               where o.Year.Equals(year.Year) && o.Month.Equals(month)
-                               orderby o.Month ascending
-                               select new { o.Value, o.Month };
-
-                    if (data.SingleOrDefault() != null)
-                    {
-                        value = data.SingleOrDefault().Value;
-                    }
-
-                    values.Add(value);
-                }
-
-                series.Add(new LineSeries() { Title = year.Year.ToString(), Values = new ChartValues<double>(values) });
+                nums.Add(valuesLeft[i].date.Month.ToString() + "/" + valuesLeft[i].date.Day.ToString());
             }
 
-            cartesianChart1.Series = series;
+            cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Recent " + (valuesLeft.Count + 1).ToString() + " Days",
+                Labels = nums.ToArray()
+            });
+
+            cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Average ADR Per Day",
+
+            });
+
+            cartesianChart1.LegendLocation = LiveCharts.LegendLocation.Right;
+
+
+            cartesianChart1.LegendLocation = LiveCharts.LegendLocation.Right;
+
+
+            ChartValues<int> listA = new ChartValues<int>();
+            ChartValues<int> listB = new ChartValues<int>();
+
+            for (int i = 0; i < valuesLeft.Count; i++)
+            {
+                listA.Add((int)Math.Round(valuesLeft[i].Adr, 0));
+                listB.Add((int)Math.Round(valuesRight[i].Adr, 0));
+            }
+
+            cartesianChart1.Series = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = this.leftPlayer.Name,
+                    Values = listA
+                },
+
+                new LineSeries
+                {
+                    Title = this.rightPlayer.Name,
+                    Values = listB
+                }
+            };
+
+
+            cartesianChart1.AxisX[0].Separator.StrokeThickness = 0;
+            cartesianChart1.AxisY[0].Separator.StrokeThickness = 0;
         }
 
-        
 
         private void panelLeftPlayerStats_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            switchToSingleView(sender, e, this.leftPlayer);
+            switchToSingleView(sender, e, this.leftPlayer, "right");
         }
 
         private void panelRightPlayerStats_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            switchToSingleView(sender, e, this.rightPlayer);
+            switchToSingleView(sender, e, this.rightPlayer, "left");
         }
 
         private void labelLeftPlayerName_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            switchToSingleView(sender, e, this.leftPlayer);
+            switchToSingleView(sender, e, this.leftPlayer, "right");
         }
 
         private void labelLeftPlayerSeasonName_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            switchToSingleView(sender, e, this.leftPlayer);
+            switchToSingleView(sender, e, this.leftPlayer, "right");
         }
 
         private void labelLeftPlayerGameMode_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            switchToSingleView(sender, e, this.leftPlayer);
+            switchToSingleView(sender, e, this.leftPlayer, "right");
         }
 
         private void labelRightPlayerName_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            switchToSingleView(sender, e, this.rightPlayer);
+            switchToSingleView(sender, e, this.rightPlayer, "left");
         }
 
         private void labelRightPlayerSeasonName_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            switchToSingleView(sender, e, this.rightPlayer);
+            switchToSingleView(sender, e, this.rightPlayer, "left");
         }
 
         private void labelRightPlayerGameMode_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            switchToSingleView(sender, e, this.rightPlayer);
+            switchToSingleView(sender, e, this.rightPlayer, "left");
         }
 
 
-        private void switchToSingleView(object sender, MouseEventArgs e, PanelPlayer player)
+        private void switchToSingleView(object sender, MouseEventArgs e, PanelPlayer player, string side)
         {
             if (this.mainForm != null)
             {
@@ -362,7 +376,7 @@ namespace PUBG_Application.Forms
                 mainWindow.rightTextBox.Text = "";
                 mainWindow.leftTextBox.Text = "";
 
-                mainWindow.SetRightPlayerNull();
+                mainWindow.SetPlayerNull(side);
                 mainWindow.OpenChildForm(new NormalSinglePlayer(player, type));
             }
             

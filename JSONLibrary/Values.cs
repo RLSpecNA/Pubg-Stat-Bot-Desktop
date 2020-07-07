@@ -22,6 +22,7 @@ namespace JSONLibrary
         public string SurvivorSeason2 = "division.bro.official.pc-2018-02";
         public string SurvivorSeason1 = "division.bro.official.pc-2018-01";
 
+
         /*
         public string Season9_2018 = "division.bro.official.2018-09";
         public string Season8_2018 = "division.bro.official.2018-08";
@@ -163,6 +164,7 @@ namespace JSONLibrary
             Unranked
         }
 
+        
         public static string GetEnumString(StatType type)
         {
             if (type == StatType.Solo)
@@ -191,11 +193,11 @@ namespace JSONLibrary
             }
             else if (type == StatType.RankedTPP)
             {
-                return "Ranked Squad";
+                return "squad";
             }
             else if (type == StatType.RankedFPP)
             {
-                return "Ranked Squad FPP";
+                return "squad-fpp";
             }
 
             return "";

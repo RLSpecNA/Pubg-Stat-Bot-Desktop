@@ -1,4 +1,5 @@
 ﻿using JSONLibrary.Json_Objects.AccountID;
+using JSONLibrary.Json_Objects.Leaderboard;
 using JSONLibrary.Json_Objects.Match;
 using JSONLibrary.Json_Objects.Ranked_Objects;
 using JSONLibrary.Json_Objects.Regular_Objects;
@@ -107,6 +108,32 @@ namespace JSONLibrary
             {
                 RootMatch obj = JsonConvert.DeserializeObject<RootMatch>(pair.Item1);
                 Tuple<RootMatch, int> response = Tuple.Create(obj, pair.Item2);
+
+                return response;
+            }
+            else
+            {
+                return null;
+
+            }
+        }
+
+        public static Tuple<RootLeaderboard, int> ParseLeaderboard(Tuple<string, int> pair)
+        {
+            if (pair == null)
+            {
+                return null;
+            }
+
+            else if (pair.Item1 == null)
+            {
+                Tuple<RootLeaderboard, int> error = Tuple.Create<RootLeaderboard, int>(null, pair.Item2);
+                return error;
+            }
+            if (pair != null)
+            {
+                RootLeaderboard obj = JsonConvert.DeserializeObject<RootLeaderboard>(pair.Item1);
+                Tuple<RootLeaderboard, int> response = Tuple.Create(obj, pair.Item2);
 
                 return response;
             }

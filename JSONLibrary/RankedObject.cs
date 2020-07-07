@@ -26,6 +26,8 @@ namespace JSONLibrary
         public double Kd { get; set; }
         public double Kda { get; set; }
         public double DbnosPerRound { get; set; }
+        public double FraggerRating { get; set; }
+
 
         public RankedObject (Image image, Values.RankTitle title, Values.RankLevel level)
         {

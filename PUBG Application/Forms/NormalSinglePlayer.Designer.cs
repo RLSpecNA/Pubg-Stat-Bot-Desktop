@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -38,23 +37,21 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelPlayerName = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelRecent20AverageDistanceTraveledValue = new System.Windows.Forms.Label();
+            this.labelRecent20AveragePlacementValue = new System.Windows.Forms.Label();
+            this.labelRecent20TimeSurvivedValue = new System.Windows.Forms.Label();
+            this.labelRecent20AdrValue = new System.Windows.Forms.Label();
+            this.labelRecent20KdValue = new System.Windows.Forms.Label();
+            this.labelRecent20AverageDistanceTraveled = new System.Windows.Forms.Label();
+            this.labelRecent20AveragePlacement = new System.Windows.Forms.Label();
+            this.labelRecent20TimeSurvived = new System.Windows.Forms.Label();
+            this.labelRecent20Adr = new System.Windows.Forms.Label();
+            this.labelRecent20Kd = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.panelFraggerRating = new System.Windows.Forms.Panel();
             this.fraggerRatingGauge = new LiveCharts.WinForms.SolidGauge();
             this.labelFraggerRating = new System.Windows.Forms.Label();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelRecent20 = new System.Windows.Forms.Panel();
             this.labelPieChartTitle = new System.Windows.Forms.Label();
             this.pieChart = new LiveCharts.WinForms.PieChart();
@@ -77,10 +74,6 @@
             this.labelGamesPlayed = new System.Windows.Forms.Label();
             this.labelHeadshotPercent = new System.Windows.Forms.Label();
             this.labelAdr = new System.Windows.Forms.Label();
-            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.graphPlotBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -88,10 +81,8 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelFraggerRating.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelRecent20.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.graphPlotBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,8 +92,6 @@
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panelFraggerRating);
             this.panel1.Controls.Add(this.cartesianChart1);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panelRecent20);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -113,6 +102,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel6);
@@ -181,132 +171,133 @@
             // 
             // panel5
             // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.labelRecent20AverageDistanceTraveledValue);
+            this.panel5.Controls.Add(this.labelRecent20AveragePlacementValue);
+            this.panel5.Controls.Add(this.labelRecent20TimeSurvivedValue);
+            this.panel5.Controls.Add(this.labelRecent20AdrValue);
+            this.panel5.Controls.Add(this.labelRecent20KdValue);
+            this.panel5.Controls.Add(this.labelRecent20AverageDistanceTraveled);
+            this.panel5.Controls.Add(this.labelRecent20AveragePlacement);
+            this.panel5.Controls.Add(this.labelRecent20TimeSurvived);
+            this.panel5.Controls.Add(this.labelRecent20Adr);
+            this.panel5.Controls.Add(this.labelRecent20Kd);
             this.panel5.Controls.Add(this.label34);
             this.panel5.Location = new System.Drawing.Point(399, 420);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(383, 232);
             this.panel5.TabIndex = 9;
             // 
-            // label10
+            // labelRecent20AverageDistanceTraveledValue
             // 
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(304, 190);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 23);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "K/D";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelRecent20AverageDistanceTraveledValue.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecent20AverageDistanceTraveledValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelRecent20AverageDistanceTraveledValue.Location = new System.Drawing.Point(281, 190);
+            this.labelRecent20AverageDistanceTraveledValue.Name = "labelRecent20AverageDistanceTraveledValue";
+            this.labelRecent20AverageDistanceTraveledValue.Size = new System.Drawing.Size(97, 23);
+            this.labelRecent20AverageDistanceTraveledValue.TabIndex = 23;
+            this.labelRecent20AverageDistanceTraveledValue.Text = "N/A";
+            this.labelRecent20AverageDistanceTraveledValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label9
+            // labelRecent20AveragePlacementValue
             // 
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(304, 158);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 23);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "K/D";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelRecent20AveragePlacementValue.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecent20AveragePlacementValue.ForeColor = System.Drawing.Color.White;
+            this.labelRecent20AveragePlacementValue.Location = new System.Drawing.Point(281, 158);
+            this.labelRecent20AveragePlacementValue.Name = "labelRecent20AveragePlacementValue";
+            this.labelRecent20AveragePlacementValue.Size = new System.Drawing.Size(97, 23);
+            this.labelRecent20AveragePlacementValue.TabIndex = 22;
+            this.labelRecent20AveragePlacementValue.Text = "N/A";
+            this.labelRecent20AveragePlacementValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // labelRecent20TimeSurvivedValue
             // 
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(304, 126);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 23);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "K/D";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelRecent20TimeSurvivedValue.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecent20TimeSurvivedValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelRecent20TimeSurvivedValue.Location = new System.Drawing.Point(281, 126);
+            this.labelRecent20TimeSurvivedValue.Name = "labelRecent20TimeSurvivedValue";
+            this.labelRecent20TimeSurvivedValue.Size = new System.Drawing.Size(97, 23);
+            this.labelRecent20TimeSurvivedValue.TabIndex = 21;
+            this.labelRecent20TimeSurvivedValue.Text = "N/A";
+            this.labelRecent20TimeSurvivedValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // labelRecent20AdrValue
             // 
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(304, 94);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 23);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "K/D";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelRecent20AdrValue.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecent20AdrValue.ForeColor = System.Drawing.Color.White;
+            this.labelRecent20AdrValue.Location = new System.Drawing.Point(281, 94);
+            this.labelRecent20AdrValue.Name = "labelRecent20AdrValue";
+            this.labelRecent20AdrValue.Size = new System.Drawing.Size(97, 23);
+            this.labelRecent20AdrValue.TabIndex = 20;
+            this.labelRecent20AdrValue.Text = "N/A";
+            this.labelRecent20AdrValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // labelRecent20KdValue
             // 
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(304, 60);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 23);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "K/D";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelRecent20KdValue.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecent20KdValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelRecent20KdValue.Location = new System.Drawing.Point(281, 60);
+            this.labelRecent20KdValue.Name = "labelRecent20KdValue";
+            this.labelRecent20KdValue.Size = new System.Drawing.Size(97, 23);
+            this.labelRecent20KdValue.TabIndex = 19;
+            this.labelRecent20KdValue.Text = "N/A";
+            this.labelRecent20KdValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // labelRecent20AverageDistanceTraveled
             // 
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(3, 190);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(217, 23);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Average Distance Traveled";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelRecent20AverageDistanceTraveled.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecent20AverageDistanceTraveled.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelRecent20AverageDistanceTraveled.Location = new System.Drawing.Point(3, 190);
+            this.labelRecent20AverageDistanceTraveled.Name = "labelRecent20AverageDistanceTraveled";
+            this.labelRecent20AverageDistanceTraveled.Size = new System.Drawing.Size(217, 23);
+            this.labelRecent20AverageDistanceTraveled.TabIndex = 18;
+            this.labelRecent20AverageDistanceTraveled.Text = "Average Distance Traveled";
+            this.labelRecent20AverageDistanceTraveled.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label4
+            // labelRecent20AveragePlacement
             // 
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 158);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(217, 23);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Average Placement";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelRecent20AveragePlacement.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecent20AveragePlacement.ForeColor = System.Drawing.Color.White;
+            this.labelRecent20AveragePlacement.Location = new System.Drawing.Point(3, 158);
+            this.labelRecent20AveragePlacement.Name = "labelRecent20AveragePlacement";
+            this.labelRecent20AveragePlacement.Size = new System.Drawing.Size(217, 23);
+            this.labelRecent20AveragePlacement.TabIndex = 17;
+            this.labelRecent20AveragePlacement.Text = "Average Placement";
+            this.labelRecent20AveragePlacement.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // labelRecent20TimeSurvived
             // 
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(3, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 23);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Time Survived";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelRecent20TimeSurvived.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecent20TimeSurvived.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelRecent20TimeSurvived.Location = new System.Drawing.Point(3, 126);
+            this.labelRecent20TimeSurvived.Name = "labelRecent20TimeSurvived";
+            this.labelRecent20TimeSurvived.Size = new System.Drawing.Size(217, 23);
+            this.labelRecent20TimeSurvived.TabIndex = 16;
+            this.labelRecent20TimeSurvived.Text = "Time Survived";
+            this.labelRecent20TimeSurvived.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label2
+            // labelRecent20Adr
             // 
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 23);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "ADR";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelRecent20Adr.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecent20Adr.ForeColor = System.Drawing.Color.White;
+            this.labelRecent20Adr.Location = new System.Drawing.Point(3, 94);
+            this.labelRecent20Adr.Name = "labelRecent20Adr";
+            this.labelRecent20Adr.Size = new System.Drawing.Size(217, 23);
+            this.labelRecent20Adr.TabIndex = 15;
+            this.labelRecent20Adr.Text = "ADR";
+            this.labelRecent20Adr.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // labelRecent20Kd
             // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(3, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 23);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "K/D";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelRecent20Kd.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecent20Kd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelRecent20Kd.Location = new System.Drawing.Point(3, 60);
+            this.labelRecent20Kd.Name = "labelRecent20Kd";
+            this.labelRecent20Kd.Size = new System.Drawing.Size(217, 23);
+            this.labelRecent20Kd.TabIndex = 14;
+            this.labelRecent20Kd.Text = "K/D";
+            this.labelRecent20Kd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label34
             // 
@@ -322,6 +313,7 @@
             // 
             // panelFraggerRating
             // 
+            this.panelFraggerRating.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelFraggerRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panelFraggerRating.Controls.Add(this.fraggerRatingGauge);
             this.panelFraggerRating.Controls.Add(this.labelFraggerRating);
@@ -354,39 +346,18 @@
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(16, 658);
+            this.cartesianChart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cartesianChart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.cartesianChart1.Location = new System.Drawing.Point(12, 658);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(770, 185);
+            this.cartesianChart1.Size = new System.Drawing.Size(770, 276);
             this.cartesianChart1.TabIndex = 7;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.yearDataGridViewTextBoxColumn,
-            this.monthDataGridViewTextBoxColumn,
-            this.valueDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.graphPlotBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 849);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(685, 85);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(707, 911);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panelRecent20
             // 
+            this.panelRecent20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelRecent20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panelRecent20.Controls.Add(this.labelPieChartTitle);
             this.panelRecent20.Controls.Add(this.pieChart);
@@ -418,6 +389,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel2.Controls.Add(this.labelDbnosPerRoundValue);
             this.panel2.Controls.Add(this.labelDbnosPerRound);
@@ -640,28 +612,6 @@
             this.labelAdr.Text = "ADR";
             this.labelAdr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // yearDataGridViewTextBoxColumn
-            // 
-            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
-            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
-            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
-            // 
-            // monthDataGridViewTextBoxColumn
-            // 
-            this.monthDataGridViewTextBoxColumn.DataPropertyName = "Month";
-            this.monthDataGridViewTextBoxColumn.HeaderText = "Month";
-            this.monthDataGridViewTextBoxColumn.Name = "monthDataGridViewTextBoxColumn";
-            // 
-            // valueDataGridViewTextBoxColumn
-            // 
-            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
-            this.valueDataGridViewTextBoxColumn.HeaderText = "Value";
-            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
-            // 
-            // graphPlotBindingSource
-            // 
-            this.graphPlotBindingSource.DataSource = typeof(PUBG_Application.GraphPlot);
-            // 
             // NormalSinglePlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -678,11 +628,9 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panelFraggerRating.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelRecent20.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.graphPlotBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -709,12 +657,6 @@
         private System.Windows.Forms.Label labelWinPercentValue;
         private System.Windows.Forms.Label labelWinsValue;
         private System.Windows.Forms.Label labelGamesPlayedValue;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource graphPlotBindingSource;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private LiveCharts.WinForms.PieChart pieChart;
         private LiveCharts.WinForms.SolidGauge fraggerRatingGauge;
@@ -724,16 +666,16 @@
         private System.Windows.Forms.Label labelPieChartTitle;
         private System.Windows.Forms.Label labelDbnosPerRoundValue;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelRecent20AverageDistanceTraveledValue;
+        private System.Windows.Forms.Label labelRecent20AveragePlacementValue;
+        private System.Windows.Forms.Label labelRecent20TimeSurvivedValue;
+        private System.Windows.Forms.Label labelRecent20AdrValue;
+        private System.Windows.Forms.Label labelRecent20KdValue;
+        private System.Windows.Forms.Label labelRecent20AverageDistanceTraveled;
+        private System.Windows.Forms.Label labelRecent20AveragePlacement;
+        private System.Windows.Forms.Label labelRecent20TimeSurvived;
+        private System.Windows.Forms.Label labelRecent20Adr;
+        private System.Windows.Forms.Label labelRecent20Kd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label labelModeType;

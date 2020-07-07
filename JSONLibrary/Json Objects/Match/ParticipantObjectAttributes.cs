@@ -15,7 +15,7 @@ namespace JSONLibrary.Json_Objects.Match
         [JsonProperty(PropertyName = "actor")]
         public string actor { get; set; }
 
-        [JsonProperty(PropertyName = "shard")]
-        public string shard { get; set; }
+        [JsonProperty(PropertyName = "shardId")]
+        public string shardId { get; set; }
     }
 }

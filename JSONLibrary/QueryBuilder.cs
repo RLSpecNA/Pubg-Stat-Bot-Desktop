@@ -10,6 +10,10 @@ namespace JSONLibrary
     {
         private readonly string BASE_URL = "https://api.pubg.com/shards/steam/";
 
+        //https://api.pubg.com/shards/pc-na/leaderboards/seasonid/squad-fpp
+        private readonly string BASE_LEADEROARD_URL = "https://api.pubg.com/shards/";
+
+
         public string GetAccountIDQuery(string name)
         {
             StringBuilder builder = new StringBuilder();
@@ -45,6 +49,14 @@ namespace JSONLibrary
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(this.BASE_URL + "matches/" + match_id);
+            return builder.ToString();
+        }
+
+        public string GetLeaderboardQuery(string shard, string season_id, string mode)
+        {
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append(this.BASE_LEADEROARD_URL + shard + "/" + "leaderboards/" + season_id + "/" + mode);
             return builder.ToString();
         }
     }

@@ -28,12 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelFraggerRating = new System.Windows.Forms.Panel();
+            this.fraggerRatingGauge = new LiveCharts.WinForms.SolidGauge();
+            this.labelFraggerRating = new System.Windows.Forms.Label();
+            this.panelRecent20 = new System.Windows.Forms.Panel();
+            this.labelPieChartTitle = new System.Windows.Forms.Label();
+            this.pieChart = new LiveCharts.WinForms.PieChart();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.labelModeTypeRight = new System.Windows.Forms.Label();
+            this.labelSeasonNameLeft = new System.Windows.Forms.Label();
+            this.labelPlayerNameTop = new System.Windows.Forms.Label();
+            this.labelSeasonName = new System.Windows.Forms.Label();
+            this.labelPlayerName = new System.Windows.Forms.Label();
+            this.labelModeType = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelRankTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -55,32 +65,13 @@
             this.labelGamesPlayed = new System.Windows.Forms.Label();
             this.labelKD = new System.Windows.Forms.Label();
             this.labelAdr = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.labelModeType = new System.Windows.Forms.Label();
-            this.labelSeasonName = new System.Windows.Forms.Label();
-            this.labelPlayerName = new System.Windows.Forms.Label();
-            this.labelPlayerNameTop = new System.Windows.Forms.Label();
-            this.labelSeasonNameLeft = new System.Windows.Forms.Label();
-            this.labelModeTypeRight = new System.Windows.Forms.Label();
-            this.panelRecent20 = new System.Windows.Forms.Panel();
-            this.labelPieChartTitle = new System.Windows.Forms.Label();
-            this.pieChart = new LiveCharts.WinForms.PieChart();
-            this.panelFraggerRating = new System.Windows.Forms.Panel();
-            this.fraggerRatingGauge = new LiveCharts.WinForms.SolidGauge();
-            this.labelFraggerRating = new System.Windows.Forms.Label();
-            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.graphPlotBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
+            this.panelFraggerRating.SuspendLayout();
+            this.panelRecent20.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panelRecent20.SuspendLayout();
-            this.panelFraggerRating.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.graphPlotBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,8 +82,6 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.cartesianChart1);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -101,8 +90,162 @@
             this.panel1.Size = new System.Drawing.Size(790, 938);
             this.panel1.TabIndex = 0;
             // 
+            // panelFraggerRating
+            // 
+            this.panelFraggerRating.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelFraggerRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.panelFraggerRating.Controls.Add(this.fraggerRatingGauge);
+            this.panelFraggerRating.Controls.Add(this.labelFraggerRating);
+            this.panelFraggerRating.Location = new System.Drawing.Point(12, 419);
+            this.panelFraggerRating.Name = "panelFraggerRating";
+            this.panelFraggerRating.Size = new System.Drawing.Size(380, 269);
+            this.panelFraggerRating.TabIndex = 11;
+            // 
+            // fraggerRatingGauge
+            // 
+            this.fraggerRatingGauge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fraggerRatingGauge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.fraggerRatingGauge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.fraggerRatingGauge.Location = new System.Drawing.Point(4, 68);
+            this.fraggerRatingGauge.Name = "fraggerRatingGauge";
+            this.fraggerRatingGauge.Size = new System.Drawing.Size(374, 186);
+            this.fraggerRatingGauge.TabIndex = 1;
+            this.fraggerRatingGauge.Text = "solidGauge1";
+            // 
+            // labelFraggerRating
+            // 
+            this.labelFraggerRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelFraggerRating.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFraggerRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelFraggerRating.Location = new System.Drawing.Point(-4, 10);
+            this.labelFraggerRating.Name = "labelFraggerRating";
+            this.labelFraggerRating.Size = new System.Drawing.Size(384, 23);
+            this.labelFraggerRating.TabIndex = 8;
+            this.labelFraggerRating.Text = "Recent 20 Games Fragger Rating";
+            this.labelFraggerRating.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelRecent20
+            // 
+            this.panelRecent20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelRecent20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.panelRecent20.Controls.Add(this.labelPieChartTitle);
+            this.panelRecent20.Controls.Add(this.pieChart);
+            this.panelRecent20.Location = new System.Drawing.Point(398, 419);
+            this.panelRecent20.Name = "panelRecent20";
+            this.panelRecent20.Size = new System.Drawing.Size(384, 269);
+            this.panelRecent20.TabIndex = 10;
+            // 
+            // labelPieChartTitle
+            // 
+            this.labelPieChartTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPieChartTitle.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPieChartTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelPieChartTitle.Location = new System.Drawing.Point(-1, 10);
+            this.labelPieChartTitle.Name = "labelPieChartTitle";
+            this.labelPieChartTitle.Size = new System.Drawing.Size(381, 23);
+            this.labelPieChartTitle.TabIndex = 9;
+            this.labelPieChartTitle.Text = "Recent 20 Maps Played";
+            this.labelPieChartTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pieChart
+            // 
+            this.pieChart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pieChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.pieChart.Location = new System.Drawing.Point(0, 52);
+            this.pieChart.Name = "pieChart";
+            this.pieChart.Size = new System.Drawing.Size(380, 214);
+            this.pieChart.TabIndex = 0;
+            this.pieChart.Text = "pieChart1";
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.labelModeTypeRight);
+            this.panel4.Controls.Add(this.labelSeasonNameLeft);
+            this.panel4.Controls.Add(this.labelPlayerNameTop);
+            this.panel4.Controls.Add(this.labelSeasonName);
+            this.panel4.Controls.Add(this.labelPlayerName);
+            this.panel4.Controls.Add(this.labelModeType);
+            this.panel4.Location = new System.Drawing.Point(12, 12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(770, 89);
+            this.panel4.TabIndex = 9;
+            // 
+            // labelModeTypeRight
+            // 
+            this.labelModeTypeRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelModeTypeRight.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelModeTypeRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelModeTypeRight.Location = new System.Drawing.Point(386, 46);
+            this.labelModeTypeRight.Name = "labelModeTypeRight";
+            this.labelModeTypeRight.Size = new System.Drawing.Size(380, 43);
+            this.labelModeTypeRight.TabIndex = 23;
+            this.labelModeTypeRight.Text = "Mode Type";
+            this.labelModeTypeRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSeasonNameLeft
+            // 
+            this.labelSeasonNameLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSeasonNameLeft.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeasonNameLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelSeasonNameLeft.Location = new System.Drawing.Point(0, 46);
+            this.labelSeasonNameLeft.Name = "labelSeasonNameLeft";
+            this.labelSeasonNameLeft.Size = new System.Drawing.Size(380, 43);
+            this.labelSeasonNameLeft.TabIndex = 22;
+            this.labelSeasonNameLeft.Text = "Season Name";
+            this.labelSeasonNameLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPlayerNameTop
+            // 
+            this.labelPlayerNameTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelPlayerNameTop.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayerNameTop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelPlayerNameTop.Location = new System.Drawing.Point(0, 0);
+            this.labelPlayerNameTop.Name = "labelPlayerNameTop";
+            this.labelPlayerNameTop.Size = new System.Drawing.Size(770, 46);
+            this.labelPlayerNameTop.TabIndex = 21;
+            this.labelPlayerNameTop.Text = "Player Name";
+            this.labelPlayerNameTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSeasonName
+            // 
+            this.labelSeasonName.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeasonName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelSeasonName.Location = new System.Drawing.Point(0, 45);
+            this.labelSeasonName.Name = "labelSeasonName";
+            this.labelSeasonName.Size = new System.Drawing.Size(380, 44);
+            this.labelSeasonName.TabIndex = 19;
+            this.labelSeasonName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPlayerName
+            // 
+            this.labelPlayerName.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelPlayerName.Location = new System.Drawing.Point(0, 1);
+            this.labelPlayerName.Name = "labelPlayerName";
+            this.labelPlayerName.Size = new System.Drawing.Size(770, 44);
+            this.labelPlayerName.TabIndex = 18;
+            this.labelPlayerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelModeType
+            // 
+            this.labelModeType.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelModeType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
+            this.labelModeType.Location = new System.Drawing.Point(390, 46);
+            this.labelModeType.Name = "labelModeType";
+            this.labelModeType.Size = new System.Drawing.Size(380, 39);
+            this.labelModeType.TabIndex = 20;
+            this.labelModeType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.pictureBox1.ErrorImage = global::PUBG_Application.Properties.Resources.Unranked;
             this.pictureBox1.InitialImage = global::PUBG_Application.Properties.Resources.Unranked;
@@ -114,39 +257,18 @@
             // 
             // cartesianChart1
             // 
+            this.cartesianChart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cartesianChart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.cartesianChart1.Location = new System.Drawing.Point(12, 691);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(770, 184);
+            this.cartesianChart1.Size = new System.Drawing.Size(770, 235);
             this.cartesianChart1.TabIndex = 7;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.yearDataGridViewTextBoxColumn,
-            this.monthDataGridViewTextBoxColumn,
-            this.valueDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.graphPlotBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 881);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(685, 53);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(703, 911);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel3.Controls.Add(this.labelRankTitle);
             this.panel3.Location = new System.Drawing.Point(398, 347);
@@ -169,6 +291,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel2.Controls.Add(this.labelTopTenRatioValue);
             this.panel2.Controls.Add(this.labelAVGRankValue);
@@ -193,7 +316,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(380, 307);
             this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // labelTopTenRatioValue
             // 
@@ -393,188 +515,24 @@
             this.labelAdr.Text = "ADR";
             this.labelAdr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.panel4.Controls.Add(this.labelModeTypeRight);
-            this.panel4.Controls.Add(this.labelSeasonNameLeft);
-            this.panel4.Controls.Add(this.labelPlayerNameTop);
-            this.panel4.Controls.Add(this.labelSeasonName);
-            this.panel4.Controls.Add(this.labelPlayerName);
-            this.panel4.Controls.Add(this.labelModeType);
-            this.panel4.Location = new System.Drawing.Point(12, 12);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(770, 89);
-            this.panel4.TabIndex = 9;
-            // 
-            // labelModeType
-            // 
-            this.labelModeType.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelModeType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelModeType.Location = new System.Drawing.Point(390, 46);
-            this.labelModeType.Name = "labelModeType";
-            this.labelModeType.Size = new System.Drawing.Size(380, 39);
-            this.labelModeType.TabIndex = 20;
-            this.labelModeType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelSeasonName
-            // 
-            this.labelSeasonName.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSeasonName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelSeasonName.Location = new System.Drawing.Point(0, 45);
-            this.labelSeasonName.Name = "labelSeasonName";
-            this.labelSeasonName.Size = new System.Drawing.Size(380, 44);
-            this.labelSeasonName.TabIndex = 19;
-            this.labelSeasonName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelPlayerName
-            // 
-            this.labelPlayerName.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlayerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelPlayerName.Location = new System.Drawing.Point(0, 1);
-            this.labelPlayerName.Name = "labelPlayerName";
-            this.labelPlayerName.Size = new System.Drawing.Size(770, 44);
-            this.labelPlayerName.TabIndex = 18;
-            this.labelPlayerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelPlayerNameTop
-            // 
-            this.labelPlayerNameTop.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlayerNameTop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelPlayerNameTop.Location = new System.Drawing.Point(3, 0);
-            this.labelPlayerNameTop.Name = "labelPlayerNameTop";
-            this.labelPlayerNameTop.Size = new System.Drawing.Size(767, 46);
-            this.labelPlayerNameTop.TabIndex = 21;
-            this.labelPlayerNameTop.Text = "Player Name";
-            this.labelPlayerNameTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelSeasonNameLeft
-            // 
-            this.labelSeasonNameLeft.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSeasonNameLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelSeasonNameLeft.Location = new System.Drawing.Point(0, 46);
-            this.labelSeasonNameLeft.Name = "labelSeasonNameLeft";
-            this.labelSeasonNameLeft.Size = new System.Drawing.Size(380, 43);
-            this.labelSeasonNameLeft.TabIndex = 22;
-            this.labelSeasonNameLeft.Text = "Season Name";
-            this.labelSeasonNameLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelModeTypeRight
-            // 
-            this.labelModeTypeRight.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelModeTypeRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelModeTypeRight.Location = new System.Drawing.Point(386, 46);
-            this.labelModeTypeRight.Name = "labelModeTypeRight";
-            this.labelModeTypeRight.Size = new System.Drawing.Size(380, 43);
-            this.labelModeTypeRight.TabIndex = 23;
-            this.labelModeTypeRight.Text = "Mode Type";
-            this.labelModeTypeRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelRecent20
-            // 
-            this.panelRecent20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.panelRecent20.Controls.Add(this.labelPieChartTitle);
-            this.panelRecent20.Controls.Add(this.pieChart);
-            this.panelRecent20.Location = new System.Drawing.Point(398, 419);
-            this.panelRecent20.Name = "panelRecent20";
-            this.panelRecent20.Size = new System.Drawing.Size(384, 269);
-            this.panelRecent20.TabIndex = 10;
-            // 
-            // labelPieChartTitle
-            // 
-            this.labelPieChartTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelPieChartTitle.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPieChartTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelPieChartTitle.Location = new System.Drawing.Point(-1, 10);
-            this.labelPieChartTitle.Name = "labelPieChartTitle";
-            this.labelPieChartTitle.Size = new System.Drawing.Size(381, 23);
-            this.labelPieChartTitle.TabIndex = 9;
-            this.labelPieChartTitle.Text = "Recent 20 Maps Played";
-            this.labelPieChartTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pieChart
-            // 
-            this.pieChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.pieChart.Location = new System.Drawing.Point(0, 52);
-            this.pieChart.Name = "pieChart";
-            this.pieChart.Size = new System.Drawing.Size(380, 214);
-            this.pieChart.TabIndex = 0;
-            this.pieChart.Text = "pieChart1";
-            // 
-            // panelFraggerRating
-            // 
-            this.panelFraggerRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.panelFraggerRating.Controls.Add(this.fraggerRatingGauge);
-            this.panelFraggerRating.Controls.Add(this.labelFraggerRating);
-            this.panelFraggerRating.Location = new System.Drawing.Point(12, 419);
-            this.panelFraggerRating.Name = "panelFraggerRating";
-            this.panelFraggerRating.Size = new System.Drawing.Size(380, 269);
-            this.panelFraggerRating.TabIndex = 11;
-            // 
-            // fraggerRatingGauge
-            // 
-            this.fraggerRatingGauge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.fraggerRatingGauge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.fraggerRatingGauge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.fraggerRatingGauge.Location = new System.Drawing.Point(4, 68);
-            this.fraggerRatingGauge.Name = "fraggerRatingGauge";
-            this.fraggerRatingGauge.Size = new System.Drawing.Size(374, 186);
-            this.fraggerRatingGauge.TabIndex = 1;
-            this.fraggerRatingGauge.Text = "solidGauge1";
-            // 
-            // labelFraggerRating
-            // 
-            this.labelFraggerRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelFraggerRating.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFraggerRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(169)))), ((int)(((byte)(0)))));
-            this.labelFraggerRating.Location = new System.Drawing.Point(-4, 10);
-            this.labelFraggerRating.Name = "labelFraggerRating";
-            this.labelFraggerRating.Size = new System.Drawing.Size(384, 23);
-            this.labelFraggerRating.TabIndex = 8;
-            this.labelFraggerRating.Text = "Season Fragger Rating";
-            this.labelFraggerRating.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // yearDataGridViewTextBoxColumn
-            // 
-            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
-            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
-            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
-            // 
-            // monthDataGridViewTextBoxColumn
-            // 
-            this.monthDataGridViewTextBoxColumn.DataPropertyName = "Month";
-            this.monthDataGridViewTextBoxColumn.HeaderText = "Month";
-            this.monthDataGridViewTextBoxColumn.Name = "monthDataGridViewTextBoxColumn";
-            // 
-            // valueDataGridViewTextBoxColumn
-            // 
-            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
-            this.valueDataGridViewTextBoxColumn.HeaderText = "Value";
-            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
-            // 
-            // graphPlotBindingSource
-            // 
-            this.graphPlotBindingSource.DataSource = typeof(PUBG_Application.GraphPlot);
-            // 
             // RankedSinglePlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(790, 938);
             this.Controls.Add(this.panel1);
             this.Name = "RankedSinglePlayer";
             this.Text = "SquadFppForm";
             this.panel1.ResumeLayout(false);
+            this.panelFraggerRating.ResumeLayout(false);
+            this.panelRecent20.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panelRecent20.ResumeLayout(false);
-            this.panelFraggerRating.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.graphPlotBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -602,12 +560,6 @@
         private System.Windows.Forms.Label labelWinPercentValue;
         private System.Windows.Forms.Label labelWinsValue;
         private System.Windows.Forms.Label labelGamesPlayedValue;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource graphPlotBindingSource;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelRankTitle;

@@ -65,5 +65,16 @@ namespace JSONLibrary
             builder.Append(this.GetDetailedResponse());
             return builder.ToString();
         }
+
+        public string GetFormattedResponseLeaderboardLookUp()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Leaderboard data fetch failed");
+            builder.Append(Environment.NewLine);
+            builder.Append("Error code: " + this.code.ToString());
+            builder.Append(Environment.NewLine);
+            builder.Append(this.GetDetailedResponse());
+            return builder.ToString();
+        }
     }
 }
